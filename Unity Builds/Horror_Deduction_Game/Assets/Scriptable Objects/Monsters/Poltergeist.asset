@@ -1,0 +1,278 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bceaf9029dce64b499beebc9aa6c8af6, type: 3}
+  m_Name: Poltergeist
+  m_EditorClassIdentifier: Assembly-CSharp::Monster_Data
+  monsterName: Poltergeist
+  monsterDescription: 
+  storyEvidence:
+    deadPets:
+      evidenceName: Dead Pets
+      evidenceDescription: Reports of Dead Pets from Civilians
+      evidenceRelevant: 0
+      evidenceType: 0
+    lateNightReports:
+      evidenceName: Late Night Reports
+      evidenceDescription: Civilians Report Incidents Past 12am
+      evidenceRelevant: 0
+      evidenceType: 0
+    coldTemperatures:
+      evidenceName: Cold Temperatures
+      evidenceDescription: Cold Temperatures Reported During Incidents
+      evidenceRelevant: 1
+      evidenceType: 0
+    scratching:
+      evidenceName: Scratching
+      evidenceDescription: Scrathcing Sounds Reported
+      evidenceRelevant: 1
+      evidenceType: 0
+    humanoid:
+      evidenceName: Humanoids
+      evidenceDescription: Humanoid Creature Spotted During Incidents
+      evidenceRelevant: 1
+      evidenceType: 0
+    flyingCreature:
+      evidenceName: Flying
+      evidenceDescription: A Flying Creature Is Seen During Incident
+      evidenceRelevant: 0
+      evidenceType: 0
+  policeReportEvidence:
+    propertyDamage:
+      evidenceName: Property Damage
+      evidenceDescription: 
+      evidenceRelevant: 1
+      evidenceType: 1
+    humanoidSuspect:
+      evidenceName: Humanoid Suspect
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 1
+    missingPeople:
+      evidenceName: Missing People
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 1
+    bloodDrainedVictims:
+      evidenceName: Blood Drained Humans or Animals
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 1
+    suddenDeaths:
+      evidenceName: Sudden Deaths
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 1
+    eveningReports:
+      evidenceName: Evening Reports
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 1
+    animalAttacks:
+      evidenceName: Animal Attacks
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 1
+  videoEvidence:
+    invisibleAssailant:
+      evidenceName: Invisible Assailant
+      evidenceDescription: 
+      evidenceRelevant: 1
+      evidenceType: 2
+    floatingObjects:
+      evidenceName: Floating Object
+      evidenceDescription: 
+      evidenceRelevant: 1
+      evidenceType: 2
+    cameraDistortion:
+      evidenceName: Camera Distortion
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 2
+    coldSpots:
+      evidenceName: Cold Spots
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 2
+    bulkyCreature:
+      evidenceName: Bulky Creature
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 2
+    animalLike:
+      evidenceName: Animal Like
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 2
+  audioEvidence:
+    audioDistortions:
+      evidenceName: Audio Distortions
+      evidenceDescription: 
+      evidenceRelevant: 1
+      evidenceType: 3
+    whispering:
+      evidenceName: Whispering
+      evidenceDescription: 
+      evidenceRelevant: 1
+      evidenceType: 3
+    wailing:
+      evidenceName: Wailing
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 3
+    howls:
+      evidenceName: Howling
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 3
+    growls:
+      evidenceName: Growling
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 3
+  imageEvidence:
+    invertedImaging:
+      evidenceName: Inverse Imaging
+      evidenceDescription: 
+      evidenceRelevant: 1
+      evidenceType: 4
+    negativeSpace:
+      evidenceName: Negative Spacing
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 4
+    heatMap:
+      evidenceName: Heat Maps
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 4
+    clawMarks:
+      evidenceName: Claw Marks
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 4
+  storyList:
+  - evidenceName: Dead Pets
+    evidenceDescription: Reports of Dead Pets from Civilians
+    evidenceRelevant: 0
+    evidenceType: 0
+  - evidenceName: Late Night Reports
+    evidenceDescription: Civilians Report Incidents Past 12am
+    evidenceRelevant: 0
+    evidenceType: 0
+  - evidenceName: Cold Temperatures
+    evidenceDescription: Cold Temperatures Reported During Incidents
+    evidenceRelevant: 1
+    evidenceType: 0
+  - evidenceName: Scratching
+    evidenceDescription: Scrathcing Sounds Reported
+    evidenceRelevant: 1
+    evidenceType: 0
+  - evidenceName: Humanoids
+    evidenceDescription: Humanoid Creature Spotted During Incidents
+    evidenceRelevant: 1
+    evidenceType: 0
+  - evidenceName: Flying
+    evidenceDescription: A Flying Creature Is Seen During Incident
+    evidenceRelevant: 0
+    evidenceType: 0
+  policeReportList:
+  - evidenceName: Property Damage
+    evidenceDescription: 
+    evidenceRelevant: 1
+    evidenceType: 1
+  - evidenceName: Humanoid Suspect
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 1
+  - evidenceName: Missing People
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 1
+  - evidenceName: Blood Drained Humans or Animals
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 1
+  - evidenceName: Sudden Deaths
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 1
+  - evidenceName: Evening Reports
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 1
+  - evidenceName: Animal Attacks
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 1
+  videoList:
+  - evidenceName: Invisible Assailant
+    evidenceDescription: 
+    evidenceRelevant: 1
+    evidenceType: 2
+  - evidenceName: Floating Object
+    evidenceDescription: 
+    evidenceRelevant: 1
+    evidenceType: 2
+  - evidenceName: Camera Distortion
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 2
+  - evidenceName: Cold Spots
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 2
+  - evidenceName: Bulky Creature
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 2
+  - evidenceName: Animal Like
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 2
+  audioList:
+  - evidenceName: Audio Distortions
+    evidenceDescription: 
+    evidenceRelevant: 1
+    evidenceType: 3
+  - evidenceName: Whispering
+    evidenceDescription: 
+    evidenceRelevant: 1
+    evidenceType: 3
+  - evidenceName: Wailing
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 3
+  - evidenceName: Howling
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 3
+  - evidenceName: Growling
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 3
+  imageList:
+  - evidenceName: Inverse Imaging
+    evidenceDescription: 
+    evidenceRelevant: 1
+    evidenceType: 4
+  - evidenceName: Negative Spacing
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 4
+  - evidenceName: Heat Maps
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 4
+  - evidenceName: Claw Marks
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 4

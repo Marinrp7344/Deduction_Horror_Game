@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa8ec57da4c56b47931af0fe93c4c3b, type: 3}
+  m_Name: Audio 1
+  m_EditorClassIdentifier: Assembly-CSharp::Evidence_Data
+  monsterName: Werewolf
+  monsterDescription: 
+  storyEvidence:
+    deadPets: 0
+    lateNightReports: 0
+    coldTemperatures: 0
+    scratching: 0
+    humanoid: 0
+    flyingCreature: 0
+  policeReportEvidence:
+    propertyDamage: 0
+    humanoidSuspect: 0
+    bloodDrainedVictims: 0
+    suddenDeaths: 0
+    eveningReports: 0
+    animalAttacks: 0
+  videoEvidence:
+    invisibleAssailant: 0
+    floatingObjects: 0
+    cameraDistortion: 0
+    coldSpots: 0
+    bulkyCreature: 0
+    animalLike: 0
+  audioEvidence:
+    audioDistortions: 0
+    whispering: 0
+    wailing: 0
+    howls: 1
+    growls: 1
+  imageEvidence:
+    invertedImaging: 0
+    negativeSpace: 0
+    heatMap: 0
+    clawMarks: 0
+  evidenceType: 3
