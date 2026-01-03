@@ -3,9 +3,10 @@ using UnityEngine.Video;
 
 public class Video_Evidence : MonoBehaviour
 {
-    [SerializeField] private VideoClip clip;
-    [SerializeField] private VideoPlayer videoPlayer;
-    [SerializeField] private Camera_Animator cameraAnimator;
+    [SerializeField] public VideoClip clip;
+    [SerializeField] public VideoPlayer videoPlayer;
+    [SerializeField] public Evidence_Data evidenceSO;
+    [SerializeField] public Camera_Animator cameraAnimator;
     
 
     public void PlayVideo()

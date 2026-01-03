@@ -17,11 +17,20 @@ public class Camera_Animator : MonoBehaviour
 
     private void Start()
     {
+        //cameraTransform.position = positions[0].position;
+        //cameraTransform.eulerAngles = positions[0].angle;
+        //currentView = 0;
+        //viewsButtons.ChangeButtons(currentView);
+    }
+
+    private void Awake()
+    {
         cameraTransform.position = positions[0].position;
         cameraTransform.eulerAngles = positions[0].angle;
         currentView = 0;
         viewsButtons.ChangeButtons(currentView);
     }
+
     private void Update()
     {
         if(switchingViews && !animationDone)

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Alpha werewolf
+* source:	https://sketchfab.com/3d-models/alpha-werewolf-8eb41176dece43998661b8fa14c1da33
+* author:	sprngtrp727 (https://sketchfab.com/sprngtrp727)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Alpha werewolf" (https://sketchfab.com/3d-models/alpha-werewolf-8eb41176dece43998661b8fa14c1da33) by sprngtrp727 (https://sketchfab.com/sprngtrp727) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

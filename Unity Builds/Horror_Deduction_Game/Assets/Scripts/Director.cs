@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
-
+using UnityEngine.Video;
+using UnityEngine.Audio;
 public class Director : MonoBehaviour
 {
     [SerializeField] private List<Monster_Data> monsters;
@@ -21,15 +22,182 @@ public class Director : MonoBehaviour
     [SerializeField] private GameObject imageView;
 
     [SerializeField] private GameObject guessingMenu;
+    [SerializeField] private List<Evidence_Data> possibleEvidence;
+    [SerializeField] private GameObject folder;
+    [SerializeField] private Vector3 folderSpawnPosition;
+    [SerializeField] private Camera_Animator cameraAnimator;
+    [SerializeField] private GameObject currentFolder;
+
+    public VideoPlayer videoPlayer;
+    public AudioSource audioSource;
+
+    private readonly System.Random rand = new System.Random();
 
     public void Start()
     {
         GenerateGuesses();
         GenerateEvidence();
+        GenerateNewEvidence();
+        DisableGuessingMenu();
     }
     public void GenerateNewEvidence()
     {
+        int randomMonster = Random.Range(0, monsters.Count);
+        currentMonster = monsters[randomMonster];
+        List<Evidence_Data> newEvidence = FindValidEvidence(monsters[randomMonster]);
+        GameObject newFolder = Instantiate(folder, folderSpawnPosition, Quaternion.identity);
+        Folder folderScript = newFolder.GetComponent<Folder>();
+        folderScript.videoPlayer = videoPlayer;
+        folderScript.audioSource = audioSource;
+        folderScript.evidence = newEvidence;
+        folderScript.cameraAnimator = cameraAnimator;
+        folderScript.InitializeEvidence();
+        currentFolder = newFolder;
+    }
 
+    public List<Evidence_Data> FindValidEvidence(Monster_Data monster)
+    {
+        List<Evidence_Data> randomizedPossibleEvidence = GenerateRandomLoop(possibleEvidence);
+        List<Evidence_Data> validEvidence = new List<Evidence_Data>();
+        int randomEvidenceAmount = Random.Range(3, 5);
+        int currentEvidenceAmount = 0;
+        List<Evidence_Data.Evidence> evidenceTypes = new List<Evidence_Data.Evidence>();
+        foreach(Evidence_Data evidence in randomizedPossibleEvidence)
+        {
+            if(currentEvidenceAmount >= randomEvidenceAmount)
+            {
+                break;
+            }
+            else
+            {
+                bool isValid = true;
+                int i = 0;
+                bool evidenceTypeNotAddedYet = true;
+
+                foreach(Evidence_Data.Evidence type in evidenceTypes)
+                {
+                    if(type == evidence.evidenceType)
+                    {
+                        evidenceTypeNotAddedYet = false;
+                    }
+                }
+                if(evidenceTypeNotAddedYet)
+                {
+                    switch (evidence.evidenceType)
+                    {
+                        case Evidence_Data.Evidence.Story:
+                            foreach (EvidenceData data in monster.storyList)
+                            {
+                                if (evidence.storyList[i].evidenceRelevant == true)
+                                {
+                                    if (data.evidenceRelevant == false)
+                                    {
+                                        isValid = false;
+                                    }
+                                }
+                                i++;
+                            }
+                            if (isValid)
+                            {
+                                validEvidence.Add(evidence);
+                                evidenceTypes.Add(evidence.evidenceType);
+                            }
+                            break;
+
+                        case Evidence_Data.Evidence.PoliceReport:
+                            foreach (EvidenceData data in monster.policeReportList)
+                            {
+                                if (evidence.policeReportList[i].evidenceRelevant == true)
+                                {
+                                    if (data.evidenceRelevant == false)
+                                    {
+                                        isValid = false;
+                                    }
+                                }
+                                i++;
+                            }
+                            if (isValid)
+                            {
+                                validEvidence.Add(evidence);
+                                evidenceTypes.Add(evidence.evidenceType);
+                            }
+                            break;
+
+                        case Evidence_Data.Evidence.Video:
+                            foreach (EvidenceData data in monster.videoList)
+                            {
+                                if (evidence.videoList[i].evidenceRelevant == true)
+                                {
+                                    if (data.evidenceRelevant == false)
+                                    {
+                                        isValid = false;
+                                    }
+                                }
+                                i++;
+                            }
+                            if (isValid)
+                            {
+                                validEvidence.Add(evidence);
+                                evidenceTypes.Add(evidence.evidenceType);
+                            }
+                            break;
+
+                        case Evidence_Data.Evidence.Audio:
+                            foreach (EvidenceData data in monster.audioList)
+                            {
+                                if (evidence.audioList[i].evidenceRelevant == true)
+                                {
+                                    if (data.evidenceRelevant == false)
+                                    {
+                                        isValid = false;
+                                    }
+                                }
+                                i++;
+                            }
+                            if (isValid)
+                            {
+                                validEvidence.Add(evidence);
+                                evidenceTypes.Add(evidence.evidenceType);
+                            }
+                            break;
+
+                        case Evidence_Data.Evidence.Image:
+                            foreach (EvidenceData data in monster.imageList)
+                            {
+                                if (evidence.imageList[i].evidenceRelevant == true)
+                                {
+                                    if (data.evidenceRelevant == false)
+                                    {
+                                        isValid = false;
+                                    }
+                                }
+                                i++;
+                            }
+                            if (isValid)
+                            {
+                                validEvidence.Add(evidence);
+                                evidenceTypes.Add(evidence.evidenceType);
+                            }
+                            break;
+                    }
+                }
+            }
+        }
+        
+        return validEvidence;
+    }
+
+    public List<Evidence_Data> GenerateRandomLoop(List<Evidence_Data> listToShuffle)
+    {
+
+        for (int i = listToShuffle.Count - 1; i > 0; i--)
+        {
+            int k = rand.Next(i + 1);
+            Evidence_Data value = listToShuffle[k];
+            listToShuffle[k] = listToShuffle[i];
+            listToShuffle[i] = value;
+        }
+        return listToShuffle;
     }
 
     public void GenerateEvidence()
@@ -180,6 +348,7 @@ public class Director : MonoBehaviour
 
     public void UpdateGuess(Monster_Data monster, MonsterGuess guessUI)
     {
+        
         if(currentButtonGuess != null)
         {
             currentButtonGuess.UnguessButton();
@@ -191,7 +360,22 @@ public class Director : MonoBehaviour
 
     public void SubmitGuess()
     {
+        Folder currentFolderScript = currentFolder.GetComponent<Folder>();
+        currentFolderScript.DestroyEvidence();
+        Destroy(currentFolder);
 
+        if (currentGuess == currentMonster)
+        {
+            monsters.Remove(currentMonster);
+        }
+        else
+        {
+
+        }
+
+        currentFolder = null;
+
+        GenerateNewEvidence();
     }
 
     public void ActivateGuessingMenu()
@@ -202,5 +386,16 @@ public class Director : MonoBehaviour
     public void DisableGuessingMenu()
     {
         guessingMenu.SetActive(false);
+    }
+
+    public void CloseVideoPlayer()
+    {
+        cameraAnimator.SwitchView(0);
+        videoPlayer.Stop();
+    }
+
+    public void SpawnMonster()
+    {
+
     }
 }

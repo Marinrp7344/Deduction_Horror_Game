@@ -43,6 +43,7 @@ public class StoryEvidence
     public EvidenceData scratching = new EvidenceData { evidenceName = "Scratching", evidenceDescription = "Scrathcing Sounds Reported", evidenceType = EvidenceData.EvidenceType.Story };
     public EvidenceData humanoid = new EvidenceData { evidenceName = "Humanoids", evidenceDescription = "Humanoid Creature Spotted During Incidents", evidenceType = EvidenceData.EvidenceType.Story };
     public EvidenceData flyingCreature = new EvidenceData { evidenceName = "Flying", evidenceDescription = "A Flying Creature Is Seen During Incident", evidenceType = EvidenceData.EvidenceType.Story };
+    public EvidenceData disappearingFigure = new EvidenceData { evidenceName = "Disappering Figure", evidenceDescription = "A Figure Is seen vanishing into thin air", evidenceType = EvidenceData.EvidenceType.Story };
 }
 
 [System.Serializable]
@@ -55,6 +56,7 @@ public class PoliceReportEvidence
     public EvidenceData bloodDrainedVictims = new EvidenceData { evidenceName = "Blood Drained Humans or Animals", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.PoliceReport };
     public EvidenceData suddenDeaths = new EvidenceData { evidenceName = "Sudden Deaths", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.PoliceReport };
     public EvidenceData eveningReports = new EvidenceData { evidenceName = "Evening Reports", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.PoliceReport };
+    public EvidenceData anytimeReports = new EvidenceData { evidenceName = "Appears Anytime", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.PoliceReport };
     public EvidenceData animalAttacks = new EvidenceData { evidenceName = "Animal Attacks", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.PoliceReport };
 }
 
@@ -68,7 +70,10 @@ public class VideoEvidence
     public EvidenceData coldSpots = new EvidenceData { evidenceName = "Cold Spots", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Video };
     public EvidenceData bulkyCreature = new EvidenceData { evidenceName = "Bulky Creature", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Video };
     public EvidenceData animalLike = new EvidenceData { evidenceName = "Animal Like", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Video };
+    public EvidenceData disappearingFigure = new EvidenceData { evidenceName = "Disappering Figure", evidenceDescription = "A Figure Is seen vanishing into thin air", evidenceType = EvidenceData.EvidenceType.Video };
+    public EvidenceData flying = new EvidenceData { evidenceName = "Flying Figure", evidenceDescription = "A figure is seen flying in the air", evidenceType = EvidenceData.EvidenceType.Video };
 }
+
 
 [System.Serializable]
 public class AudioEvidence
@@ -79,6 +84,9 @@ public class AudioEvidence
     public EvidenceData wailing = new EvidenceData { evidenceName = "Wailing", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Audio };
     public EvidenceData howls = new EvidenceData { evidenceName = "Howling", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Audio };
     public EvidenceData growls = new EvidenceData { evidenceName = "Growling", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Audio };
+    public EvidenceData screaming = new EvidenceData { evidenceName = "Screaming", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Audio };
+    public EvidenceData screaching = new EvidenceData { evidenceName = "Screaching", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Audio };
+
 }
 
 [System.Serializable]
@@ -89,6 +97,8 @@ public class ImageEvidence
     public EvidenceData negativeSpace = new EvidenceData { evidenceName = "Negative Spacing", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Image };
     public EvidenceData heatMap = new EvidenceData { evidenceName = "Heat Maps", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Image };
     public EvidenceData clawMarks = new EvidenceData { evidenceName = "Claw Marks", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Image };
+    public EvidenceData tracks = new EvidenceData { evidenceName = "Tracks", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Image };
+    public EvidenceData flying = new EvidenceData { evidenceName = "Flying Creature", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Image };
 
 }
 

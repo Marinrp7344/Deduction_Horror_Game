@@ -45,6 +45,11 @@ MonoBehaviour:
       evidenceDescription: A Flying Creature Is Seen During Incident
       evidenceRelevant: 0
       evidenceType: 0
+    disappearingFigure:
+      evidenceName: Disappering Figure
+      evidenceDescription: A Figure Is seen vanishing into thin air
+      evidenceRelevant: 0
+      evidenceType: 0
   policeReportEvidence:
     propertyDamage:
       evidenceName: Property Damage
@@ -73,6 +78,11 @@ MonoBehaviour:
       evidenceType: 1
     eveningReports:
       evidenceName: Evening Reports
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 1
+    anytimeReports:
+      evidenceName: Appears Anytime
       evidenceDescription: 
       evidenceRelevant: 0
       evidenceType: 1
@@ -112,6 +122,16 @@ MonoBehaviour:
       evidenceDescription: 
       evidenceRelevant: 0
       evidenceType: 2
+    disappearingFigure:
+      evidenceName: Disappering Figure
+      evidenceDescription: A Figure Is seen vanishing into thin air
+      evidenceRelevant: 0
+      evidenceType: 2
+    flying:
+      evidenceName: Flying Figure
+      evidenceDescription: A figure is seen flying in the air
+      evidenceRelevant: 0
+      evidenceType: 2
   audioEvidence:
     audioDistortions:
       evidenceName: Audio Distortions
@@ -138,6 +158,16 @@ MonoBehaviour:
       evidenceDescription: 
       evidenceRelevant: 0
       evidenceType: 3
+    screaming:
+      evidenceName: Screaming
+      evidenceDescription: 
+      evidenceRelevant: 1
+      evidenceType: 3
+    screaching:
+      evidenceName: Screaching
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 3
   imageEvidence:
     invertedImaging:
       evidenceName: Inverse Imaging
@@ -156,6 +186,16 @@ MonoBehaviour:
       evidenceType: 4
     clawMarks:
       evidenceName: Claw Marks
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 4
+    tracks:
+      evidenceName: Tracks
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 4
+    flying:
+      evidenceName: Flying Creature
       evidenceDescription: 
       evidenceRelevant: 0
       evidenceType: 4
@@ -184,6 +224,10 @@ MonoBehaviour:
     evidenceDescription: A Flying Creature Is Seen During Incident
     evidenceRelevant: 0
     evidenceType: 0
+  - evidenceName: Disappering Figure
+    evidenceDescription: A Figure Is seen vanishing into thin air
+    evidenceRelevant: 0
+    evidenceType: 0
   policeReportList:
   - evidenceName: Property Damage
     evidenceDescription: 
@@ -206,6 +250,10 @@ MonoBehaviour:
     evidenceRelevant: 0
     evidenceType: 1
   - evidenceName: Evening Reports
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 1
+  - evidenceName: Appears Anytime
     evidenceDescription: 
     evidenceRelevant: 0
     evidenceType: 1
@@ -238,6 +286,14 @@ MonoBehaviour:
     evidenceDescription: 
     evidenceRelevant: 0
     evidenceType: 2
+  - evidenceName: Disappering Figure
+    evidenceDescription: A Figure Is seen vanishing into thin air
+    evidenceRelevant: 0
+    evidenceType: 2
+  - evidenceName: Flying Figure
+    evidenceDescription: A figure is seen flying in the air
+    evidenceRelevant: 0
+    evidenceType: 2
   audioList:
   - evidenceName: Audio Distortions
     evidenceDescription: 
@@ -259,6 +315,14 @@ MonoBehaviour:
     evidenceDescription: 
     evidenceRelevant: 0
     evidenceType: 3
+  - evidenceName: Screaming
+    evidenceDescription: 
+    evidenceRelevant: 1
+    evidenceType: 3
+  - evidenceName: Screaching
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 3
   imageList:
   - evidenceName: Inverse Imaging
     evidenceDescription: 
@@ -273,6 +337,14 @@ MonoBehaviour:
     evidenceRelevant: 0
     evidenceType: 4
   - evidenceName: Claw Marks
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 4
+  - evidenceName: Tracks
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 4
+  - evidenceName: Flying Creature
     evidenceDescription: 
     evidenceRelevant: 0
     evidenceType: 4
