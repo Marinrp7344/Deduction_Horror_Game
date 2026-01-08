@@ -14,6 +14,7 @@ public class Camera_Animator : MonoBehaviour
     [SerializeField] private float angleChangeSpeed;
     [SerializeField] private bool positionReached = false;
     [SerializeField] private bool angleReached = false;
+    [SerializeField] private Inventory inventory;
 
     private void Start()
     {
@@ -35,6 +36,7 @@ public class Camera_Animator : MonoBehaviour
     {
         if(switchingViews && !animationDone)
         {
+            inventory.DeactivateInventory();
             bool reachedPosition = MoveTowardsNewPosition();
             if(reachedPosition)
             {
@@ -46,6 +48,19 @@ public class Camera_Animator : MonoBehaviour
                 angleReached = false;
             }
         }
+        else
+        {
+            inventory.ActivateInventory();
+        }
+
+        if(currentView == 0 || currentView == 4)
+        {
+            inventory.DeactivateInventory();
+        }
+        else if(!switchingViews && animationDone)
+        {
+            inventory.ActivateInventory();
+        }
     }
 
     private bool MoveTowardsNewPosition()
@@ -55,14 +70,13 @@ public class Camera_Animator : MonoBehaviour
         cameraTransform.position = Vector3.Lerp(cameraTransform.position, targetPosition.position, positionChangeSpeed * Time.deltaTime);
 
         Quaternion targetRotation = Quaternion.Euler(targetPosition.angle);
-        cameraTransform.rotation = Quaternion.Slerp(cameraTransform.rotation, targetRotation, angleChangeSpeed * Time.deltaTime
-        );
+        cameraTransform.rotation = Quaternion.Slerp(cameraTransform.rotation, targetRotation, angleChangeSpeed * Time.deltaTime);
 
         float positionDistance = Mathf.Abs(Vector3.Distance(targetPosition.position, cameraTransform.position));
         float angleDistance = Mathf.Abs(Vector3.Distance(targetPosition.angle, cameraTransform.eulerAngles));
 
-        Debug.Log("Position: " + positionDistance);
-        Debug.Log("Angle: " + angleDistance);
+        //Debug.Log("Position: " + positionDistance);
+        //Debug.Log("Angle: " + angleDistance);
         if (positionDistance < 0.1f && positionReached != true)
         {
             positionReached = true;

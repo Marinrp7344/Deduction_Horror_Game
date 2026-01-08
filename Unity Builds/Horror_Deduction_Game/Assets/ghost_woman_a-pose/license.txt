@@ -1,0 +1,11 @@
+Model Information:
+* title:	Ghost Woman A-Pose
+* source:	https://sketchfab.com/3d-models/ghost-woman-a-pose-f4f4f2f59f124f54a787438bb3ed9ab0
+* author:	fluxium3d (https://sketchfab.com/fluxium3d)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Ghost Woman A-Pose" (https://sketchfab.com/3d-models/ghost-woman-a-pose-f4f4f2f59f124f54a787438bb3ed9ab0) by fluxium3d (https://sketchfab.com/fluxium3d) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

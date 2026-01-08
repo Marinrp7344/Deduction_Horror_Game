@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Monster_Data
   monsterName: Vampire
   monsterDescription: 
+  monsterPrefab: {fileID: 3000940667549754802, guid: b4286672a7970764a82ed4bfb8750c88, type: 3}
   storyEvidence:
     deadPets:
       evidenceName: Dead Pets

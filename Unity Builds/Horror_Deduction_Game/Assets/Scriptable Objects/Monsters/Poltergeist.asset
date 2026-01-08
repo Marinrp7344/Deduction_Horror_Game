@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Monster_Data
   monsterName: Poltergeist
   monsterDescription: 
+  monsterPrefab: {fileID: 8903641717870787769, guid: ef8fd91b6f57c6f42b5e05619ca3b545, type: 3}
   storyEvidence:
     deadPets:
       evidenceName: Dead Pets

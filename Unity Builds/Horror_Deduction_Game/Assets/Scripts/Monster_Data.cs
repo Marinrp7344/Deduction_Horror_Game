@@ -9,6 +9,7 @@ public class Monster_Data : ScriptableObject
     [Header("Monster Information")]
     public string monsterName;
     public string monsterDescription;
+    public GameObject monsterPrefab;
 
     [Header("Evidence")]
     [HideInInspector] public StoryEvidence storyEvidence;

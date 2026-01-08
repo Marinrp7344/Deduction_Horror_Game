@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Monster_Data
   monsterName: Chupacabra
   monsterDescription: 
+  monsterPrefab: {fileID: 6259721282164427119, guid: 3a3d2074853e73b489ce49bed9f55273, type: 3}
   storyEvidence:
     deadPets:
       evidenceName: Dead Pets

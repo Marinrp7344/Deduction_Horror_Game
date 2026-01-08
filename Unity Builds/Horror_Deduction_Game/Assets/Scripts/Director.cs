@@ -27,6 +27,7 @@ public class Director : MonoBehaviour
     [SerializeField] private Vector3 folderSpawnPosition;
     [SerializeField] private Camera_Animator cameraAnimator;
     [SerializeField] private GameObject currentFolder;
+    [SerializeField] private Enemy_Director enemyDirector;
 
     public VideoPlayer videoPlayer;
     public AudioSource audioSource;
@@ -370,7 +371,7 @@ public class Director : MonoBehaviour
         }
         else
         {
-
+            enemyDirector.SpawnMonster(currentMonster);
         }
 
         currentFolder = null;

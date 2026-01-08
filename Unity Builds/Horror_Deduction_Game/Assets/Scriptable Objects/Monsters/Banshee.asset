@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Monster_Data
   monsterName: Banshee
   monsterDescription: 
+  monsterPrefab: {fileID: 775796347886557438, guid: 853f2e82c1c6b32458972402b99dd489, type: 3}
   storyEvidence:
     deadPets:
       evidenceName: Dead Pets

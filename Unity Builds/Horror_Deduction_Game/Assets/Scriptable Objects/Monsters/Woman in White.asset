@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Monster_Data
   monsterName: Woman in White
   monsterDescription: 
+  monsterPrefab: {fileID: 515771567521653684, guid: 9261e00df4aea8e4dbd4dbf26ca66a77, type: 3}
   storyEvidence:
     deadPets:
       evidenceName: Dead Pets
