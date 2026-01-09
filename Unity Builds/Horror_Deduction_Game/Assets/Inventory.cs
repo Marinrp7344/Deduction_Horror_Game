@@ -16,6 +16,7 @@ public class Inventory : MonoBehaviour
     public Camera playerCam;
     public float shootRange;
     public LayerMask shootingMask;
+    public LayerMask crucifixMask;
 
 
     private void Start()
@@ -88,11 +89,27 @@ public class Inventory : MonoBehaviour
         }
 
     }
+
+    public void ShowCrucifix()
+    {
+        Ray ray = playerCam.ScreenPointToRay(Mouse.current.position.ReadValue());
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, shootRange, crucifixMask))
+        {
+            GameObject enemyBody = hit.collider.gameObject.transform.parent.gameObject;
+            Enemy enemyScript = enemyBody.GetComponent<Enemy>();
+            enemyScript.HitCrucifix();
+        }
+
+    }
+
     public void UseCrucifix()
     {
         if(currentlySelectedSlot.charge > 0)
         {
             currentlySelectedSlot.charge -= chargeDecayRate * Time.deltaTime;
+            ShowCrucifix();
         }
         else
         {

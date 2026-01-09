@@ -89,4 +89,12 @@ public class Vampire : Enemy
         vampire.SetActive(false);
         currentPosition = 0;
     }
+
+    public override void HitCrucifix()
+    {
+        if(currentPosition == 2)
+        {
+            ResetEnemy();
+        }
+    }
 }

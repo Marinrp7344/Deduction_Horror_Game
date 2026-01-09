@@ -724,6 +724,7 @@ MonoBehaviour:
   player: {fileID: 0}
   rotationY: -90
   rotationX: 0
+  view: 0
   banshee: {fileID: 5472814361645877649}
 --- !u!1 &776249185891477704
 GameObject:
@@ -6607,7 +6608,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3898267562820859120}
-  m_Layer: 0
+  - component: {fileID: 8429043404824860192}
+  m_Layer: 7
   m_Name: Banshee Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6631,6 +6633,29 @@ Transform:
   - {fileID: 2508369506472597201}
   m_Father: {fileID: 8058609963259554782}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &8429043404824860192
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5472814361645877649}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2.07
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &5480242672044201090
 GameObject:
   m_ObjectHideFlags: 0

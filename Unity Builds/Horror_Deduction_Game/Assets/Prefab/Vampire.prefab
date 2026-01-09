@@ -1808,6 +1808,7 @@ MonoBehaviour:
   player: {fileID: 0}
   rotationY: 0
   rotationX: -90
+  view: 0
   position1: {x: 6.87, y: 4.192, z: 9.191}
   position2: {x: 7.61, y: 4.192, z: 4.45}
   position3: {x: 6.52, y: 4.192, z: 1.58}
@@ -4760,13 +4761,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 896624920368898596}
-  m_Layer: 0
+  - component: {fileID: 6195857068298096692}
+  m_Layer: 7
   m_Name: Vampire Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &896624920368898596
 Transform:
   m_ObjectHideFlags: 0
@@ -4784,6 +4786,29 @@ Transform:
   - {fileID: 1955463512938181273}
   m_Father: {fileID: 4404208198876215256}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &6195857068298096692
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6826779256728659048}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &6867853048988442383
 GameObject:
   m_ObjectHideFlags: 0

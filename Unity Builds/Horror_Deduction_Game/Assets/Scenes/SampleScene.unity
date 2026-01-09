@@ -11404,6 +11404,9 @@ MonoBehaviour:
   shootingMask:
     serializedVersion: 2
     m_Bits: 64
+  crucifixMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &986942540
 MonoBehaviour:
   m_ObjectHideFlags: 0
