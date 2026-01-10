@@ -24252,6 +24252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   affectedByPoltergeist: 0
+  spawnPosition: {x: 1.007, y: -0.36, z: 6.535}
   startingPoint: {x: 1.007, y: 0.04, z: 6.535}
   endingPoint: {x: 1.007, y: 0.79, z: 6.535}
   targetPosition: {x: 1.007, y: -0.36, z: 6.535}
@@ -24287,6 +24288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   affectedByPoltergeist: 0
+  spawnPosition: {x: 9.593, y: 0.342, z: 5.4025674}
   startingPoint: {x: 9.593, y: 0.62, z: 5.4025674}
   endingPoint: {x: 9.593, y: 1.39, z: 5.4025674}
   targetPosition: {x: 9.593, y: 0.342, z: 5.4025674}
@@ -24591,6 +24593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   affectedByPoltergeist: 0
+  spawnPosition: {x: 5.38, y: -0.37, z: 8.281}
   startingPoint: {x: 5.38, y: -0.03, z: 8.281}
   endingPoint: {x: 5.38, y: 0.46, z: 8.281}
   targetPosition: {x: 5.38, y: -0.37, z: 8.281}

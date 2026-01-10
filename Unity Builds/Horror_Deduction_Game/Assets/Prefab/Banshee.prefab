@@ -726,6 +726,9 @@ MonoBehaviour:
   rotationX: 0
   view: 0
   banshee: {fileID: 5472814361645877649}
+  maxCharge: 5
+  currentCharge: 0
+  chargeIncreaseRate: 2
 --- !u!1 &776249185891477704
 GameObject:
   m_ObjectHideFlags: 0

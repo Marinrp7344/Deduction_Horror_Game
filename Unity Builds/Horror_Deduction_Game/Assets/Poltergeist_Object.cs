@@ -3,6 +3,7 @@ using UnityEngine;
 public class Poltergeist_Object : MonoBehaviour
 {
     public bool affectedByPoltergeist;
+    public Vector3 spawnPosition;
     public Vector3 startingPoint;
     public Vector3 endingPoint;
     public Vector3 targetPosition;
@@ -22,6 +23,10 @@ public class Poltergeist_Object : MonoBehaviour
             {
                 GoingUp();
             }
+        }
+        else
+        {
+            transform.position = spawnPosition;
         }
     }
 

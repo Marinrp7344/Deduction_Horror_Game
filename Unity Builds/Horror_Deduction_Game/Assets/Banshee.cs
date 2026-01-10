@@ -4,6 +4,9 @@ public class Banshee : Enemy
 {
     [Header("Banshee Information")]
     public GameObject banshee;
+    public float maxCharge;
+    public float currentCharge;
+    public float chargeIncreaseRate;
 
     public override void ChangeState()
     {
@@ -41,6 +44,21 @@ public class Banshee : Enemy
         isVisible = false;
         banshee.SetActive(false);
         enemyDirector.bansheeMultiplier = 1;
+        currentCharge = 0;
+    }
+
+    public override void HitCrucifix()
+    {
+        if(currentCharge > maxCharge)
+        {
+            ResetEnemy();
+        }
+        else
+        {
+            currentCharge += chargeIncreaseRate * Time.deltaTime;
+        }
+        
+
     }
 
 }

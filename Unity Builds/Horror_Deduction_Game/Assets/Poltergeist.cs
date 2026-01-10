@@ -64,4 +64,9 @@ public class Poltergeist : Enemy
         poltergeist.SetActive(false);
         isVisible = false;
     }
+
+    public override void HitCrucifix()
+    {
+        ResetEnemy();
+    }
 }
