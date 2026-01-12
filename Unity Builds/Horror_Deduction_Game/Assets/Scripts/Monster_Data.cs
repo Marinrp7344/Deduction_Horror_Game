@@ -45,6 +45,7 @@ public class StoryEvidence
     public EvidenceData humanoid = new EvidenceData { evidenceName = "Humanoids", evidenceDescription = "Humanoid Creature Spotted During Incidents", evidenceType = EvidenceData.EvidenceType.Story };
     public EvidenceData flyingCreature = new EvidenceData { evidenceName = "Flying", evidenceDescription = "A Flying Creature Is Seen During Incident", evidenceType = EvidenceData.EvidenceType.Story };
     public EvidenceData disappearingFigure = new EvidenceData { evidenceName = "Disappering Figure", evidenceDescription = "A Figure Is seen vanishing into thin air", evidenceType = EvidenceData.EvidenceType.Story };
+    public EvidenceData beastLike = new EvidenceData { evidenceName = "Beast Like", evidenceDescription = "A Beast Like Creature often described as Furry or Animal Like", evidenceType = EvidenceData.EvidenceType.Story };
 }
 
 [System.Serializable]
@@ -106,6 +107,7 @@ public class ImageEvidence
 [System.Serializable]
 public class EvidenceData
 {
+    //{ get; set; }
     public string evidenceName;
     public string evidenceDescription;
     public bool evidenceRelevant;

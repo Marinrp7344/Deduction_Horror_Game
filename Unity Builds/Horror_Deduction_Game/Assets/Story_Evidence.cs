@@ -4,16 +4,16 @@ using UnityEngine.UI;
 
 public class Story_Evidence : MonoBehaviour
 {
-    public TextMeshProUGUI title;
-    public TextMeshProUGUI description;
+    public TextMeshProUGUI story;
     public Evidence_Data evidenceSO;
 
     public GameObject storyUI;
 
     public void InitializePaper()
     {
-        title.text = evidenceSO.storyTitle;
-        description.text = evidenceSO.storyDescription;
+        string builtStory = "Name: " + evidenceSO.storyName +"\nDate: " + evidenceSO.storyDate + "\n\nTestimonial: " + evidenceSO.storyDescription + "\n\nComments: " + evidenceSO.storyComments;
+
+        story.text = builtStory;
     }
 
     public void ClosePaperMenu()

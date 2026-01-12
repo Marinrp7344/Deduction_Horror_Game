@@ -10,8 +10,10 @@ public class Evidence_Data : Monster_Data
     public GameObject evidencePrefab;
 
     [Header("Story Evidence Details")]
-    public string storyTitle;
+    public string storyName;
+    public string storyDate;
     public string storyDescription;
+    public string storyComments;
 
     [Header("Police Report Evidence Details")]
     public string policeReportTitle;

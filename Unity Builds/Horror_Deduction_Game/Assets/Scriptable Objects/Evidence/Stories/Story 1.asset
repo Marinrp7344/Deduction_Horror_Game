@@ -9,17 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bceaf9029dce64b499beebc9aa6c8af6, type: 3}
-  m_Name: Chupacabra
-  m_EditorClassIdentifier: Assembly-CSharp::Monster_Data
-  monsterName: Chupacabra
+  m_Script: {fileID: 11500000, guid: 3fa8ec57da4c56b47931af0fe93c4c3b, type: 3}
+  m_Name: Story 1
+  m_EditorClassIdentifier: Assembly-CSharp::Evidence_Data
+  monsterName: 
   monsterDescription: 
-  monsterPrefab: {fileID: 6259721282164427119, guid: 3a3d2074853e73b489ce49bed9f55273, type: 3}
+  monsterPrefab: {fileID: 0}
   storyEvidence:
     deadPets:
       evidenceName: Dead Pets
       evidenceDescription: Reports of Dead Pets from Civilians
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 0
     lateNightReports:
       evidenceName: Late Night Reports
@@ -34,7 +34,7 @@ MonoBehaviour:
     scratching:
       evidenceName: Scratching
       evidenceDescription: Scrathcing Sounds Reported
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 0
     humanoid:
       evidenceName: Humanoids
@@ -51,12 +51,6 @@ MonoBehaviour:
       evidenceDescription: A Figure Is seen vanishing into thin air
       evidenceRelevant: 0
       evidenceType: 0
-    beastLike:
-      evidenceName: Beast Like
-      evidenceDescription: A Beast Like Creature often described as Furry or Animal
-        Like
-      evidenceRelevant: 1
-      evidenceType: 0
   policeReportEvidence:
     propertyDamage:
       evidenceName: Property Damage
@@ -71,12 +65,12 @@ MonoBehaviour:
     missingPeople:
       evidenceName: Missing People
       evidenceDescription: 
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 1
     bloodDrainedVictims:
       evidenceName: Blood Drained Humans or Animals
       evidenceDescription: 
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 1
     suddenDeaths:
       evidenceName: Sudden Deaths
@@ -127,7 +121,7 @@ MonoBehaviour:
     animalLike:
       evidenceName: Animal Like
       evidenceDescription: 
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 2
     disappearingFigure:
       evidenceName: Disappering Figure
@@ -163,7 +157,7 @@ MonoBehaviour:
     growls:
       evidenceName: Growling
       evidenceDescription: 
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 3
     screaming:
       evidenceName: Screaming
@@ -189,7 +183,7 @@ MonoBehaviour:
     heatMap:
       evidenceName: Heat Maps
       evidenceDescription: 
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 4
     clawMarks:
       evidenceName: Claw Marks
@@ -199,7 +193,7 @@ MonoBehaviour:
     tracks:
       evidenceName: Tracks
       evidenceDescription: 
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 4
     flying:
       evidenceName: Flying Creature
@@ -209,7 +203,7 @@ MonoBehaviour:
   storyList:
   - evidenceName: Dead Pets
     evidenceDescription: Reports of Dead Pets from Civilians
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 0
   - evidenceName: Late Night Reports
     evidenceDescription: Civilians Report Incidents Past 12am
@@ -221,7 +215,7 @@ MonoBehaviour:
     evidenceType: 0
   - evidenceName: Scratching
     evidenceDescription: Scrathcing Sounds Reported
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 0
   - evidenceName: Humanoids
     evidenceDescription: Humanoid Creature Spotted During Incidents
@@ -235,11 +229,6 @@ MonoBehaviour:
     evidenceDescription: A Figure Is seen vanishing into thin air
     evidenceRelevant: 0
     evidenceType: 0
-  - evidenceName: Beast Like
-    evidenceDescription: A Beast Like Creature often described as Furry or Animal
-      Like
-    evidenceRelevant: 1
-    evidenceType: 0
   policeReportList:
   - evidenceName: Property Damage
     evidenceDescription: 
@@ -251,11 +240,11 @@ MonoBehaviour:
     evidenceType: 1
   - evidenceName: Missing People
     evidenceDescription: 
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 1
   - evidenceName: Blood Drained Humans or Animals
     evidenceDescription: 
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 1
   - evidenceName: Sudden Deaths
     evidenceDescription: 
@@ -296,7 +285,7 @@ MonoBehaviour:
     evidenceType: 2
   - evidenceName: Animal Like
     evidenceDescription: 
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 2
   - evidenceName: Disappering Figure
     evidenceDescription: A Figure Is seen vanishing into thin air
@@ -325,7 +314,7 @@ MonoBehaviour:
     evidenceType: 3
   - evidenceName: Growling
     evidenceDescription: 
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 3
   - evidenceName: Screaming
     evidenceDescription: 
@@ -346,7 +335,7 @@ MonoBehaviour:
     evidenceType: 4
   - evidenceName: Heat Maps
     evidenceDescription: 
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 4
   - evidenceName: Claw Marks
     evidenceDescription: 
@@ -354,9 +343,17 @@ MonoBehaviour:
     evidenceType: 4
   - evidenceName: Tracks
     evidenceDescription: 
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 4
   - evidenceName: Flying Creature
     evidenceDescription: 
     evidenceRelevant: 0
     evidenceType: 4
+  evidenceType: 0
+  evidencePrefab: {fileID: 0}
+  storyTitle: 
+  storyDescription: 
+  policeReportTitle: 
+  policeReportDescription: 
+  videoClip: {fileID: 0}
+  audioClip: {fileID: 0}

@@ -9,17 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bceaf9029dce64b499beebc9aa6c8af6, type: 3}
-  m_Name: Chupacabra
-  m_EditorClassIdentifier: Assembly-CSharp::Monster_Data
-  monsterName: Chupacabra
+  m_Script: {fileID: 11500000, guid: 3fa8ec57da4c56b47931af0fe93c4c3b, type: 3}
+  m_Name: Story_Beast 3
+  m_EditorClassIdentifier: Assembly-CSharp::Evidence_Data
+  monsterName: 
   monsterDescription: 
-  monsterPrefab: {fileID: 6259721282164427119, guid: 3a3d2074853e73b489ce49bed9f55273, type: 3}
+  monsterPrefab: {fileID: 0}
   storyEvidence:
     deadPets:
       evidenceName: Dead Pets
       evidenceDescription: Reports of Dead Pets from Civilians
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 0
     lateNightReports:
       evidenceName: Late Night Reports
@@ -34,7 +34,7 @@ MonoBehaviour:
     scratching:
       evidenceName: Scratching
       evidenceDescription: Scrathcing Sounds Reported
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 0
     humanoid:
       evidenceName: Humanoids
@@ -71,12 +71,12 @@ MonoBehaviour:
     missingPeople:
       evidenceName: Missing People
       evidenceDescription: 
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 1
     bloodDrainedVictims:
       evidenceName: Blood Drained Humans or Animals
       evidenceDescription: 
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 1
     suddenDeaths:
       evidenceName: Sudden Deaths
@@ -127,7 +127,7 @@ MonoBehaviour:
     animalLike:
       evidenceName: Animal Like
       evidenceDescription: 
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 2
     disappearingFigure:
       evidenceName: Disappering Figure
@@ -163,7 +163,7 @@ MonoBehaviour:
     growls:
       evidenceName: Growling
       evidenceDescription: 
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 3
     screaming:
       evidenceName: Screaming
@@ -189,7 +189,7 @@ MonoBehaviour:
     heatMap:
       evidenceName: Heat Maps
       evidenceDescription: 
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 4
     clawMarks:
       evidenceName: Claw Marks
@@ -199,7 +199,7 @@ MonoBehaviour:
     tracks:
       evidenceName: Tracks
       evidenceDescription: 
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 4
     flying:
       evidenceName: Flying Creature
@@ -209,7 +209,7 @@ MonoBehaviour:
   storyList:
   - evidenceName: Dead Pets
     evidenceDescription: Reports of Dead Pets from Civilians
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 0
   - evidenceName: Late Night Reports
     evidenceDescription: Civilians Report Incidents Past 12am
@@ -221,7 +221,7 @@ MonoBehaviour:
     evidenceType: 0
   - evidenceName: Scratching
     evidenceDescription: Scrathcing Sounds Reported
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 0
   - evidenceName: Humanoids
     evidenceDescription: Humanoid Creature Spotted During Incidents
@@ -251,11 +251,11 @@ MonoBehaviour:
     evidenceType: 1
   - evidenceName: Missing People
     evidenceDescription: 
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 1
   - evidenceName: Blood Drained Humans or Animals
     evidenceDescription: 
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 1
   - evidenceName: Sudden Deaths
     evidenceDescription: 
@@ -296,7 +296,7 @@ MonoBehaviour:
     evidenceType: 2
   - evidenceName: Animal Like
     evidenceDescription: 
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 2
   - evidenceName: Disappering Figure
     evidenceDescription: A Figure Is seen vanishing into thin air
@@ -325,7 +325,7 @@ MonoBehaviour:
     evidenceType: 3
   - evidenceName: Growling
     evidenceDescription: 
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 3
   - evidenceName: Screaming
     evidenceDescription: 
@@ -346,7 +346,7 @@ MonoBehaviour:
     evidenceType: 4
   - evidenceName: Heat Maps
     evidenceDescription: 
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 4
   - evidenceName: Claw Marks
     evidenceDescription: 
@@ -354,9 +354,28 @@ MonoBehaviour:
     evidenceType: 4
   - evidenceName: Tracks
     evidenceDescription: 
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 4
   - evidenceName: Flying Creature
     evidenceDescription: 
     evidenceRelevant: 0
     evidenceType: 4
+  evidenceType: 0
+  evidencePrefab: {fileID: 6586202626002414144, guid: b02f6cf486235c440987b4f4073b828e, type: 3}
+  storyName: N/A
+  storyDate: N/A
+  storyDescription: "I remember that I was hearing some rustling outside my house
+    every night for about a week. I was never one to be too paranoid. I\u2019ve lived
+    around here my whole life and I ain\u2019t never seen anything past that one
+    police chase that passed through here some odd years back. I set up that camera
+    I told ya bout and that night I saw some sort of animal or beast or something.
+    Not too sure. Most we see around here are the occasional coyotes so the fact
+    that I caught something that ungodly huge around here is something. Reported
+    it to the sheriff right away. I know you said you wanted the video but some people
+    already came to get it a couple days ago and I didn't make a copy sorry bout
+    that."
+  storyComments: 
+  policeReportTitle: 
+  policeReportDescription: 
+  videoClip: {fileID: 0}
+  audioClip: {fileID: 0}

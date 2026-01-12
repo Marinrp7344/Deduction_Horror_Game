@@ -51,6 +51,12 @@ MonoBehaviour:
       evidenceDescription: A Figure Is seen vanishing into thin air
       evidenceRelevant: 0
       evidenceType: 0
+    beastLike:
+      evidenceName: Beast Like
+      evidenceDescription: A Beast Like Creature often described as Furry or Animal
+        Like
+      evidenceRelevant: 1
+      evidenceType: 0
   policeReportEvidence:
     propertyDamage:
       evidenceName: Property Damage
@@ -228,6 +234,11 @@ MonoBehaviour:
   - evidenceName: Disappering Figure
     evidenceDescription: A Figure Is seen vanishing into thin air
     evidenceRelevant: 0
+    evidenceType: 0
+  - evidenceName: Beast Like
+    evidenceDescription: A Beast Like Creature often described as Furry or Animal
+      Like
+    evidenceRelevant: 1
     evidenceType: 0
   policeReportList:
   - evidenceName: Property Damage
