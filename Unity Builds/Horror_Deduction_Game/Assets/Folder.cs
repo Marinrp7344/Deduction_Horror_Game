@@ -9,6 +9,11 @@ public class Folder : MonoBehaviour
     public Camera_Animator cameraAnimator;
     public List<Evidence_Data> evidence;
     public List<GameObject> physicalEvidence;
+
+    public GameObject storyParentPrefab;
+    public GameObject storyParentObject;
+    public int storyNumber = 0;
+
     public Vector3 folderPoint;
 
     public Vector3 storyPoint;
@@ -19,6 +24,12 @@ public class Folder : MonoBehaviour
 
     public void InitializeEvidence()
     {
+        if (storyParentObject == null)
+        {
+            GameObject storyParent = Instantiate(storyParentPrefab, folderPoint, Quaternion.identity);
+            storyParentObject = storyParent;
+        }
+
         for (int i = 0; i < evidence.Count; i++)
         {
             GameObject evidencePrefab = Instantiate(evidence[i].evidencePrefab, folderPoint, Quaternion.identity);
@@ -52,6 +63,26 @@ public class Folder : MonoBehaviour
 
     public void ProcessStory(GameObject evidenceObject, Evidence_Data evidence)
     {
+
+
+        Story_Evidence_Parent storyParentScript = storyParentObject.GetComponent<Story_Evidence_Parent>();
+        evidenceObject.transform.SetParent(storyParentScript.storiesParent.transform);
+
+        switch(storyNumber)
+        {
+            case 0:
+                storyParentScript.story1 = evidenceObject;
+                break;
+            case 1:
+                storyParentScript.story2 = evidenceObject;
+                break;
+            case 2:
+                storyParentScript.story3 = evidenceObject;
+                break;
+
+        }
+
+        storyNumber += 1;
         Story_Evidence storyEvidence = evidenceObject.GetComponent<Story_Evidence>();
         storyEvidence.evidenceSO = evidence;
         storyEvidence.InitializePaper();
@@ -92,6 +123,8 @@ public class Folder : MonoBehaviour
             Destroy(ev);
         }
 
+        Destroy(storyParentObject);
+
         physicalEvidence = new List<GameObject>();
     }
 
@@ -101,7 +134,7 @@ public class Folder : MonoBehaviour
         {
             if (evidenceData.TryGetComponent<Story_Evidence>(out Story_Evidence story))
             {
-                story.gameObject.transform.position = storyPoint;
+                storyParentObject.gameObject.transform.position = storyPoint;
             }
             else if (evidenceData.TryGetComponent<Police_Report_Evidence>(out Police_Report_Evidence police))
             {

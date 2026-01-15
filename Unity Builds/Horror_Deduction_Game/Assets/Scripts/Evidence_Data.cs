@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Video;
 [CreateAssetMenu(fileName = "Evidence_Data", menuName = "Scriptable Objects/Evidence_Data")]
 public class Evidence_Data : Monster_Data
@@ -25,4 +27,16 @@ public class Evidence_Data : Monster_Data
     [Header("Audio Evidence Details")]
     public AudioClip audioClip;
 
+    [Header("Image Details")]
+    public ImageInfo image;
+
+}
+
+[System.Serializable]
+public class ImageInfo
+{
+    public List<Texture> image1;
+    public List<Texture> image2;
+    public List<Texture> image3;
+    public List<Texture> image4;
 }

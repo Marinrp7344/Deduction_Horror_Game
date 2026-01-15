@@ -7,7 +7,7 @@ public class Story_Evidence : MonoBehaviour
     public TextMeshProUGUI story;
     public Evidence_Data evidenceSO;
 
-    public GameObject storyUI;
+    //public GameObject storyUI;
 
     public void InitializePaper()
     {
@@ -16,15 +16,6 @@ public class Story_Evidence : MonoBehaviour
         story.text = builtStory;
     }
 
-    public void ClosePaperMenu()
-    {
-        storyUI.SetActive(false);
-    }
-
-    public void OpenPaperMenu()
-    {
-        storyUI.SetActive(true);
-    }
 
 
 }

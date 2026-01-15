@@ -34,6 +34,12 @@ public class Director : MonoBehaviour
 
     private readonly System.Random rand = new System.Random();
 
+    public EvidenceData chosenTrait = new EvidenceData();
+    public List<EvidenceData> unchosenTraits = new List<EvidenceData>();
+    public List<Evidence_Data> randomList = new List<Evidence_Data>();
+    public int maxDifferenceStrength;
+    public int currentDifferenceStrength;
+
     public void Start()
     {
         GenerateGuesses();
@@ -46,6 +52,17 @@ public class Director : MonoBehaviour
         int randomMonster = Random.Range(0, monsters.Count);
         currentMonster = monsters[randomMonster];
         List<Evidence_Data> newEvidence = FindValidEvidence(monsters[randomMonster]);
+        Debug.Log(newEvidence.Count);
+        CreateUnchosenList();
+        List<Evidence_Data> extraStories = GetAlternateStories();
+
+        foreach(Evidence_Data story in extraStories)
+        {
+            newEvidence.Add(story);
+        }
+
+        newEvidence = GenerateRandomLoop(newEvidence);
+
         GameObject newFolder = Instantiate(folder, folderSpawnPosition, Quaternion.identity);
         Folder folderScript = newFolder.GetComponent<Folder>();
         folderScript.videoPlayer = videoPlayer;
@@ -56,16 +73,89 @@ public class Director : MonoBehaviour
         currentFolder = newFolder;
     }
 
-    public List<Evidence_Data> FindValidEvidence(Monster_Data monster)
+    public void CreateUnchosenList()
+    {
+        unchosenTraits = new List<EvidenceData> ();
+        foreach(EvidenceData data in currentMonster.storyList)
+        {
+            if (data.evidenceRelevant == true) 
+            {
+                if (data.evidenceName != chosenTrait.evidenceName)
+                {
+                    unchosenTraits.Add(data);
+                }
+            }
+        }
+    }
+
+    public List<Evidence_Data> GetAlternateStories()
     {
         List<Evidence_Data> randomizedPossibleEvidence = GenerateRandomLoop(possibleEvidence);
         List<Evidence_Data> validEvidence = new List<Evidence_Data>();
+
+        foreach(Evidence_Data evidence in randomizedPossibleEvidence)
+        {
+            if(evidence.evidenceType == Evidence_Data.Evidence.Story)
+            {
+                int i = 0;
+                bool isValid = false;
+                int incrementalDifferenceStrength = 0;
+                foreach (EvidenceData data in evidence.storyList)
+                {
+                    
+                    if (data.evidenceRelevant)
+                    {
+                        if (data.evidenceRelevant == currentMonster.storyList[i].evidenceRelevant)
+                        {
+                            if(data.evidenceName == chosenTrait.evidenceName)
+                            {
+                                //Debug.Log("Data Name: " + data.evidenceName + "\nChosen Trait Name: " + chosenTrait.evidenceName);
+                                isValid = true;
+                            }
+                            else
+                            {
+                                incrementalDifferenceStrength += 1;
+                            }
+                        }
+                    }
+                    i++;
+
+                    
+                }
+
+                //Debug.Log(incrementalDifferenceStrength);
+                if (isValid == true && (incrementalDifferenceStrength + currentDifferenceStrength) < maxDifferenceStrength)
+                {
+                    validEvidence.Add(evidence);
+                    currentDifferenceStrength += incrementalDifferenceStrength;
+                }
+            }
+
+            //Debug.Log(validEvidence.Count);
+            
+
+            if(validEvidence.Count >= 2) 
+            { 
+                break; 
+            }
+        }
+
+        return validEvidence;
+    }
+
+
+    public List<Evidence_Data> FindValidEvidence(Monster_Data monster)
+    {
+        List<Evidence_Data> randomizedPossibleEvidence = GenerateRandomLoop(possibleEvidence);
+        randomList = randomizedPossibleEvidence;
+        List<Evidence_Data> validEvidence = new List<Evidence_Data>();
         int randomEvidenceAmount = Random.Range(3, 5);
-        int currentEvidenceAmount = 0;
+        currentDifferenceStrength = 0;
         List<Evidence_Data.Evidence> evidenceTypes = new List<Evidence_Data.Evidence>();
         foreach(Evidence_Data evidence in randomizedPossibleEvidence)
         {
-            if(currentEvidenceAmount >= randomEvidenceAmount)
+            Debug.Log(validEvidence.Count);
+            if(validEvidence.Count >= randomEvidenceAmount)
             {
                 break;
             }
@@ -87,13 +177,17 @@ public class Director : MonoBehaviour
                     switch (evidence.evidenceType)
                     {
                         case Evidence_Data.Evidence.Story:
+                            List<EvidenceData> chosenEvidenceTraits= new List<EvidenceData>();
+                            isValid = false;
                             foreach (EvidenceData data in monster.storyList)
                             {
                                 if (evidence.storyList[i].evidenceRelevant == true)
                                 {
-                                    if (data.evidenceRelevant == false)
+                                    if (data.evidenceRelevant == true)
                                     {
-                                        isValid = false;
+                                        chosenEvidenceTraits.Add(data);
+                                        isValid = true;
+                                        currentDifferenceStrength += 1;
                                     }
                                 }
                                 i++;
@@ -102,6 +196,8 @@ public class Director : MonoBehaviour
                             {
                                 validEvidence.Add(evidence);
                                 evidenceTypes.Add(evidence.evidenceType);
+                                int randomTrait = Random.Range(0, chosenEvidenceTraits.Count);
+                                chosenTrait = chosenEvidenceTraits[randomTrait];
                             }
                             break;
 

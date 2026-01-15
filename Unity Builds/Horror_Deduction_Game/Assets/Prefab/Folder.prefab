@@ -50,8 +50,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   videoPlayer: {fileID: 0}
   audioSource: {fileID: 0}
+  cameraAnimator: {fileID: 0}
   evidence: []
   physicalEvidence: []
+  storyParentPrefab: {fileID: 1772313572462533729, guid: 25666a05bfd7b9141b39d7107aa1227a, type: 3}
+  storyParentObject: {fileID: 0}
+  storyNumber: 0
   folderPoint: {x: 7.865, y: 0.585, z: -5.534}
   storyPoint: {x: 7.5, y: 0.585, z: -5.55}
   policeReportPoint: {x: 7.15, y: 0.585, z: -5.55}
@@ -76,7 +80,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3912510476165308624
 RectTransform:
   m_ObjectHideFlags: 0
@@ -280,9 +284,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Director, Assembly-CSharp
-        m_MethodName: ActivateGuessingMenu
+      - m_Target: {fileID: 6101163878973407034}
+        m_TargetAssemblyTypeName: Folder, Assembly-CSharp
+        m_MethodName: OpenFolder
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
