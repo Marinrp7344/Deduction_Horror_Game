@@ -372,9 +372,18 @@ MonoBehaviour:
   audioClip: {fileID: 0}
   image:
     image1:
-    - {fileID: 2800000, guid: 15263945638294940a09915a0567f2c2, type: 3}
     - {fileID: 2800000, guid: b64b8c0d7f42500478875a695c52843a, type: 3}
     - {fileID: 2800000, guid: e3bf0ec4c8ba93448a5e2916d0db763b, type: 3}
-    image2: []
-    image3: []
-    image4: []
+    - {fileID: 2800000, guid: 15263945638294940a09915a0567f2c2, type: 3}
+    image2:
+    - {fileID: 2800000, guid: 16de571a6532a2742ae9dcc8fbd838dc, type: 3}
+    - {fileID: 2800000, guid: 308bf8ff1832ec64e8663e680e763fc6, type: 3}
+    - {fileID: 2800000, guid: 2d371d59cbdc55042906d3c731dbdbfe, type: 3}
+    image3:
+    - {fileID: 2800000, guid: 775bf0713569a1f4cb384fc1f881f229, type: 3}
+    - {fileID: 2800000, guid: 18f80a18ecab37643b1c64b2db7252d6, type: 3}
+    - {fileID: 2800000, guid: c1f42fd37b227b34581addf61b5b3b85, type: 3}
+    image4:
+    - {fileID: 2800000, guid: 621f0c4c2d7f8a04ca4286a29b7eb0c9, type: 3}
+    - {fileID: 2800000, guid: 8f5823e1a14c70844a6914fa8ffdf38d, type: 3}
+    - {fileID: 2800000, guid: e9f9cb57c5a308547896e44ac412ffee, type: 3}
