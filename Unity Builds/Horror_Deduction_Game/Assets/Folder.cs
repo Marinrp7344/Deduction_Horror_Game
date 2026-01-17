@@ -57,6 +57,7 @@ public class Folder : MonoBehaviour
                 ProcessAudio(evidenceObject, evidence);
                 break;
             case Evidence_Data.Evidence.Image:
+                ProcessImage(evidenceObject, evidence);
                 break;
         }
     }
@@ -111,9 +112,10 @@ public class Folder : MonoBehaviour
         audioEvidence.audioSource = audioSource;
     }
 
-    public void ProcessImage()
+    public void ProcessImage(GameObject evidenceObject, Evidence_Data evidence)
     {
-
+        Image_Evidence imageEvidence = evidenceObject.GetComponent<Image_Evidence>();
+        imageEvidence.evidenceSO = evidence;
     }
 
     public void DestroyEvidence()

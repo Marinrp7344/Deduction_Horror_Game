@@ -47,16 +47,43 @@ public class Director : MonoBehaviour
         GenerateNewEvidence();
         DisableGuessingMenu();
     }
+
+    private List<Monster_Data> GetReadyMonsters()
+    {
+        List<Monster_Data> readyMonsters = new List<Monster_Data>();
+
+        foreach (Monster_Data monster in monsters)
+        {
+            if (monster.monsterReady)
+            {
+                readyMonsters.Add(monster);
+            }
+        }
+
+        return readyMonsters;
+    }
+
     public void GenerateNewEvidence()
     {
-        int randomMonster = Random.Range(0, monsters.Count);
-        currentMonster = monsters[randomMonster];
-        List<Evidence_Data> newEvidence = FindValidEvidence(monsters[randomMonster]);
+
+        List<Monster_Data> monsterList = GetReadyMonsters();
+
+        if (monsterList.Count == 0)
+        {
+            Debug.LogError("No monsters are marked as ready!");
+            return;
+        }
+
+        int randomMonster = Random.Range(0, monsterList.Count);
+        currentMonster = monsterList[randomMonster];
+
+
+        List<Evidence_Data> newEvidence = FindValidEvidence(monsterList[randomMonster]);
         Debug.Log(newEvidence.Count);
         CreateUnchosenList();
         List<Evidence_Data> extraStories = GetAlternateStories();
 
-        foreach(Evidence_Data story in extraStories)
+        foreach (Evidence_Data story in extraStories)
         {
             newEvidence.Add(story);
         }
@@ -310,6 +337,31 @@ public class Director : MonoBehaviour
             evidenceGuesses.Add(checkboxEvidence);
         }
 
+
+        foreach (EvidenceData evidence in guessingData.imageList)
+        {
+            GameObject checkbox = Instantiate(evidencePrefab, transform.position, Quaternion.identity);
+            checkbox.transform.SetParent(imageView.transform);
+            Evidence_Guess_UI checkboxEvidence = checkbox.GetComponent<Evidence_Guess_UI>();
+            checkboxEvidence.guessingValue = evidence;
+            checkboxEvidence.director = this;
+            checkboxEvidence.text.text = evidence.evidenceName;
+            evidenceGuesses.Add(checkboxEvidence);
+        }
+
+        foreach (EvidenceData evidence in guessingData.audioList)
+        {
+            GameObject checkbox = Instantiate(evidencePrefab, transform.position, Quaternion.identity);
+            checkbox.transform.SetParent(audioView.transform);
+            Evidence_Guess_UI checkboxEvidence = checkbox.GetComponent<Evidence_Guess_UI>();
+            checkboxEvidence.guessingValue = evidence;
+            checkboxEvidence.director = this;
+            checkboxEvidence.text.text = evidence.evidenceName;
+            evidenceGuesses.Add(checkboxEvidence);
+        }
+
+        /* 
+
         foreach (EvidenceData evidence in guessingData.policeReportList)
         {
             GameObject checkbox = Instantiate(evidencePrefab, transform.position, Quaternion.identity);
@@ -331,29 +383,10 @@ public class Director : MonoBehaviour
             checkboxEvidence.text.text = evidence.evidenceName;
             evidenceGuesses.Add(checkboxEvidence);
         }
+        */
 
+        
 
-        foreach (EvidenceData evidence in guessingData.audioList)
-        {
-            GameObject checkbox = Instantiate(evidencePrefab, transform.position, Quaternion.identity);
-            checkbox.transform.SetParent(audioView.transform);
-            Evidence_Guess_UI checkboxEvidence = checkbox.GetComponent<Evidence_Guess_UI>();
-            checkboxEvidence.guessingValue = evidence;
-            checkboxEvidence.director = this;
-            checkboxEvidence.text.text = evidence.evidenceName;
-            evidenceGuesses.Add(checkboxEvidence);
-        }
-
-        foreach (EvidenceData evidence in guessingData.imageList)
-        {
-            GameObject checkbox = Instantiate(evidencePrefab, transform.position, Quaternion.identity);
-            checkbox.transform.SetParent(imageView.transform);
-            Evidence_Guess_UI checkboxEvidence = checkbox.GetComponent<Evidence_Guess_UI>();
-            checkboxEvidence.guessingValue = evidence;
-            checkboxEvidence.director = this;
-            checkboxEvidence.text.text = evidence.evidenceName;
-            evidenceGuesses.Add(checkboxEvidence);
-        }
 
     }
 

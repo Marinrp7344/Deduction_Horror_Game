@@ -22,7 +22,7 @@ public class Image_Evidence : MonoBehaviour
     public ImageInfo currentImage;
     public int currentImageIndex;
 
-    private void Awake()
+    private void Start()
     {
         currentImageIndex = 0;
         currentImage = evidenceSO.image;

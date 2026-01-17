@@ -15,21 +15,17 @@ MonoBehaviour:
   monsterName: Mothman
   monsterDescription: 
   monsterPrefab: {fileID: 2069477968092458892, guid: 8aab2481d3d99734198177d854979bfc, type: 3}
+  monsterReady: 1
   storyEvidence:
     deadPets:
       evidenceName: Dead Pets
       evidenceDescription: Reports of Dead Pets from Civilians
       evidenceRelevant: 0
       evidenceType: 0
-    lateNightReports:
-      evidenceName: Late Night Reports
-      evidenceDescription: Civilians Report Incidents Past 12am
-      evidenceRelevant: 0
-      evidenceType: 0
     coldTemperatures:
       evidenceName: Cold Temperatures
       evidenceDescription: Cold Temperatures Reported During Incidents
-      evidenceRelevant: 0
+      evidenceRelevant: 1
       evidenceType: 0
     scratching:
       evidenceName: Scratching
@@ -49,6 +45,22 @@ MonoBehaviour:
     disappearingFigure:
       evidenceName: Disappering Figure
       evidenceDescription: A Figure Is seen vanishing into thin air
+      evidenceRelevant: 0
+      evidenceType: 0
+    beastLike:
+      evidenceName: Beast Like
+      evidenceDescription: A Beast Like Creature often described as Furry or Animal
+        Like
+      evidenceRelevant: 0
+      evidenceType: 0
+    missingPerson:
+      evidenceName: Missing Person
+      evidenceDescription: A person is reported missing during an Incident
+      evidenceRelevant: 0
+      evidenceType: 0
+    memoryGaps:
+      evidenceName: Memory Gaps
+      evidenceDescription: Gaps in memories proceeding or during anomoly incidents
       evidenceRelevant: 0
       evidenceType: 0
   policeReportEvidence:
@@ -134,55 +146,60 @@ MonoBehaviour:
       evidenceRelevant: 1
       evidenceType: 2
   audioEvidence:
-    audioDistortions:
-      evidenceName: Audio Distortions
-      evidenceDescription: 
-      evidenceRelevant: 0
-      evidenceType: 3
     whispering:
       evidenceName: Whispering
       evidenceDescription: 
       evidenceRelevant: 0
       evidenceType: 3
-    wailing:
-      evidenceName: Wailing
-      evidenceDescription: 
-      evidenceRelevant: 0
-      evidenceType: 3
-    howls:
-      evidenceName: Howling
-      evidenceDescription: 
+    crying:
+      evidenceName: Crying
+      evidenceDescription: Crying can clearly be heard after fixing audio
       evidenceRelevant: 0
       evidenceType: 3
     growls:
       evidenceName: Growling
       evidenceDescription: 
-      evidenceRelevant: 0
-      evidenceType: 3
-    screaming:
-      evidenceName: Screaming
-      evidenceDescription: 
-      evidenceRelevant: 0
-      evidenceType: 3
-    screaching:
-      evidenceName: Screaching
-      evidenceDescription: 
       evidenceRelevant: 1
       evidenceType: 3
-  imageEvidence:
-    invertedImaging:
-      evidenceName: Inverse Imaging
-      evidenceDescription: 
+    mimicry:
+      evidenceName: Mimicry
+      evidenceDescription: Voices can be heard mimicking voices the player has heard
       evidenceRelevant: 0
-      evidenceType: 4
+      evidenceType: 3
+    scratching:
+      evidenceName: Scratching
+      evidenceDescription: Scratching can clearly be heard after fixing audio
+      evidenceRelevant: 0
+      evidenceType: 3
+    spectrogramSymbols:
+      evidenceName: Symbols
+      evidenceDescription: Symbols can be seen in spectrographic transcript of audio
+      evidenceRelevant: 1
+      evidenceType: 3
+    missingAudio:
+      evidenceName: Missing Audio
+      evidenceDescription: Chunks of are clearly missing from the audio
+      evidenceRelevant: 0
+      evidenceType: 3
+    spectrogramWords:
+      evidenceName: Spectrogram Words
+      evidenceDescription: Words are Embedded in to audio source
+      evidenceRelevant: 0
+      evidenceType: 3
+    reverseSpeech:
+      evidenceName: Reverse Speech
+      evidenceDescription: After reversing audio words become legible
+      evidenceRelevant: 0
+      evidenceType: 3
+  imageEvidence:
     negativeSpace:
       evidenceName: Negative Spacing
       evidenceDescription: 
       evidenceRelevant: 0
       evidenceType: 4
-    heatMap:
-      evidenceName: Heat Maps
-      evidenceDescription: 
+    thermalSignature:
+      evidenceName: Thermal Signatures
+      evidenceDescription: When checking thermal Levels unsual Signatures appear.
       evidenceRelevant: 1
       evidenceType: 4
     clawMarks:
@@ -190,28 +207,46 @@ MonoBehaviour:
       evidenceDescription: 
       evidenceRelevant: 0
       evidenceType: 4
-    tracks:
-      evidenceName: Tracks
-      evidenceDescription: 
+    starSigil:
+      evidenceName: Star Sigil
+      evidenceDescription: A sigil in the form of a 7 pointed star is seen somewhere
+        in the image.
       evidenceRelevant: 0
       evidenceType: 4
-    flying:
-      evidenceName: Flying Creature
-      evidenceDescription: 
+    crossArrowSigil:
+      evidenceName: Cross Arrow Sigil
+      evidenceDescription: A sigil in the form of a Cross with an arrow tip is seen
+        somewhere in the image.
+      evidenceRelevant: 0
+      evidenceType: 4
+    obscuredFaces:
+      evidenceName: Obscured Faces
+      evidenceDescription: An obscured face is seen somewhere in the image
+      evidenceRelevant: 0
+      evidenceType: 4
+    possessedPerson:
+      evidenceName: Possessed Person
+      evidenceDescription: Through photo editing you can see residue of human possession
       evidenceRelevant: 1
+      evidenceType: 4
+    shadowFigures:
+      evidenceName: Shadow Figure
+      evidenceDescription: A shadowy figure is seen in the image often obscured.
+      evidenceRelevant: 1
+      evidenceType: 4
+    bloodPresent:
+      evidenceName: Blood Present
+      evidenceDescription: Blood is clearly seen visibly or through UV photography
+      evidenceRelevant: 0
       evidenceType: 4
   storyList:
   - evidenceName: Dead Pets
     evidenceDescription: Reports of Dead Pets from Civilians
     evidenceRelevant: 0
     evidenceType: 0
-  - evidenceName: Late Night Reports
-    evidenceDescription: Civilians Report Incidents Past 12am
-    evidenceRelevant: 0
-    evidenceType: 0
   - evidenceName: Cold Temperatures
     evidenceDescription: Cold Temperatures Reported During Incidents
-    evidenceRelevant: 0
+    evidenceRelevant: 1
     evidenceType: 0
   - evidenceName: Scratching
     evidenceDescription: Scrathcing Sounds Reported
@@ -229,6 +264,95 @@ MonoBehaviour:
     evidenceDescription: A Figure Is seen vanishing into thin air
     evidenceRelevant: 0
     evidenceType: 0
+  - evidenceName: Beast Like
+    evidenceDescription: A Beast Like Creature often described as Furry or Animal
+      Like
+    evidenceRelevant: 0
+    evidenceType: 0
+  - evidenceName: Missing Person
+    evidenceDescription: A person is reported missing during an Incident
+    evidenceRelevant: 0
+    evidenceType: 0
+  - evidenceName: Memory Gaps
+    evidenceDescription: Gaps in memories proceeding or during anomoly incidents
+    evidenceRelevant: 0
+    evidenceType: 0
+  imageList:
+  - evidenceName: Negative Spacing
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 4
+  - evidenceName: Thermal Signatures
+    evidenceDescription: When checking thermal Levels unsual Signatures appear.
+    evidenceRelevant: 1
+    evidenceType: 4
+  - evidenceName: Claw Marks
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 4
+  - evidenceName: Star Sigil
+    evidenceDescription: A sigil in the form of a 7 pointed star is seen somewhere
+      in the image.
+    evidenceRelevant: 0
+    evidenceType: 4
+  - evidenceName: Cross Arrow Sigil
+    evidenceDescription: A sigil in the form of a Cross with an arrow tip is seen
+      somewhere in the image.
+    evidenceRelevant: 0
+    evidenceType: 4
+  - evidenceName: Obscured Faces
+    evidenceDescription: An obscured face is seen somewhere in the image
+    evidenceRelevant: 0
+    evidenceType: 4
+  - evidenceName: Possessed Person
+    evidenceDescription: Through photo editing you can see residue of human possession
+    evidenceRelevant: 1
+    evidenceType: 4
+  - evidenceName: Shadow Figure
+    evidenceDescription: A shadowy figure is seen in the image often obscured.
+    evidenceRelevant: 1
+    evidenceType: 4
+  - evidenceName: Blood Present
+    evidenceDescription: Blood is clearly seen visibly or through UV photography
+    evidenceRelevant: 0
+    evidenceType: 4
+  audioList:
+  - evidenceName: Whispering
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 3
+  - evidenceName: Crying
+    evidenceDescription: Crying can clearly be heard after fixing audio
+    evidenceRelevant: 0
+    evidenceType: 3
+  - evidenceName: Growling
+    evidenceDescription: 
+    evidenceRelevant: 1
+    evidenceType: 3
+  - evidenceName: Mimicry
+    evidenceDescription: Voices can be heard mimicking voices the player has heard
+    evidenceRelevant: 0
+    evidenceType: 3
+  - evidenceName: Scratching
+    evidenceDescription: Scratching can clearly be heard after fixing audio
+    evidenceRelevant: 0
+    evidenceType: 3
+  - evidenceName: Symbols
+    evidenceDescription: Symbols can be seen in spectrographic transcript of audio
+    evidenceRelevant: 1
+    evidenceType: 3
+  - evidenceName: Missing Audio
+    evidenceDescription: Chunks of are clearly missing from the audio
+    evidenceRelevant: 0
+    evidenceType: 3
+  - evidenceName: Spectrogram Words
+    evidenceDescription: Words are Embedded in to audio source
+    evidenceRelevant: 0
+    evidenceType: 3
+  - evidenceName: Reverse Speech
+    evidenceDescription: After reversing audio words become legible
+    evidenceRelevant: 0
+    evidenceType: 3
   policeReportList:
   - evidenceName: Property Damage
     evidenceDescription: 
@@ -295,57 +419,3 @@ MonoBehaviour:
     evidenceDescription: A figure is seen flying in the air
     evidenceRelevant: 1
     evidenceType: 2
-  audioList:
-  - evidenceName: Audio Distortions
-    evidenceDescription: 
-    evidenceRelevant: 0
-    evidenceType: 3
-  - evidenceName: Whispering
-    evidenceDescription: 
-    evidenceRelevant: 0
-    evidenceType: 3
-  - evidenceName: Wailing
-    evidenceDescription: 
-    evidenceRelevant: 0
-    evidenceType: 3
-  - evidenceName: Howling
-    evidenceDescription: 
-    evidenceRelevant: 0
-    evidenceType: 3
-  - evidenceName: Growling
-    evidenceDescription: 
-    evidenceRelevant: 0
-    evidenceType: 3
-  - evidenceName: Screaming
-    evidenceDescription: 
-    evidenceRelevant: 0
-    evidenceType: 3
-  - evidenceName: Screaching
-    evidenceDescription: 
-    evidenceRelevant: 1
-    evidenceType: 3
-  imageList:
-  - evidenceName: Inverse Imaging
-    evidenceDescription: 
-    evidenceRelevant: 0
-    evidenceType: 4
-  - evidenceName: Negative Spacing
-    evidenceDescription: 
-    evidenceRelevant: 0
-    evidenceType: 4
-  - evidenceName: Heat Maps
-    evidenceDescription: 
-    evidenceRelevant: 1
-    evidenceType: 4
-  - evidenceName: Claw Marks
-    evidenceDescription: 
-    evidenceRelevant: 0
-    evidenceType: 4
-  - evidenceName: Tracks
-    evidenceDescription: 
-    evidenceRelevant: 0
-    evidenceType: 4
-  - evidenceName: Flying Creature
-    evidenceDescription: 
-    evidenceRelevant: 1
-    evidenceType: 4

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bceaf9029dce64b499beebc9aa6c8af6, type: 3}
-  m_Name: Poltergeist
+  m_Name: Jersey Devil
   m_EditorClassIdentifier: Assembly-CSharp::Monster_Data
-  monsterName: Poltergeist
+  monsterName: Jersey Devil
   monsterDescription: 
-  monsterPrefab: {fileID: 8903641717870787769, guid: ef8fd91b6f57c6f42b5e05619ca3b545, type: 3}
-  monsterReady: 1
+  monsterPrefab: {fileID: 0}
+  monsterReady: 0
   storyEvidence:
     deadPets:
       evidenceName: Dead Pets
@@ -25,12 +25,12 @@ MonoBehaviour:
     coldTemperatures:
       evidenceName: Cold Temperatures
       evidenceDescription: Cold Temperatures Reported During Incidents
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 0
     scratching:
       evidenceName: Scratching
       evidenceDescription: Scrathcing Sounds Reported
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 0
     humanoid:
       evidenceName: Humanoids
@@ -40,7 +40,7 @@ MonoBehaviour:
     flyingCreature:
       evidenceName: Flying
       evidenceDescription: A Flying Creature Is Seen During Incident
-      evidenceRelevant: 0
+      evidenceRelevant: 1
       evidenceType: 0
     disappearingFigure:
       evidenceName: Disappering Figure
@@ -51,7 +51,7 @@ MonoBehaviour:
       evidenceName: Beast Like
       evidenceDescription: A Beast Like Creature often described as Furry or Animal
         Like
-      evidenceRelevant: 0
+      evidenceRelevant: 1
       evidenceType: 0
     missingPerson:
       evidenceName: Missing Person
@@ -67,7 +67,7 @@ MonoBehaviour:
     propertyDamage:
       evidenceName: Property Damage
       evidenceDescription: 
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 1
     humanoidSuspect:
       evidenceName: Humanoid Suspect
@@ -108,12 +108,12 @@ MonoBehaviour:
     invisibleAssailant:
       evidenceName: Invisible Assailant
       evidenceDescription: 
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 2
     floatingObjects:
       evidenceName: Floating Object
       evidenceDescription: 
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 2
     cameraDistortion:
       evidenceName: Camera Distortion
@@ -148,7 +148,7 @@ MonoBehaviour:
   audioEvidence:
     whispering:
       evidenceName: Whispering
-      evidenceDescription: 
+      evidenceDescription: Whispering can clearly be heard after fixing audio
       evidenceRelevant: 0
       evidenceType: 3
     crying:
@@ -158,7 +158,7 @@ MonoBehaviour:
       evidenceType: 3
     growls:
       evidenceName: Growling
-      evidenceDescription: 
+      evidenceDescription: Growling can clearly be heard after fixing audio
       evidenceRelevant: 0
       evidenceType: 3
     mimicry:
@@ -169,17 +169,17 @@ MonoBehaviour:
     scratching:
       evidenceName: Scratching
       evidenceDescription: Scratching can clearly be heard after fixing audio
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 3
     spectrogramSymbols:
       evidenceName: Symbols
       evidenceDescription: Symbols can be seen in spectrographic transcript of audio
-      evidenceRelevant: 0
+      evidenceRelevant: 1
       evidenceType: 3
     missingAudio:
       evidenceName: Missing Audio
       evidenceDescription: Chunks of are clearly missing from the audio
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 3
     spectrogramWords:
       evidenceName: Spectrogram Words
@@ -189,13 +189,14 @@ MonoBehaviour:
     reverseSpeech:
       evidenceName: Reverse Speech
       evidenceDescription: After reversing audio words become legible
-      evidenceRelevant: 0
+      evidenceRelevant: 1
       evidenceType: 3
   imageEvidence:
     negativeSpace:
       evidenceName: Negative Spacing
-      evidenceDescription: 
-      evidenceRelevant: 1
+      evidenceDescription: When inverting images figures that weren't previously
+        there show up.
+      evidenceRelevant: 0
       evidenceType: 4
     thermalSignature:
       evidenceName: Thermal Signatures
@@ -204,14 +205,14 @@ MonoBehaviour:
       evidenceType: 4
     clawMarks:
       evidenceName: Claw Marks
-      evidenceDescription: 
-      evidenceRelevant: 0
+      evidenceDescription: Visible Claw Marks on the sides of trees or buildings
+      evidenceRelevant: 1
       evidenceType: 4
     starSigil:
       evidenceName: Star Sigil
       evidenceDescription: A sigil in the form of a 7 pointed star is seen somewhere
         in the image.
-      evidenceRelevant: 0
+      evidenceRelevant: 1
       evidenceType: 4
     crossArrowSigil:
       evidenceName: Cross Arrow Sigil
@@ -222,12 +223,12 @@ MonoBehaviour:
     obscuredFaces:
       evidenceName: Obscured Faces
       evidenceDescription: An obscured face is seen somewhere in the image
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 4
     possessedPerson:
       evidenceName: Possessed Person
       evidenceDescription: Through photo editing you can see residue of human possession
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 4
     shadowFigures:
       evidenceName: Shadow Figure
@@ -237,7 +238,7 @@ MonoBehaviour:
     bloodPresent:
       evidenceName: Blood Present
       evidenceDescription: Blood is clearly seen visibly or through UV photography
-      evidenceRelevant: 0
+      evidenceRelevant: 1
       evidenceType: 4
   storyList:
   - evidenceName: Dead Pets
@@ -246,11 +247,11 @@ MonoBehaviour:
     evidenceType: 0
   - evidenceName: Cold Temperatures
     evidenceDescription: Cold Temperatures Reported During Incidents
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 0
   - evidenceName: Scratching
     evidenceDescription: Scrathcing Sounds Reported
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 0
   - evidenceName: Humanoids
     evidenceDescription: Humanoid Creature Spotted During Incidents
@@ -258,7 +259,7 @@ MonoBehaviour:
     evidenceType: 0
   - evidenceName: Flying
     evidenceDescription: A Flying Creature Is Seen During Incident
-    evidenceRelevant: 0
+    evidenceRelevant: 1
     evidenceType: 0
   - evidenceName: Disappering Figure
     evidenceDescription: A Figure Is seen vanishing into thin air
@@ -267,7 +268,7 @@ MonoBehaviour:
   - evidenceName: Beast Like
     evidenceDescription: A Beast Like Creature often described as Furry or Animal
       Like
-    evidenceRelevant: 0
+    evidenceRelevant: 1
     evidenceType: 0
   - evidenceName: Missing Person
     evidenceDescription: A person is reported missing during an Incident
@@ -279,21 +280,22 @@ MonoBehaviour:
     evidenceType: 0
   imageList:
   - evidenceName: Negative Spacing
-    evidenceDescription: 
-    evidenceRelevant: 1
+    evidenceDescription: When inverting images figures that weren't previously there
+      show up.
+    evidenceRelevant: 0
     evidenceType: 4
   - evidenceName: Thermal Signatures
     evidenceDescription: When checking thermal Levels unsual Signatures appear.
     evidenceRelevant: 0
     evidenceType: 4
   - evidenceName: Claw Marks
-    evidenceDescription: 
-    evidenceRelevant: 0
+    evidenceDescription: Visible Claw Marks on the sides of trees or buildings
+    evidenceRelevant: 1
     evidenceType: 4
   - evidenceName: Star Sigil
     evidenceDescription: A sigil in the form of a 7 pointed star is seen somewhere
       in the image.
-    evidenceRelevant: 0
+    evidenceRelevant: 1
     evidenceType: 4
   - evidenceName: Cross Arrow Sigil
     evidenceDescription: A sigil in the form of a Cross with an arrow tip is seen
@@ -302,11 +304,11 @@ MonoBehaviour:
     evidenceType: 4
   - evidenceName: Obscured Faces
     evidenceDescription: An obscured face is seen somewhere in the image
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 4
   - evidenceName: Possessed Person
     evidenceDescription: Through photo editing you can see residue of human possession
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 4
   - evidenceName: Shadow Figure
     evidenceDescription: A shadowy figure is seen in the image often obscured.
@@ -314,11 +316,11 @@ MonoBehaviour:
     evidenceType: 4
   - evidenceName: Blood Present
     evidenceDescription: Blood is clearly seen visibly or through UV photography
-    evidenceRelevant: 0
+    evidenceRelevant: 1
     evidenceType: 4
   audioList:
   - evidenceName: Whispering
-    evidenceDescription: 
+    evidenceDescription: Whispering can clearly be heard after fixing audio
     evidenceRelevant: 0
     evidenceType: 3
   - evidenceName: Crying
@@ -326,7 +328,7 @@ MonoBehaviour:
     evidenceRelevant: 0
     evidenceType: 3
   - evidenceName: Growling
-    evidenceDescription: 
+    evidenceDescription: Growling can clearly be heard after fixing audio
     evidenceRelevant: 0
     evidenceType: 3
   - evidenceName: Mimicry
@@ -335,15 +337,15 @@ MonoBehaviour:
     evidenceType: 3
   - evidenceName: Scratching
     evidenceDescription: Scratching can clearly be heard after fixing audio
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 3
   - evidenceName: Symbols
     evidenceDescription: Symbols can be seen in spectrographic transcript of audio
-    evidenceRelevant: 0
+    evidenceRelevant: 1
     evidenceType: 3
   - evidenceName: Missing Audio
     evidenceDescription: Chunks of are clearly missing from the audio
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 3
   - evidenceName: Spectrogram Words
     evidenceDescription: Words are Embedded in to audio source
@@ -351,12 +353,12 @@ MonoBehaviour:
     evidenceType: 3
   - evidenceName: Reverse Speech
     evidenceDescription: After reversing audio words become legible
-    evidenceRelevant: 0
+    evidenceRelevant: 1
     evidenceType: 3
   policeReportList:
   - evidenceName: Property Damage
     evidenceDescription: 
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 1
   - evidenceName: Humanoid Suspect
     evidenceDescription: 
@@ -389,11 +391,11 @@ MonoBehaviour:
   videoList:
   - evidenceName: Invisible Assailant
     evidenceDescription: 
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 2
   - evidenceName: Floating Object
     evidenceDescription: 
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 2
   - evidenceName: Camera Distortion
     evidenceDescription: 

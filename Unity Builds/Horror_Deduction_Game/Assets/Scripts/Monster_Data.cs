@@ -10,6 +10,7 @@ public class Monster_Data : ScriptableObject
     public string monsterName;
     public string monsterDescription;
     public GameObject monsterPrefab;
+    public bool monsterReady;
 
     [Header("Evidence")]
     [HideInInspector] public StoryEvidence storyEvidence;
@@ -19,10 +20,14 @@ public class Monster_Data : ScriptableObject
     [HideInInspector] public ImageEvidence imageEvidence;
 
     public List<EvidenceData> storyList;
+    public List<EvidenceData> imageList;
+    public List<EvidenceData> audioList;
+
+    [Header("Depracated Evidence")]
     public List<EvidenceData> policeReportList;
     public List<EvidenceData> videoList;
-    public List<EvidenceData> audioList;
-    public List<EvidenceData> imageList;
+    
+    
 
     private void OnEnable()
     {
@@ -38,14 +43,47 @@ public class Monster_Data : ScriptableObject
 public class StoryEvidence
 {
     [Header("Story Evidence")]
-    public EvidenceData deadPets = new EvidenceData { evidenceName = "Dead Pets", evidenceDescription = "Reports of Dead Pets from Civilians", evidenceType = EvidenceData.EvidenceType.Story};
-    public EvidenceData lateNightReports = new EvidenceData { evidenceName = "Late Night Reports", evidenceDescription = "Civilians Report Incidents Past 12am", evidenceType = EvidenceData.EvidenceType.Story };
+    public EvidenceData deadPets = new EvidenceData { evidenceName = "Dead Pets", evidenceDescription = "Reports of Dead Pets from Civilians", evidenceType = EvidenceData.EvidenceType.Story};    
     public EvidenceData coldTemperatures = new EvidenceData { evidenceName = "Cold Temperatures", evidenceDescription = "Cold Temperatures Reported During Incidents", evidenceType = EvidenceData.EvidenceType.Story };
     public EvidenceData scratching = new EvidenceData { evidenceName = "Scratching", evidenceDescription = "Scrathcing Sounds Reported", evidenceType = EvidenceData.EvidenceType.Story };
     public EvidenceData humanoid = new EvidenceData { evidenceName = "Humanoids", evidenceDescription = "Humanoid Creature Spotted During Incidents", evidenceType = EvidenceData.EvidenceType.Story };
     public EvidenceData flyingCreature = new EvidenceData { evidenceName = "Flying", evidenceDescription = "A Flying Creature Is Seen During Incident", evidenceType = EvidenceData.EvidenceType.Story };
     public EvidenceData disappearingFigure = new EvidenceData { evidenceName = "Disappering Figure", evidenceDescription = "A Figure Is seen vanishing into thin air", evidenceType = EvidenceData.EvidenceType.Story };
     public EvidenceData beastLike = new EvidenceData { evidenceName = "Beast Like", evidenceDescription = "A Beast Like Creature often described as Furry or Animal Like", evidenceType = EvidenceData.EvidenceType.Story };
+    public EvidenceData missingPerson = new EvidenceData { evidenceName = "Missing Person", evidenceDescription = "A person is reported missing during an Incident", evidenceType = EvidenceData.EvidenceType.Story };
+    public EvidenceData memoryGaps = new EvidenceData { evidenceName = "Memory Gaps", evidenceDescription = "Gaps in memories proceeding or during anomoly incidents", evidenceType = EvidenceData.EvidenceType.Story };
+}
+
+[System.Serializable]
+public class ImageEvidence
+{
+    [Header("Image Evidence")]
+    public EvidenceData negativeSpace = new EvidenceData { evidenceName = "Negative Spacing", evidenceDescription = "When inverting images figures that weren't previously there show up.", evidenceType = EvidenceData.EvidenceType.Image };
+    public EvidenceData thermalSignature = new EvidenceData { evidenceName = "Thermal Signatures", evidenceDescription = "When checking thermal Levels unsual Signatures appear.", evidenceType = EvidenceData.EvidenceType.Image };
+    public EvidenceData clawMarks = new EvidenceData { evidenceName = "Claw Marks", evidenceDescription = "Visible Claw Marks on the sides of trees or buildings", evidenceType = EvidenceData.EvidenceType.Image };
+    public EvidenceData starSigil = new EvidenceData { evidenceName = "Star Sigil", evidenceDescription = "A sigil in the form of a 7 pointed star is seen somewhere in the image.", evidenceType = EvidenceData.EvidenceType.Image };
+    public EvidenceData crossArrowSigil = new EvidenceData { evidenceName = "Cross Arrow Sigil", evidenceDescription = "A sigil in the form of a Cross with an arrow tip is seen somewhere in the image.", evidenceType = EvidenceData.EvidenceType.Image };
+    public EvidenceData obscuredFaces = new EvidenceData { evidenceName = "Obscured Faces", evidenceDescription = "An obscured face is seen somewhere in the image", evidenceType = EvidenceData.EvidenceType.Image };
+    public EvidenceData possessedPerson = new EvidenceData { evidenceName = "Possessed Person", evidenceDescription = "Through photo editing you can see residue of human possession", evidenceType = EvidenceData.EvidenceType.Image };
+    public EvidenceData shadowFigures = new EvidenceData { evidenceName = "Shadow Figure", evidenceDescription = "A shadowy figure is seen in the image often obscured.", evidenceType = EvidenceData.EvidenceType.Image };
+    public EvidenceData bloodPresent = new EvidenceData { evidenceName = "Blood Present", evidenceDescription = "Blood is clearly seen visibly or through UV photography", evidenceType = EvidenceData.EvidenceType.Image };
+
+
+}
+
+[System.Serializable]
+public class AudioEvidence
+{
+    [Header("Audio Evidence")]
+    public EvidenceData whispering = new EvidenceData { evidenceName = "Whispering", evidenceDescription = "Whispering can clearly be heard after fixing audio", evidenceType = EvidenceData.EvidenceType.Audio };
+    public EvidenceData crying = new EvidenceData { evidenceName = "Crying", evidenceDescription = "Crying can clearly be heard after fixing audio", evidenceType = EvidenceData.EvidenceType.Audio };
+    public EvidenceData growls = new EvidenceData { evidenceName = "Growling", evidenceDescription = "Growling can clearly be heard after fixing audio", evidenceType = EvidenceData.EvidenceType.Audio };
+    public EvidenceData mimicry = new EvidenceData { evidenceName = "Mimicry", evidenceDescription = "Voices can be heard mimicking voices the player has heard", evidenceType = EvidenceData.EvidenceType.Audio };
+    public EvidenceData scratching = new EvidenceData { evidenceName = "Scratching", evidenceDescription = "Scratching can clearly be heard after fixing audio", evidenceType = EvidenceData.EvidenceType.Audio };
+    public EvidenceData spectrogramSymbols = new EvidenceData { evidenceName = "Symbols", evidenceDescription = "Symbols can be seen in spectrographic transcript of audio", evidenceType = EvidenceData.EvidenceType.Audio };
+    public EvidenceData missingAudio = new EvidenceData { evidenceName = "Missing Audio", evidenceDescription = "Chunks of are clearly missing from the audio", evidenceType = EvidenceData.EvidenceType.Audio };
+    public EvidenceData spectrogramWords = new EvidenceData { evidenceName = "Spectrogram Words", evidenceDescription = "Words are Embedded in to audio source", evidenceType = EvidenceData.EvidenceType.Audio };
+    public EvidenceData reverseSpeech = new EvidenceData { evidenceName = "Reverse Speech", evidenceDescription = "After reversing audio words become legible", evidenceType = EvidenceData.EvidenceType.Audio };
 }
 
 [System.Serializable]
@@ -74,34 +112,6 @@ public class VideoEvidence
     public EvidenceData animalLike = new EvidenceData { evidenceName = "Animal Like", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Video };
     public EvidenceData disappearingFigure = new EvidenceData { evidenceName = "Disappering Figure", evidenceDescription = "A Figure Is seen vanishing into thin air", evidenceType = EvidenceData.EvidenceType.Video };
     public EvidenceData flying = new EvidenceData { evidenceName = "Flying Figure", evidenceDescription = "A figure is seen flying in the air", evidenceType = EvidenceData.EvidenceType.Video };
-}
-
-
-[System.Serializable]
-public class AudioEvidence
-{
-    [Header("Audio Evidence")]
-    public EvidenceData audioDistortions = new EvidenceData { evidenceName = "Audio Distortions", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Audio };
-    public EvidenceData whispering = new EvidenceData { evidenceName = "Whispering", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Audio };
-    public EvidenceData wailing = new EvidenceData { evidenceName = "Wailing", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Audio };
-    public EvidenceData howls = new EvidenceData { evidenceName = "Howling", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Audio };
-    public EvidenceData growls = new EvidenceData { evidenceName = "Growling", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Audio };
-    public EvidenceData screaming = new EvidenceData { evidenceName = "Screaming", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Audio };
-    public EvidenceData screaching = new EvidenceData { evidenceName = "Screaching", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Audio };
-
-}
-
-[System.Serializable]
-public class ImageEvidence
-{
-    [Header("Image Evidence")]
-    public EvidenceData invertedImaging = new EvidenceData { evidenceName = "Inverse Imaging", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Image };
-    public EvidenceData negativeSpace = new EvidenceData { evidenceName = "Negative Spacing", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Image };
-    public EvidenceData heatMap = new EvidenceData { evidenceName = "Heat Maps", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Image };
-    public EvidenceData clawMarks = new EvidenceData { evidenceName = "Claw Marks", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Image };
-    public EvidenceData tracks = new EvidenceData { evidenceName = "Tracks", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Image };
-    public EvidenceData flying = new EvidenceData { evidenceName = "Flying Creature", evidenceDescription = "", evidenceType = EvidenceData.EvidenceType.Image };
-
 }
 
 [System.Serializable]
