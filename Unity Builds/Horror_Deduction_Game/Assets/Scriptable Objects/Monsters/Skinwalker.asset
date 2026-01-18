@@ -20,7 +20,7 @@ MonoBehaviour:
     deadPets:
       evidenceName: Dead Pets
       evidenceDescription: Reports of Dead Pets from Civilians
-      evidenceRelevant: 0
+      evidenceRelevant: 1
       evidenceType: 0
     coldTemperatures:
       evidenceName: Cold Temperatures
@@ -30,7 +30,7 @@ MonoBehaviour:
     scratching:
       evidenceName: Scratching
       evidenceDescription: Scrathcing Sounds Reported
-      evidenceRelevant: 1
+      evidenceRelevant: 0
       evidenceType: 0
     humanoid:
       evidenceName: Humanoids
@@ -243,7 +243,7 @@ MonoBehaviour:
   storyList:
   - evidenceName: Dead Pets
     evidenceDescription: Reports of Dead Pets from Civilians
-    evidenceRelevant: 0
+    evidenceRelevant: 1
     evidenceType: 0
   - evidenceName: Cold Temperatures
     evidenceDescription: Cold Temperatures Reported During Incidents
@@ -251,7 +251,7 @@ MonoBehaviour:
     evidenceType: 0
   - evidenceName: Scratching
     evidenceDescription: Scrathcing Sounds Reported
-    evidenceRelevant: 1
+    evidenceRelevant: 0
     evidenceType: 0
   - evidenceName: Humanoids
     evidenceDescription: Humanoid Creature Spotted During Incidents
