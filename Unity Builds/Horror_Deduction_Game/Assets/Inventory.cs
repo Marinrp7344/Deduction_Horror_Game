@@ -17,6 +17,9 @@ public class Inventory : MonoBehaviour
     public float shootRange;
     public LayerMask shootingMask;
     public LayerMask crucifixMask;
+    public LayerMask frequencyMask;
+
+    public FrequencyDevice frequencyDevice;
 
 
     private void Start()
@@ -26,6 +29,18 @@ public class Inventory : MonoBehaviour
 
     private void Update()
     {
+
+        if(currentlySelectedSlot != null)
+        {
+            if(currentlySelectedSlot.index == 2 && inventoryActive)
+            {
+                frequencyDevice.gameObject.SetActive(true);
+            }
+            else
+            {
+                frequencyDevice.gameObject.SetActive(false);
+            }
+        }
         if (clicked && currentlySelectedSlot != null && inventoryActive)
         {
             UseItem();
@@ -43,6 +58,7 @@ public class Inventory : MonoBehaviour
     {
         inventoryActive = false;
         inventoryUIObject.SetActive(false);
+        frequencyDevice.gameObject.SetActive(false);
     }
 
     public void UpdateInventoryUISlots()
@@ -60,8 +76,8 @@ public class Inventory : MonoBehaviour
             case InventorySlot.Item.Crucifix:
                 UseCrucifix();
                 break;
-            case InventorySlot.Item.Salt:
-                UseSalt();
+            case InventorySlot.Item.FrequencyDisruptor:
+                UseFrequencyDisruptor();
                 break;
         }
     }
@@ -86,6 +102,20 @@ public class Inventory : MonoBehaviour
             GameObject enemyBody = hit.collider.gameObject.transform.parent.gameObject;
             Enemy enemyScript = enemyBody.GetComponent<Enemy>();
             enemyScript.HitBullet();
+        }
+
+    }
+
+    public void ChooseFrequencyTarget()
+    {
+        Ray ray = playerCam.ScreenPointToRay(Mouse.current.position.ReadValue());
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, shootRange, frequencyMask))
+        {
+            GameObject enemyBody = hit.collider.gameObject.transform.parent.gameObject;
+            Enemy enemyScript = enemyBody.GetComponent<Enemy>();
+            frequencyDevice.SetTargetFrequency(enemyScript);
         }
 
     }
@@ -117,11 +147,11 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void UseSalt()
+    public void UseFrequencyDisruptor()
     {
-        if (currentlySelectedSlot.amount > 0 && liftedButton)
+        if (liftedButton)
         {
-            currentlySelectedSlot.amount -= 1;
+            ChooseFrequencyTarget();
             liftedButton = false;
         }
     }
@@ -209,6 +239,6 @@ public class InventorySlot
     public Sprite icon;
     public int amount;
     public float charge;
-    public enum Item { None, Bullet, Crucifix, Salt }
+    public enum Item { None, Bullet, Crucifix, FrequencyDisruptor }
     public Item itemType;
 }

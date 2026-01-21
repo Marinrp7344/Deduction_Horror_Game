@@ -5,13 +5,17 @@ using UnityEngine.Audio;
 public class Folder : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
-    public AudioSource audioSource;
+    public GameObject audioSource;
     public Camera_Animator cameraAnimator;
     public List<Evidence_Data> evidence;
     public List<GameObject> physicalEvidence;
 
     public GameObject storyParentPrefab;
     public GameObject storyParentObject;
+
+    public List<AudioClip> genericMainAudioClips = new List<AudioClip>();
+    public List<AudioClip> genericStaticAudioClips = new List<AudioClip>();
+
     public int storyNumber = 0;
 
     public Vector3 folderPoint;
@@ -108,8 +112,22 @@ public class Folder : MonoBehaviour
     public void ProcessAudio(GameObject evidenceObject, Evidence_Data evidence)
     {
         Audio_Evidence audioEvidence = evidenceObject.GetComponent<Audio_Evidence>();
-        audioEvidence.audioClip = evidence.audioClip;
-        audioEvidence.audioSource = audioSource;
+        int mainClipIndex = Random.Range(0, genericMainAudioClips.Count);
+        int staticClipIndex = Random.Range(0, genericStaticAudioClips.Count);
+        audioEvidence.audioPlayer = audioSource;
+
+        if (evidence.mimicClip == null)
+        {
+            audioEvidence.audioClips.Add(genericMainAudioClips[mainClipIndex]);
+            audioEvidence.audioClips.Add(evidence.audioClip);
+            audioEvidence.audioClips.Add(genericStaticAudioClips[staticClipIndex]);
+        }
+        else
+        {
+            audioEvidence.audioClips.Add(evidence.audioClip);
+            audioEvidence.audioClips.Add(evidence.mimicClip);
+            audioEvidence.audioClips.Add(genericStaticAudioClips[staticClipIndex]);
+        }
     }
 
     public void ProcessImage(GameObject evidenceObject, Evidence_Data evidence)

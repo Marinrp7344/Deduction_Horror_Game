@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
     public bool isActive;
     public bool isVisible;
     public Enemy_Director enemyDirector;
+    public Monster_Data.MonsterType monsterType;
     public Vector3 spawnPosition;
     public int aggression;
     public int visibleMultiplier;
@@ -15,9 +16,12 @@ public class Enemy : MonoBehaviour
     public float rotationX;
     public int view;
 
+    public float enemyFrequency;
+
     private void Start()
     {
         transform.rotation = Quaternion.Euler(rotationX, rotationY, transform.rotation.z);
+        enemyFrequency = Random.Range(0f, 360f);
     }
 
     public virtual void ResetEnemy()
@@ -51,6 +55,7 @@ public class Enemy : MonoBehaviour
     public virtual void MakeEnemyVisible()
     {
         Debug.Log("Enemy Visible");
+        enemyFrequency = Random.Range(0f, 360f);
     }
 
     public void DeactivateEnemy()

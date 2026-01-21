@@ -1,16 +1,15 @@
 using UnityEngine;
-
+using TMPro;
 public class DisplaySlot : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public TextMeshProUGUI monsterName;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public TextMeshProUGUI storyName;
+    public TextMeshProUGUI imageName;
+    public TextMeshProUGUI audioName;
+    public TextMeshProUGUI storyAmount;
+    public TextMeshProUGUI imageAmount;
+    public TextMeshProUGUI audioAmount;
+
+
 }

@@ -26,6 +26,7 @@ public class Evidence_Data : Monster_Data
 
     [Header("Audio Evidence Details")]
     public AudioClip audioClip;
+    public AudioClip mimicClip;
 
     [Header("Image Details")]
     public ImageInfo image;

@@ -11,6 +11,8 @@ public class Monster_Data : ScriptableObject
     public string monsterDescription;
     public GameObject monsterPrefab;
     public bool monsterReady;
+    public enum MonsterType { Werewolf, Banshee, Vampire, Poltergeist, WomanInWhite, Chupacabra, Mothman, Skinwalker, Doppelganger, JerseyDevil, Demon, HopskinvilleGoblin, Slenderman, BlackShuck, TheHook }
+    public MonsterType type;
 
     [Header("Evidence")]
     [HideInInspector] public StoryEvidence storyEvidence;

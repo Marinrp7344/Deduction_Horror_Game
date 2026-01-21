@@ -55,6 +55,10 @@ MonoBehaviour:
   physicalEvidence: []
   storyParentPrefab: {fileID: 1772313572462533729, guid: 25666a05bfd7b9141b39d7107aa1227a, type: 3}
   storyParentObject: {fileID: 0}
+  genericMainAudioClips:
+  - {fileID: 8300000, guid: 58817692171139a4da984bebf2586c12, type: 3}
+  genericStaticAudioClips:
+  - {fileID: 8300000, guid: 2e9cae5a6b3a2c0428df7bfe4d0c874a, type: 3}
   storyNumber: 0
   folderPoint: {x: 7.865, y: 0.585, z: -5.534}
   storyPoint: {x: 7.5, y: 0.585, z: -5.55}

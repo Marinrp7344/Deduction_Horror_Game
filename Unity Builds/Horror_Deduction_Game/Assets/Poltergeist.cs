@@ -32,6 +32,7 @@ public class Poltergeist : Enemy
 
     public override void MakeEnemyVisible()
     {
+        base.MakeEnemyVisible();
         poltergeist.SetActive(true);
         poltergeistObjects[currentObject].affectedByPoltergeist = true;
         currentObject += 1;

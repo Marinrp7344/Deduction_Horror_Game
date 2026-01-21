@@ -4,7 +4,7 @@ using UnityEngine.Video;
 using UnityEngine.Audio;
 public class Director : MonoBehaviour
 {
-    [SerializeField] private List<Monster_Data> monsters;
+    [SerializeField] public List<Monster_Data> monsters;
     [SerializeField] private Evidence_Data guessingData;
     [SerializeField] private Monster_Data currentMonster;
     [SerializeField] private Monster_Data currentGuess;
@@ -30,7 +30,7 @@ public class Director : MonoBehaviour
     [SerializeField] private Enemy_Director enemyDirector;
 
     public VideoPlayer videoPlayer;
-    public AudioSource audioSource;
+    public GameObject audioSource;
 
     private readonly System.Random rand = new System.Random();
 
@@ -504,8 +504,10 @@ public class Director : MonoBehaviour
         }
 
         currentFolder = null;
-
+        ClearGuessingMenu();
+        FilterPossibleGuesses();
         GenerateNewEvidence();
+        
     }
 
     public void ActivateGuessingMenu()
@@ -524,8 +526,28 @@ public class Director : MonoBehaviour
         videoPlayer.Stop();
     }
 
-    public void SpawnMonster()
+    public void ClearGuessingMenu()
     {
+        foreach(Evidence_Guess_UI guess in evidenceGuesses)
+        {
+            guess.ClearToggle();
+        }
+
+        foreach(EvidenceData story in guessingData.storyList)
+        {
+            story.evidenceRelevant = false;
+        }
+
+        foreach (EvidenceData image in guessingData.imageList)
+        {
+            image.evidenceRelevant = false;
+        }
+
+        foreach (EvidenceData audio in guessingData.audioList)
+        {
+            audio.evidenceRelevant = false;
+        }
+
 
     }
 }

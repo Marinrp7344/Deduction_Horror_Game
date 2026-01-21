@@ -18,4 +18,9 @@ public class Evidence_Guess_UI : MonoBehaviour
         guessingValue.evidenceRelevant = checkbox.isOn;
         director.FilterPossibleGuesses();
     }
+
+    public void ClearToggle()
+    {
+        checkbox.isOn = false;
+    }
 }
