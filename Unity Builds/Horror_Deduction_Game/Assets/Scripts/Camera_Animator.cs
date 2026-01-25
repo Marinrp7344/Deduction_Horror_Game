@@ -15,6 +15,7 @@ public class Camera_Animator : MonoBehaviour
     [SerializeField] private bool positionReached = false;
     [SerializeField] private bool angleReached = false;
     [SerializeField] private Inventory inventory;
+    [SerializeField] private AudioSource steps;
 
     private void Start()
     {
@@ -82,7 +83,18 @@ public class Camera_Animator : MonoBehaviour
             positionReached = true;
         }
 
-        if((angleDistance < 0.2f || (angleDistance > 359.8f && angleDistance <= 360.2f)) && angleReached != true)
+        if (positionDistance > .5f)
+        {
+            if (!steps.isPlaying)
+            {
+                float randomPitch = Random.Range(1f, 1.35f);
+                steps.pitch = randomPitch;
+                steps.Play();
+            }
+        }
+
+
+        if ((angleDistance < 0.2f || (angleDistance > 359.8f && angleDistance <= 360.2f)) && angleReached != true)
         {
             angleReached = true;
         }
