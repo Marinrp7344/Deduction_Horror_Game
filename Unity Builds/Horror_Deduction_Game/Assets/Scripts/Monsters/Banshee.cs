@@ -7,6 +7,7 @@ public class Banshee : Enemy
     public float maxCharge;
     public float currentCharge;
     public float chargeIncreaseRate;
+    public AudioSource arriveAudio;
 
     public override void ChangeState()
     {
@@ -36,6 +37,7 @@ public class Banshee : Enemy
     public override void MakeEnemyVisible()
     {
         banshee.SetActive(true);
+        arriveAudio.Play();
     }
 
 

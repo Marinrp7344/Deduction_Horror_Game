@@ -14,6 +14,9 @@ public class Werewolf : Enemy
 
     public float speed;
 
+    public AudioSource arriveAudio;
+    public AudioSource changingAudio;
+
     //Update is called once per frame
     void Update()
     {
@@ -45,6 +48,7 @@ public class Werewolf : Enemy
     {
         werewolf.SetActive(true);
         werewolfAnimator.enabled = true;
+        arriveAudio.Play();
     }
 
     private void SwitchState()
@@ -53,6 +57,7 @@ public class Werewolf : Enemy
         Debug.Log("SwitchState: " + switchStateChance);
         if(switchStateChance == 0)
         {
+            changingAudio.Play();
             setState = setState * -1;
             currentState += 1;
             werewolfAnimator.SetFloat("State", setState);

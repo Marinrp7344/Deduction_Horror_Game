@@ -10,6 +10,8 @@ public class Mothman : Enemy
     public float position;
     public float flyAwayOffset;
     public bool beganFlyingAway;
+    public AudioSource arriveSound;
+    public AudioSource leavingSound;
 
     private void Update()
     {
@@ -74,11 +76,13 @@ public class Mothman : Enemy
     {
         yield return new WaitForSeconds(flyAwayOffset);
         flyAway = true;
+        leavingSound.Play();
     }
 
     public override void MakeEnemyVisible()
     {
         mothman.SetActive(true);
+        arriveSound.Play();
     }
 
     public override void ResetEnemy()

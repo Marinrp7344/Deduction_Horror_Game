@@ -8,6 +8,7 @@ public class WomanInWhite : Enemy
     public bool playerBeganLooking;
     public int secondsToLookAway;
     public GameObject womanInWhite;
+    public AudioSource arriveAudio;
  
     private void Update()
     {
@@ -53,6 +54,7 @@ public class WomanInWhite : Enemy
     public override void MakeEnemyVisible()
     {
         womanInWhite.SetActive(true);
+        arriveAudio.Play();
     }
 
     public override void ResetEnemy()

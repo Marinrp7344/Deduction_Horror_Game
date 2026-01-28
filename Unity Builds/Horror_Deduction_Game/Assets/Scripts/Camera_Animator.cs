@@ -16,6 +16,7 @@ public class Camera_Animator : MonoBehaviour
     [SerializeField] private bool angleReached = false;
     [SerializeField] private Inventory inventory;
     [SerializeField] private AudioSource steps;
+    [SerializeField] private AudioSource clothes;
 
     private void Start()
     {
@@ -117,6 +118,17 @@ public class Camera_Animator : MonoBehaviour
         currentPosition = positions[currentView];
         currentView = view;
         targetPosition = positions[currentView];
+
+        float positionDistance = Mathf.Abs(Vector3.Distance(targetPosition.position, cameraTransform.position));
+
+        if (positionDistance < .5f)
+        {
+            float randomVolume = Random.Range(.03f, .3f);
+            float randomPitch = Random.Range(.45f, .95f);
+            clothes.pitch = randomPitch;
+            clothes.volume = randomVolume;
+            clothes.Play();
+        }
     }
 
     public int GetCurrentView()

@@ -9,11 +9,15 @@ public class Story_Evidence_Parent : MonoBehaviour
 
     public GameObject stories;
     public GameObject storiesParent;
+    public AudioSource paperChange;
+    public AudioSource paperPickedUp;
 
     public void ActivateStories()
     {
         stories.SetActive(true);
         ChangeStory(0);
+        paperPickedUp.pitch = Random.Range(0.75f, 1);
+        paperPickedUp.Play();
     }
 
     public void DeactivateStories()
@@ -52,5 +56,7 @@ public class Story_Evidence_Parent : MonoBehaviour
                 story3.SetActive(true);
                 break;
         }
+        paperChange.pitch = Random.Range(0.75f, 1);
+        paperChange.Play();
     }
 }

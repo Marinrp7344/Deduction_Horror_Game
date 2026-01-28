@@ -11,6 +11,7 @@ public class Vampire : Enemy
     public bool moving;
     public float moveSpeed;
     public GameObject vampire;
+    public AudioSource scurrySound;
 
     private void Update()
     {
@@ -72,6 +73,7 @@ public class Vampire : Enemy
             if(currentPosition <= 2)
             {
                 moving = true;
+                scurrySound.Play();
             }
             else
             {
