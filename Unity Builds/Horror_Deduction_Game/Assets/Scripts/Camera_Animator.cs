@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 public class Camera_Animator : MonoBehaviour
 {
     [SerializeField] private List<PlayerPointOfViews> positions;
@@ -32,6 +33,7 @@ public class Camera_Animator : MonoBehaviour
         cameraTransform.eulerAngles = positions[0].angle;
         currentView = 0;
         viewsButtons.ChangeButtons(currentView);
+        
     }
 
     private void Update()

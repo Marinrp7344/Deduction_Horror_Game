@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -69,6 +70,7 @@ public class Enemy : MonoBehaviour
 
     public virtual void EnemyAttack()
     {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Debug.Log("Enemy Attack");
     }
 

@@ -55,6 +55,12 @@ public class Poltergeist : Enemy
         }
     }
 
+    public override void EnemyAttack()
+    {
+        ProgressDirector.Instance.AcheivedStep("Died To Poltergeist");
+        base.EnemyAttack();
+    }
+
     public override void ResetEnemy()
     {
         foreach(Poltergeist_Object obj in poltergeistObjects)

@@ -64,5 +64,11 @@ public class WomanInWhite : Enemy
         womanInWhite.SetActive(false);
     }
 
+    public override void EnemyAttack()
+    {
+        ProgressDirector.Instance.AcheivedStep("Died To Woman In White");
+        base.EnemyAttack();
+    }
+
 
 }

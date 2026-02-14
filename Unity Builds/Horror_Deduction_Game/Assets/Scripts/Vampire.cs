@@ -62,6 +62,13 @@ public class Vampire : Enemy
         vampire.SetActive(true);
     }
 
+    public override void EnemyAttack()
+    {
+        ProgressDirector.Instance.AcheivedStep("Died To Vampire");
+        base.EnemyAttack();
+        
+    }
+
     public void SwitchState()
     {
         int switchStateChance = Random.Range(0, aggression);

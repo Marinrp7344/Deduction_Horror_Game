@@ -80,4 +80,10 @@ public class Chupacabra : Enemy
     {
         startingAudio.Play();
     }
+
+    public override void EnemyAttack()
+    {
+        ProgressDirector.Instance.AcheivedStep("Died To Chupacabra");
+        base.EnemyAttack();
+    }
 }
