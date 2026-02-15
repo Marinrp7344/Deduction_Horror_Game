@@ -34,7 +34,7 @@ MonoBehaviour:
     associatedAudio: {fileID: 8300000, guid: ab20080434d94144bb86477f8bf0a3a1, type: 3}
     priorityLevel: 2
   - name: Died To Woman In White
-    achieved: 1
+    achieved: 0
     repeatable: 1
     associatedAudio: {fileID: 8300000, guid: 7c5ef51e8d1548c478e1f0a7eff93e42, type: 3}
     priorityLevel: 2
