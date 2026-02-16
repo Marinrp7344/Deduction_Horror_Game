@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9286521762cec184ab0939d5a16f72c2, type: 3}
+  m_Name: Hallucinations
+  m_EditorClassIdentifier: Assembly-CSharp::Hallucinations
+  hallucinationElements:
+  - name: Rightside Still Desk Hallucination
+    hallucinationPrefab: {fileID: 7694454903399971158, guid: 8e7e8fd605603b241bbb0024a6129760, type: 3}
+    halucinationAudio: {fileID: 0}
+    rarity: 50
+    activated: 1
+    repeatable: 1
+  - name: Whispering Hallucination
+    hallucinationPrefab: {fileID: 185912453235945125, guid: 4732fe6d58fc8b34fb5e122c203ed3ef, type: 3}
+    halucinationAudio: {fileID: 0}
+    rarity: 10
+    activated: 1
+    repeatable: 1

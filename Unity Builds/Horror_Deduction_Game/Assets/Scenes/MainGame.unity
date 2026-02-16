@@ -23763,6 +23763,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5021227140663468382, guid: 032a1429a1946bd47922a5086b986f30, type: 3}
   m_PrefabInstance: {fileID: 1251074533}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1618653012
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1618653014}
+  - component: {fileID: 1618653013}
+  m_Layer: 0
+  m_Name: Hallucination Director
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1618653013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618653012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07f9c25fefb1c5b43972a9cdee16afa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  hallucinationManager: {fileID: 11400000, guid: 5418f9b25fd211c4f9a45b20602eb160, type: 2}
+  hallucinationActive: 0
+  currentHallucination: {fileID: 0}
+  hallucinationLikelihood: 20
+  player: {fileID: 986942536}
+--- !u!4 &1618653014
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618653012}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 844.12006, y: -0.00003, z: 4035.5298}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1620618215
 GameObject:
   m_ObjectHideFlags: 0
@@ -33896,3 +33945,4 @@ SceneRoots:
   - {fileID: 1104059581}
   - {fileID: 1111067075}
   - {fileID: 866199414}
+  - {fileID: 1618653014}

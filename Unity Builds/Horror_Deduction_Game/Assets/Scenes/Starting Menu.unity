@@ -4537,7 +4537,7 @@ MonoBehaviour:
   displayImage: {fileID: 798586336}
   displayAudio: {fileID: 0}
   loadingScreen: {fileID: 1860337753}
-  loadSpeed: 3
+  loadSpeed: 7
   typeSound: {fileID: 1095474559826755503, guid: 09e67df98e0929c4bb630da4f1b2442e, type: 3}
 --- !u!1 &1777725304
 GameObject:
