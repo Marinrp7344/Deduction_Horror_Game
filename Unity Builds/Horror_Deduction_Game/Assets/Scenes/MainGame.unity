@@ -23960,7 +23960,7 @@ MonoBehaviour:
   hallucinationManager: {fileID: 11400000, guid: 5418f9b25fd211c4f9a45b20602eb160, type: 2}
   hallucinationActive: 0
   currentHallucination: {fileID: 0}
-  hallucinationLikelihood: 10
+  hallucinationLikelihood: 2
   player: {fileID: 986942536}
   lightSwitch: {fileID: 3305534055002876172}
 --- !u!4 &1618653014

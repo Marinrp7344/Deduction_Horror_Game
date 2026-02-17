@@ -63,7 +63,7 @@ MonoBehaviour:
     repeatable: 0
   director: {fileID: 0}
   flickerTime: 0.2
-  preFlickerTime: 20
+  preFlickerTime: 1.5
   source: {fileID: 5388138668908665949}
   started: 0
 --- !u!82 &5388138668908665949
