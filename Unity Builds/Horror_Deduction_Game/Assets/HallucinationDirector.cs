@@ -8,7 +8,7 @@ public class HallucinationDirector : MonoBehaviour
     [SerializeField] private Hallucination currentHallucination;
     [SerializeField] private int hallucinationLikelihood;
     [SerializeField] private Camera_Animator player;
-
+    [SerializeField] public LightSwitch lightSwitch;
     public void Start()
     {
         StartCoroutine(HallucinationTimer());

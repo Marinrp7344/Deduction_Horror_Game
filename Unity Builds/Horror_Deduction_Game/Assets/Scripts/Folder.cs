@@ -72,6 +72,8 @@ public class Folder : MonoBehaviour
 
         Story_Evidence_Parent storyParentScript = storyParentObject.GetComponent<Story_Evidence_Parent>();
         evidenceObject.transform.SetParent(storyParentScript.storiesParent.transform);
+      
+        evidenceObject.transform.position = storyParentObject.transform.position -new Vector3(100,0,0);
 
         switch(storyNumber)
         {

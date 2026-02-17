@@ -13,6 +13,7 @@ public class Hallucination : MonoBehaviour
     public GameObject body;
     public HallucinationElement hallucinationElement;
     public HallucinationDirector director;
+    
 
     public void DestroyHallucination()
     {
