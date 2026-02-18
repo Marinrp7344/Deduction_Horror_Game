@@ -16,6 +16,7 @@ MonoBehaviour:
   monsterDescription: 
   monsterPrefab: {fileID: 515771567521653684, guid: 9261e00df4aea8e4dbd4dbf26ca66a77, type: 3}
   monsterReady: 1
+  type: 4
   storyEvidence:
     deadPets:
       evidenceName: Dead Pets
