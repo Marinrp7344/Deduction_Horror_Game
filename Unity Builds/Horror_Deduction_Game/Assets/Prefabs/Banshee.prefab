@@ -718,7 +718,7 @@ MonoBehaviour:
   isActive: 1
   isVisible: 0
   enemyDirector: {fileID: 0}
-  monsterType: 0
+  monsterType: 1
   spawnPosition: {x: 18.656, y: -0.782, z: 3.487}
   aggression: 10
   visibleMultiplier: 2

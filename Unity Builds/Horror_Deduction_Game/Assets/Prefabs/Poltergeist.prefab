@@ -101,6 +101,7 @@ MonoBehaviour:
   isActive: 1
   isVisible: 0
   enemyDirector: {fileID: 0}
+  monsterType: 3
   spawnPosition: {x: 5.876074, y: 1.27, z: 3.24}
   aggression: 5
   visibleMultiplier: 10
@@ -110,6 +111,7 @@ MonoBehaviour:
   rotationX: 0
   view: 0
   enemyFrequency: 0
+  startingAudio: {fileID: 0}
   poltergeistObjects:
   - {fileID: 0}
   - {fileID: 0}

@@ -16,6 +16,45 @@ public class Enemy_Director : MonoBehaviour
         StartCoroutine(ChangeGameState());
     }
 
+    public void CheckIfMonsterActive(Monster_Data monster)
+    {
+        foreach(GameObject enemy in activeEnemies)
+        {
+            Enemy enemyScript = enemy.GetComponent<Enemy>();
+            if(enemyScript.monsterType == monster.type)
+            {
+                activeEnemies.Remove(enemy);
+                Destroy(enemy);
+            }
+        }
+    }
+
+    public bool MonsterActive(Monster_Data monster)
+    {
+        foreach (GameObject enemy in activeEnemies)
+        {
+            Enemy enemyScript = enemy.GetComponent<Enemy>();
+            if (enemyScript.monsterType == monster.type)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
+    public void PlayerGuessedWrongTwice(Monster_Data monster)
+    {
+        foreach (GameObject enemy in activeEnemies)
+        {
+            Enemy enemyScript = enemy.GetComponent<Enemy>();
+            if (enemyScript.monsterType == monster.type)
+            {
+                enemyScript.EnemyAttack();
+            }
+        }
+    }
     private IEnumerator ChangeGameState()
     {
         while (true)

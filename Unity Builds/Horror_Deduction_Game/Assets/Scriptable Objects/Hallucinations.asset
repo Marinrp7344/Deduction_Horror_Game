@@ -28,6 +28,6 @@ MonoBehaviour:
   - name: Light Hallucinations
     hallucinationPrefab: {fileID: 5002535681625789820, guid: d1adf71e3617ee040a5887160f15aa05, type: 3}
     halucinationAudio: {fileID: 0}
-    rarity: 2
+    rarity: 20
     activated: 1
     repeatable: 1

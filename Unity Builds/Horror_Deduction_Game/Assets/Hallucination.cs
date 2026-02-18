@@ -49,6 +49,7 @@ public class Hallucination : MonoBehaviour
     {
         if(player.GetCurrentView() != viewPosition)
         {
+            Debug.Log("Current View: " + player.GetCurrentView() + "\nView Position: " + viewPosition);
             active = true;
             body.SetActive(true);
         }

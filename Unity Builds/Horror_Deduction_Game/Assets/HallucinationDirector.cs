@@ -38,7 +38,7 @@ public class HallucinationDirector : MonoBehaviour
         //Debug.Log("Checking Halucination"+ "\nAttempt Value:" + hallucinationAttempt);
         if (hallucinationAttempt == 1)
         {
-            Debug.Log("Choosing Hallucination");
+            //Debug.Log("Choosing Hallucination");
             ChooseHallucination();
         }
     }
@@ -48,13 +48,13 @@ public class HallucinationDirector : MonoBehaviour
         foreach(HallucinationElement hallucination in hallucinationManager.hallucinationElements)
         {
             int attemptToActivate = Random.Range(0, hallucination.rarity);
-            Debug.Log("Hallucination Attempt To Activate" + "\nAttempt Value:" + attemptToActivate);
+            //Debug.Log("Hallucination Attempt To Activate" + "\nAttempt Value:" + attemptToActivate);
 
             if (!hallucination.activated || hallucination.repeatable)
             {
                 if (attemptToActivate == 1)
                 {
-                    Debug.Log("Hallucination Found");
+                    //Debug.Log("Hallucination Found");
                     ActivateHallucination(hallucination);
                     break;
                 }

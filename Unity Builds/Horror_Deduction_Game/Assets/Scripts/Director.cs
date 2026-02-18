@@ -48,7 +48,7 @@ public class Director : MonoBehaviour
         DisableGuessingMenu();
     }
 
-    private List<Monster_Data> GetReadyMonsters()
+    public List<Monster_Data> GetReadyMonsters()
     {
         List<Monster_Data> readyMonsters = new List<Monster_Data>();
 
@@ -497,10 +497,18 @@ public class Director : MonoBehaviour
         if (currentGuess == currentMonster)
         {
             monsters.Remove(currentMonster);
+            enemyDirector.CheckIfMonsterActive(currentMonster);
         }
         else
         {
-            enemyDirector.SpawnMonster(currentMonster);
+            if(!enemyDirector.MonsterActive(currentMonster))
+            {
+                enemyDirector.SpawnMonster(currentMonster);
+            }
+            else
+            {
+                enemyDirector.PlayerGuessedWrongTwice(currentMonster);
+            }
         }
 
         currentFolder = null;

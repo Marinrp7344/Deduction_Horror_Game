@@ -42,6 +42,8 @@ public class LightSwitch : MonoBehaviour
     {
         if (currentTime <= 0)
         {
+            SwitchLightOff();
+            source.Play();
             lightBroken = true;
         }
     }

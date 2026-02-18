@@ -11,7 +11,10 @@ public class LightHallucination : Hallucination
     public override void Update()
     {
         base.Update();
-        ActivatePhysicalHallucinationProperties();
+        if (viewed && active)
+        {
+            ActivatePhysicalHallucinationProperties();
+        }
     }
 
     public override void ActivatePhysicalHallucinationProperties()
