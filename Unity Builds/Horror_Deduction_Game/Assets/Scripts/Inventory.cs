@@ -20,7 +20,7 @@ public class Inventory : MonoBehaviour
     public LayerMask frequencyMask;
 
     public FrequencyDevice frequencyDevice;
-
+    public List<GameObject> inventoryObjects;
 
     private void Start()
     {
@@ -34,31 +34,64 @@ public class Inventory : MonoBehaviour
         {
             if(currentlySelectedSlot.index == 2 && inventoryActive)
             {
-                frequencyDevice.gameObject.SetActive(true);
+                //frequencyDevice.gameObject.SetActive(true);
             }
             else
             {
-                frequencyDevice.gameObject.SetActive(false);
+                //frequencyDevice.gameObject.SetActive(false);
             }
         }
         if (clicked && currentlySelectedSlot != null && inventoryActive)
         {
             UseItem();
+            UpdateHeldItem();
             UpdateInventoryUISlots();
+        }
+
+    }
+
+    public void UpdateHeldItem()
+    {
+        if (inventoryActive && currentlySelectedSlot != null)
+        {
+            switch (currentlySelectedSlot.itemType)
+            {
+                case InventorySlot.Item.Bullet:
+                    inventoryObjects[0].SetActive(true);
+                    inventoryObjects[1].SetActive(false);
+                    inventoryObjects[2].SetActive(false);
+                    break;
+                case InventorySlot.Item.Crucifix:
+                    inventoryObjects[0].SetActive(false);
+                    inventoryObjects[1].SetActive(true);
+                    inventoryObjects[2].SetActive(false);
+                    break;
+                case InventorySlot.Item.FrequencyDisruptor:
+                    inventoryObjects[0].SetActive(false);
+                    inventoryObjects[1].SetActive(false);
+                    inventoryObjects[2].SetActive(true);
+                    break;
+            }
+        }
+        else
+        {
+            inventoryObjects[0].SetActive(false);
+            inventoryObjects[1].SetActive(false);
+            inventoryObjects[2].SetActive(false);
         }
     }
 
     public void ActivateInventory()
     {
         inventoryActive = true;
-        inventoryUIObject.SetActive(true);
+        //inventoryUIObject.SetActive(true);
     }
 
     public void DeactivateInventory()
     {
         inventoryActive = false;
         inventoryUIObject.SetActive(false);
-        frequencyDevice.gameObject.SetActive(false);
+        //frequencyDevice.gameObject.SetActive(false);
     }
 
     public void UpdateInventoryUISlots()
@@ -193,7 +226,7 @@ public class Inventory : MonoBehaviour
 
             currentlySelectedSlot = inventorySlots[(int)currentIndex];
         }
-
+        UpdateHeldItem();
         UpdateInventoryUISlots();
         
     }
@@ -216,14 +249,22 @@ public class Inventory : MonoBehaviour
                 break;
         }
 
+        UpdateHeldItem();
         UpdateInventoryUISlots();
     }
 
     private void CheckKeyInventoryInteraction(int num)
     {
-        if (currentlySelectedSlot.index == inventorySlots[num].index)
+        if (currentlySelectedSlot != null)
         {
-            currentlySelectedSlot = null;
+            if (currentlySelectedSlot.index == inventorySlots[num].index)
+            {
+                currentlySelectedSlot = null;
+            }
+            else
+            {
+                currentlySelectedSlot = inventorySlots[num];
+            }
         }
         else
         {

@@ -16,7 +16,7 @@ public class FrequencyDevice : MonoBehaviour
     public float errorAmount;
     public bool attackable;
 
-    public RectTransform dialTransform;
+    //public RectTransform dialTransform;
     public FrequencyDial dial;
 
 
@@ -29,9 +29,22 @@ public class FrequencyDevice : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (dial == null)
+        {
+            Debug.LogError("Dial is NULL on " + gameObject.name);
+            return;
+        }
+
         playerFrequency = dial.frequency;
+
         if (targetedEnemy != null)
         {
+            if (lineRenderer == null)
+            {
+                Debug.LogError("LineRenderer is NULL on " + gameObject.name);
+                return;
+            }
+
             lineRenderer.gameObject.SetActive(true);
             float error = Mathf.Abs(playerFrequency - targetFrequency);
             errorAmount = error;
@@ -39,7 +52,8 @@ public class FrequencyDevice : MonoBehaviour
         }
         else
         {
-            lineRenderer.gameObject.SetActive(false);
+            if (lineRenderer != null)
+                lineRenderer.gameObject.SetActive(false);
         }
     }
 

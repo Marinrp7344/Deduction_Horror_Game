@@ -2,12 +2,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class FrequencyDial : MonoBehaviour
 {
-    public RectTransform dialPosition;
+    public Transform dialPosition;
     public Vector2 mousePosition;
     public bool changingValue;
     public bool hovering;
 
     public float frequency;
+    public Camera mainCamera;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,9 +27,9 @@ public class FrequencyDial : MonoBehaviour
     public void DecidePlayerFrequency()
     {
         mousePosition = Mouse.current.position.ReadValue();
-
-        float x = dialPosition.position.x - mousePosition.x;
-        float y = dialPosition.position.y - mousePosition.y;
+        Vector2 dialScreenPosition = mainCamera.WorldToScreenPoint(dialPosition.position);
+        float x = dialScreenPosition.x - mousePosition.x;
+        float y = dialScreenPosition.y - mousePosition.y;
 
         float angleRad = Mathf.Atan2(x, y);
         float angleDeg = (Mathf.Rad2Deg * angleRad) + 180f;
