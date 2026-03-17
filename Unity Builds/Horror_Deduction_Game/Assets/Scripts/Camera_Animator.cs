@@ -9,7 +9,7 @@ public class Camera_Animator : MonoBehaviour
     [SerializeField] private int currentView;
     [SerializeField] private bool animationDone;
     [SerializeField] private bool switchingViews;
-    [SerializeField] private ViewsButtons viewsButtons;
+    [SerializeField] public ViewsButtons viewsButtons;
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private float positionChangeSpeed;
     [SerializeField] private float angleChangeSpeed;

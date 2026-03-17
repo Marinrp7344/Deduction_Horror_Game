@@ -202,7 +202,7 @@ MonoBehaviour:
   player: {fileID: 0}
   rotationY: 90
   rotationX: 0
-  view: 0
+  view: 3
   enemyFrequency: 0
   startingAudio: {fileID: 1541219822069065277}
   chupacabra: {fileID: 5208381229324337306}

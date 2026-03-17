@@ -21,6 +21,7 @@ public class Image_Evidence : MonoBehaviour
     public Evidence_Data evidenceSO;
     public ImageInfo currentImage;
     public int currentImageIndex;
+    public Camera_Animator player;
 
     private void Start()
     {
@@ -31,12 +32,14 @@ public class Image_Evidence : MonoBehaviour
 
     public void ActivateImage()
     {
+        player.viewsButtons.DisableButtons();
         imageUI.SetActive(true);
         ResetValues();
     }
 
     public void DeactivateImage()
     {
+        player.viewsButtons.ChangeButtons(0);
         imageUI.SetActive(false);
         ResetValues();
     }

@@ -11,18 +11,28 @@ public class Story_Evidence_Parent : MonoBehaviour
     public GameObject storiesParent;
     public AudioSource paperChange;
     public AudioSource paperPickedUp;
+    public bool activated;
+
+    public Camera_Animator player;
 
     public void ActivateStories()
     {
-        stories.SetActive(true);
-        ChangeStory(0);
-        paperPickedUp.pitch = Random.Range(0.75f, 1);
-        paperPickedUp.Play();
+        if (!activated)
+        {
+            activated = true;
+            stories.SetActive(true);
+            ChangeStory(0);
+            paperPickedUp.pitch = Random.Range(0.75f, 1);
+            paperPickedUp.Play();
+            player.viewsButtons.DisableButtons();
+        }
     }
 
     public void DeactivateStories()
     {
+        player.viewsButtons.ChangeButtons(0);
         stories.SetActive(false);
+        activated = false;
     }
 
     public void ChangeStory(int indexChange)

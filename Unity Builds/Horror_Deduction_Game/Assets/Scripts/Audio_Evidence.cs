@@ -19,6 +19,7 @@ public class Audio_Evidence : MonoBehaviour
     public Slider audioSlider;
     public bool changingSlider;
     public float currentLength;
+    public Camera_Animator player;
 
     public AudioMixer audioMixer;
 
@@ -374,11 +375,13 @@ public class Audio_Evidence : MonoBehaviour
     {
         StopAudio();
         audioMenu.SetActive(false);
+        player.viewsButtons.ChangeButtons(0);
     }
 
     public void OpenAudio()
     {
         audioMenu.SetActive(true);
+        player.viewsButtons.DisableButtons();
     }
 
 

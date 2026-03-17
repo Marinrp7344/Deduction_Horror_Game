@@ -726,7 +726,7 @@ MonoBehaviour:
   player: {fileID: 0}
   rotationY: -90
   rotationX: 0
-  view: 0
+  view: 2
   enemyFrequency: 0
   startingAudio: {fileID: 0}
   banshee: {fileID: 5472814361645877649}

@@ -8,7 +8,10 @@ public class FrequencyDial : MonoBehaviour
     public bool hovering;
 
     public float frequency;
+    public float lastFrequency;
+    public float dialThreshold;
     public Camera mainCamera;
+    public AudioSource dialTurnAudio;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,12 +23,18 @@ public class FrequencyDial : MonoBehaviour
     {
         if(changingValue)
         {
+            float changeInValue = Mathf.Abs(frequency - lastFrequency);
+            if(!dialTurnAudio.isPlaying && changeInValue > 2)
+            {
+                dialTurnAudio.Play();
+            }
             DecidePlayerFrequency();
         }
     }
 
     public void DecidePlayerFrequency()
     {
+        lastFrequency = frequency;
         mousePosition = Mouse.current.position.ReadValue();
         Vector2 dialScreenPosition = mainCamera.WorldToScreenPoint(dialPosition.position);
         float x = dialScreenPosition.x - mousePosition.x;

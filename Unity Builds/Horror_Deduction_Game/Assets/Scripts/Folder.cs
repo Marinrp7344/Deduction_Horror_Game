@@ -12,6 +12,7 @@ public class Folder : MonoBehaviour
 
     public GameObject storyParentPrefab;
     public GameObject storyParentObject;
+    public Director director;
 
     public List<AudioClip> genericMainAudioClips = new List<AudioClip>();
     public List<AudioClip> genericStaticAudioClips = new List<AudioClip>();
@@ -72,6 +73,7 @@ public class Folder : MonoBehaviour
 
         Story_Evidence_Parent storyParentScript = storyParentObject.GetComponent<Story_Evidence_Parent>();
         evidenceObject.transform.SetParent(storyParentScript.storiesParent.transform);
+        storyParentScript.player = director.cameraAnimator;
       
         evidenceObject.transform.position = storyParentObject.transform.position -new Vector3(100,0,0);
 
@@ -117,7 +119,7 @@ public class Folder : MonoBehaviour
         int mainClipIndex = Random.Range(0, genericMainAudioClips.Count);
         int staticClipIndex = Random.Range(0, genericStaticAudioClips.Count);
         audioEvidence.audioPlayer = audioSource;
-
+        audioEvidence.player = director.cameraAnimator;
         if (evidence.mimicClip == null)
         {
             audioEvidence.audioClips.Add(genericMainAudioClips[mainClipIndex]);
@@ -135,6 +137,7 @@ public class Folder : MonoBehaviour
     public void ProcessImage(GameObject evidenceObject, Evidence_Data evidence)
     {
         Image_Evidence imageEvidence = evidenceObject.GetComponent<Image_Evidence>();
+        imageEvidence.player = director.cameraAnimator;
         imageEvidence.evidenceSO = evidence;
     }
 

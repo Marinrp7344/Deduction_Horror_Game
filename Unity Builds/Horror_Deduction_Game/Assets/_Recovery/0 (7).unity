@@ -15462,17 +15462,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Inventory
   inventorySlots:
-  - index: 1
+  - index: 0
     icon: {fileID: 0}
     amount: 100
     charge: 0
     itemType: 1
-  - index: 2
+  - index: 1
     icon: {fileID: 0}
     amount: 100
     charge: 100
     itemType: 2
-  - index: 3
+  - index: 2
     icon: {fileID: 0}
     amount: 10
     charge: 0
@@ -15507,7 +15507,6 @@ MonoBehaviour:
   - {fileID: 1728775796}
   crucifixAudio: {fileID: 1894923026}
   gunShotPrefab: {fileID: 6444478900061053036, guid: 477f3024cce6620438d01bf9e95aedd8, type: 3}
-  player: {fileID: 986942536}
 --- !u!114 &986942540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24105,7 +24104,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 0d4bc195428b8bd46a8df60b1e1ad181, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -25737,16 +25736,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ce4f39ad3aaaf9140bb22be1cc57effe, type: 2}
   - {fileID: 11400000, guid: caa76a0be7e3c1a47a605d55fedb91e4, type: 2}
   - {fileID: 11400000, guid: bc67886e75cb4c547ab93f5ffc93245e, type: 2}
-  - {fileID: 11400000, guid: 920b0dca8c27b6c45a4858d794c045da, type: 2}
-  - {fileID: 11400000, guid: bb8fe306f00cd374d8e37c1eb05fefd1, type: 2}
-  - {fileID: 11400000, guid: 975f038527b874742bc3f4557e2a7776, type: 2}
-  - {fileID: 11400000, guid: 9c190e8ed11060a46be38bed104dcb1a, type: 2}
-  - {fileID: 11400000, guid: 0f59821f6cafc3d4fba0729bd6416ccb, type: 2}
-  - {fileID: 11400000, guid: 3ba73c37e2dacb34c97d44cc04eae8c2, type: 2}
-  - {fileID: 11400000, guid: ddbfdfe2482ec594081f37564fefa605, type: 2}
-  - {fileID: 11400000, guid: 775a7fdb43ee4824897d6f398ef07d64, type: 2}
-  - {fileID: 11400000, guid: dbffe3d070015744686d8cec2e75a59b, type: 2}
-  - {fileID: 11400000, guid: 4c6edf2241d2ad144800a744894c896e, type: 2}
   folder: {fileID: 251206376181590000, guid: 7939dd8de7facd944a1f33074dd80095, type: 3}
   folderSpawnPosition: {x: 7.869, y: 0.589, z: -5.52734}
   cameraAnimator: {fileID: 986942536}

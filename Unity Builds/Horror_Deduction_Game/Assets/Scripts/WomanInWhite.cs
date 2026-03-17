@@ -20,7 +20,7 @@ public class WomanInWhite : Enemy
     }
     public override void ChangeState()
     {
-        if (isActive)
+        if (isActive && player.GetCurrentView() == 0)
         {
             if (!isVisible)
             {

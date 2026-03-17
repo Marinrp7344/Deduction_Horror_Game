@@ -25,7 +25,7 @@ public class Director : MonoBehaviour
     [SerializeField] private List<Evidence_Data> possibleEvidence;
     [SerializeField] private GameObject folder;
     [SerializeField] private Vector3 folderSpawnPosition;
-    [SerializeField] private Camera_Animator cameraAnimator;
+    [SerializeField] public Camera_Animator cameraAnimator;
     [SerializeField] private GameObject currentFolder;
     [SerializeField] private Enemy_Director enemyDirector;
 
@@ -96,6 +96,7 @@ public class Director : MonoBehaviour
         folderScript.audioSource = audioSource;
         folderScript.evidence = newEvidence;
         folderScript.cameraAnimator = cameraAnimator;
+        folderScript.director = this;
         folderScript.InitializeEvidence();
         currentFolder = newFolder;
     }

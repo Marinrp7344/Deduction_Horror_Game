@@ -22,6 +22,9 @@ public class Inventory : MonoBehaviour
     public FrequencyDevice frequencyDevice;
     public List<GameObject> inventoryObjects;
 
+    public AudioSource crucifixAudio;
+    public GameObject gunShotPrefab;
+    public Camera_Animator player;
     private void Start()
     {
         UpdateInventoryUISlots();
@@ -43,9 +46,19 @@ public class Inventory : MonoBehaviour
         }
         if (clicked && currentlySelectedSlot != null && inventoryActive)
         {
-            UseItem();
-            UpdateHeldItem();
-            UpdateInventoryUISlots();
+            if (currentlySelectedSlot.itemType != InventorySlot.Item.None)
+            {
+                UseItem();
+                UpdateHeldItem();
+                UpdateInventoryUISlots();
+            }
+        }
+        else
+        {
+            if(crucifixAudio.isPlaying)
+            {
+                crucifixAudio.Stop();
+            }
         }
 
     }
@@ -72,18 +85,21 @@ public class Inventory : MonoBehaviour
                     inventoryObjects[2].SetActive(true);
                     break;
             }
+            player.viewsButtons.DisableButtons();
         }
         else
         {
             inventoryObjects[0].SetActive(false);
             inventoryObjects[1].SetActive(false);
             inventoryObjects[2].SetActive(false);
+            player.viewsButtons.ChangeButtons(player.GetCurrentView());
         }
     }
 
     public void ActivateInventory()
     {
         inventoryActive = true;
+        
         //inventoryUIObject.SetActive(true);
     }
 
@@ -129,6 +145,7 @@ public class Inventory : MonoBehaviour
     {
         Ray ray = playerCam.ScreenPointToRay(Mouse.current.position.ReadValue());
         RaycastHit hit;
+        Instantiate(gunShotPrefab, transform.position, Quaternion.identity);
 
         if (Physics.Raycast(ray, out hit, shootRange, shootingMask))
         {
@@ -157,6 +174,10 @@ public class Inventory : MonoBehaviour
     {
         Ray ray = playerCam.ScreenPointToRay(Mouse.current.position.ReadValue());
         RaycastHit hit;
+        if (!crucifixAudio.isPlaying)
+        {
+            crucifixAudio.Play();
+        }
 
         if (Physics.Raycast(ray, out hit, shootRange, crucifixMask))
         {
@@ -270,6 +291,11 @@ public class Inventory : MonoBehaviour
         {
             currentlySelectedSlot = inventorySlots[num];
         }
+    }
+
+    public void LiftButton()
+    {
+
     }
 }
 

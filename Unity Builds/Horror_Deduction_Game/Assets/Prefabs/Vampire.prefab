@@ -1810,7 +1810,7 @@ MonoBehaviour:
   player: {fileID: 0}
   rotationY: 0
   rotationX: -90
-  view: 0
+  view: 1
   enemyFrequency: 0
   startingAudio: {fileID: 0}
   position1: {x: 6.87, y: 4.192, z: 9.191}

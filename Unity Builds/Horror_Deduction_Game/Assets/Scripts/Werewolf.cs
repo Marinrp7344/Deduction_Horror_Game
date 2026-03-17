@@ -28,7 +28,7 @@ public class Werewolf : Enemy
 
     public override void ChangeState()
     {
-        if (isActive)
+        if (isActive && view != player.GetCurrentView())
         {
             if (!isLunging)
             {

@@ -109,7 +109,7 @@ MonoBehaviour:
   player: {fileID: 0}
   rotationY: 0
   rotationX: 0
-  view: 0
+  view: 1
   enemyFrequency: 0
   startingAudio: {fileID: 0}
   poltergeistObjects:

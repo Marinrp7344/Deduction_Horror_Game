@@ -1,0 +1,456 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa8ec57da4c56b47931af0fe93c4c3b, type: 3}
+  m_Name: ColdTemps_Missing_Memory
+  m_EditorClassIdentifier: Assembly-CSharp::Evidence_Data
+  monsterName: 
+  monsterDescription: 
+  monsterPrefab: {fileID: 0}
+  monsterReady: 0
+  type: 0
+  storyEvidence:
+    deadPets:
+      evidenceName: Dead Pets
+      evidenceDescription: Reports of Dead Pets from Civilians
+      evidenceRelevant: 0
+      evidenceType: 0
+    coldTemperatures:
+      evidenceName: Cold Temperatures
+      evidenceDescription: Cold Temperatures Reported During Incidents
+      evidenceRelevant: 1
+      evidenceType: 0
+    scratching:
+      evidenceName: Scratching
+      evidenceDescription: Scrathcing Sounds Reported
+      evidenceRelevant: 0
+      evidenceType: 0
+    humanoid:
+      evidenceName: Humanoids
+      evidenceDescription: Humanoid Creature Spotted During Incidents
+      evidenceRelevant: 0
+      evidenceType: 0
+    flyingCreature:
+      evidenceName: Flying
+      evidenceDescription: A Flying Creature Is Seen During Incident
+      evidenceRelevant: 0
+      evidenceType: 0
+    disappearingFigure:
+      evidenceName: Disappering Figure
+      evidenceDescription: A Figure Is seen vanishing into thin air
+      evidenceRelevant: 0
+      evidenceType: 0
+    beastLike:
+      evidenceName: Beast Like
+      evidenceDescription: A Beast Like Creature often described as Furry or Animal
+        Like
+      evidenceRelevant: 0
+      evidenceType: 0
+    missingPerson:
+      evidenceName: Missing Person
+      evidenceDescription: A person is reported missing during an Incident
+      evidenceRelevant: 1
+      evidenceType: 0
+    memoryGaps:
+      evidenceName: Memory Gaps
+      evidenceDescription: Gaps in memories proceeding or during anomoly incidents
+      evidenceRelevant: 1
+      evidenceType: 0
+  policeReportEvidence:
+    propertyDamage:
+      evidenceName: Property Damage
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 1
+    humanoidSuspect:
+      evidenceName: Humanoid Suspect
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 1
+    missingPeople:
+      evidenceName: Missing People
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 1
+    bloodDrainedVictims:
+      evidenceName: Blood Drained Humans or Animals
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 1
+    suddenDeaths:
+      evidenceName: Sudden Deaths
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 1
+    eveningReports:
+      evidenceName: Evening Reports
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 1
+    anytimeReports:
+      evidenceName: Appears Anytime
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 1
+    animalAttacks:
+      evidenceName: Animal Attacks
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 1
+  videoEvidence:
+    invisibleAssailant:
+      evidenceName: Invisible Assailant
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 2
+    floatingObjects:
+      evidenceName: Floating Object
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 2
+    cameraDistortion:
+      evidenceName: Camera Distortion
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 2
+    coldSpots:
+      evidenceName: Cold Spots
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 2
+    bulkyCreature:
+      evidenceName: Bulky Creature
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 2
+    animalLike:
+      evidenceName: Animal Like
+      evidenceDescription: 
+      evidenceRelevant: 0
+      evidenceType: 2
+    disappearingFigure:
+      evidenceName: Disappering Figure
+      evidenceDescription: A Figure Is seen vanishing into thin air
+      evidenceRelevant: 0
+      evidenceType: 2
+    flying:
+      evidenceName: Flying Figure
+      evidenceDescription: A figure is seen flying in the air
+      evidenceRelevant: 0
+      evidenceType: 2
+  audioEvidence:
+    whispering:
+      evidenceName: Whispering
+      evidenceDescription: Whispering can clearly be heard after fixing audio
+      evidenceRelevant: 0
+      evidenceType: 3
+    crying:
+      evidenceName: Crying
+      evidenceDescription: Crying can clearly be heard after fixing audio
+      evidenceRelevant: 0
+      evidenceType: 3
+    growls:
+      evidenceName: Growling
+      evidenceDescription: Growling can clearly be heard after fixing audio
+      evidenceRelevant: 0
+      evidenceType: 3
+    mimicry:
+      evidenceName: Mimicry
+      evidenceDescription: Voices can be heard mimicking voices the player has heard
+      evidenceRelevant: 0
+      evidenceType: 3
+    scratching:
+      evidenceName: Scratching
+      evidenceDescription: Scratching can clearly be heard after fixing audio
+      evidenceRelevant: 0
+      evidenceType: 3
+    spectrogramSymbols:
+      evidenceName: Symbols
+      evidenceDescription: Symbols can be seen in spectrographic transcript of audio
+      evidenceRelevant: 0
+      evidenceType: 3
+    missingAudio:
+      evidenceName: Missing Audio
+      evidenceDescription: Chunks of are clearly missing from the audio
+      evidenceRelevant: 0
+      evidenceType: 3
+    spectrogramWords:
+      evidenceName: Spectrogram Words
+      evidenceDescription: Words are Embedded in to audio source
+      evidenceRelevant: 0
+      evidenceType: 3
+    reverseSpeech:
+      evidenceName: Reverse Speech
+      evidenceDescription: After reversing audio words become legible
+      evidenceRelevant: 0
+      evidenceType: 3
+  imageEvidence:
+    negativeSpace:
+      evidenceName: Negative Spacing
+      evidenceDescription: When inverting images figures that weren't previously
+        there show up.
+      evidenceRelevant: 0
+      evidenceType: 4
+    thermalSignature:
+      evidenceName: Thermal Signatures
+      evidenceDescription: When checking thermal Levels unsual Signatures appear.
+      evidenceRelevant: 0
+      evidenceType: 4
+    clawMarks:
+      evidenceName: Claw Marks
+      evidenceDescription: Visible Claw Marks on the sides of trees or buildings
+      evidenceRelevant: 0
+      evidenceType: 4
+    starSigil:
+      evidenceName: Star Sigil
+      evidenceDescription: A sigil in the form of a 7 pointed star is seen somewhere
+        in the image.
+      evidenceRelevant: 0
+      evidenceType: 4
+    crossArrowSigil:
+      evidenceName: Cross Arrow Sigil
+      evidenceDescription: A sigil in the form of a Cross with an arrow tip is seen
+        somewhere in the image.
+      evidenceRelevant: 0
+      evidenceType: 4
+    obscuredFaces:
+      evidenceName: Obscured Faces
+      evidenceDescription: An obscured face is seen somewhere in the image
+      evidenceRelevant: 0
+      evidenceType: 4
+    possessedPerson:
+      evidenceName: Possessed Person
+      evidenceDescription: Through photo editing you can see residue of human possession
+      evidenceRelevant: 0
+      evidenceType: 4
+    shadowFigures:
+      evidenceName: Shadow Figure
+      evidenceDescription: A shadowy figure is seen in the image often obscured.
+      evidenceRelevant: 0
+      evidenceType: 4
+    bloodPresent:
+      evidenceName: Blood Present
+      evidenceDescription: Blood is clearly seen visibly or through UV photography
+      evidenceRelevant: 0
+      evidenceType: 4
+  storyList:
+  - evidenceName: Dead Pets
+    evidenceDescription: Reports of Dead Pets from Civilians
+    evidenceRelevant: 0
+    evidenceType: 0
+  - evidenceName: Cold Temperatures
+    evidenceDescription: Cold Temperatures Reported During Incidents
+    evidenceRelevant: 1
+    evidenceType: 0
+  - evidenceName: Scratching
+    evidenceDescription: Scrathcing Sounds Reported
+    evidenceRelevant: 0
+    evidenceType: 0
+  - evidenceName: Humanoids
+    evidenceDescription: Humanoid Creature Spotted During Incidents
+    evidenceRelevant: 0
+    evidenceType: 0
+  - evidenceName: Flying
+    evidenceDescription: A Flying Creature Is Seen During Incident
+    evidenceRelevant: 0
+    evidenceType: 0
+  - evidenceName: Disappering Figure
+    evidenceDescription: A Figure Is seen vanishing into thin air
+    evidenceRelevant: 0
+    evidenceType: 0
+  - evidenceName: Beast Like
+    evidenceDescription: A Beast Like Creature often described as Furry or Animal
+      Like
+    evidenceRelevant: 0
+    evidenceType: 0
+  - evidenceName: Missing Person
+    evidenceDescription: A person is reported missing during an Incident
+    evidenceRelevant: 1
+    evidenceType: 0
+  - evidenceName: Memory Gaps
+    evidenceDescription: Gaps in memories proceeding or during anomoly incidents
+    evidenceRelevant: 1
+    evidenceType: 0
+  imageList:
+  - evidenceName: Negative Spacing
+    evidenceDescription: When inverting images figures that weren't previously there
+      show up.
+    evidenceRelevant: 0
+    evidenceType: 4
+  - evidenceName: Thermal Signatures
+    evidenceDescription: When checking thermal Levels unsual Signatures appear.
+    evidenceRelevant: 0
+    evidenceType: 4
+  - evidenceName: Claw Marks
+    evidenceDescription: Visible Claw Marks on the sides of trees or buildings
+    evidenceRelevant: 0
+    evidenceType: 4
+  - evidenceName: Star Sigil
+    evidenceDescription: A sigil in the form of a 7 pointed star is seen somewhere
+      in the image.
+    evidenceRelevant: 0
+    evidenceType: 4
+  - evidenceName: Cross Arrow Sigil
+    evidenceDescription: A sigil in the form of a Cross with an arrow tip is seen
+      somewhere in the image.
+    evidenceRelevant: 0
+    evidenceType: 4
+  - evidenceName: Obscured Faces
+    evidenceDescription: An obscured face is seen somewhere in the image
+    evidenceRelevant: 0
+    evidenceType: 4
+  - evidenceName: Possessed Person
+    evidenceDescription: Through photo editing you can see residue of human possession
+    evidenceRelevant: 0
+    evidenceType: 4
+  - evidenceName: Shadow Figure
+    evidenceDescription: A shadowy figure is seen in the image often obscured.
+    evidenceRelevant: 0
+    evidenceType: 4
+  - evidenceName: Blood Present
+    evidenceDescription: Blood is clearly seen visibly or through UV photography
+    evidenceRelevant: 0
+    evidenceType: 4
+  audioList:
+  - evidenceName: Whispering
+    evidenceDescription: Whispering can clearly be heard after fixing audio
+    evidenceRelevant: 0
+    evidenceType: 3
+  - evidenceName: Crying
+    evidenceDescription: Crying can clearly be heard after fixing audio
+    evidenceRelevant: 0
+    evidenceType: 3
+  - evidenceName: Growling
+    evidenceDescription: Growling can clearly be heard after fixing audio
+    evidenceRelevant: 0
+    evidenceType: 3
+  - evidenceName: Mimicry
+    evidenceDescription: Voices can be heard mimicking voices the player has heard
+    evidenceRelevant: 0
+    evidenceType: 3
+  - evidenceName: Scratching
+    evidenceDescription: Scratching can clearly be heard after fixing audio
+    evidenceRelevant: 0
+    evidenceType: 3
+  - evidenceName: Symbols
+    evidenceDescription: Symbols can be seen in spectrographic transcript of audio
+    evidenceRelevant: 0
+    evidenceType: 3
+  - evidenceName: Missing Audio
+    evidenceDescription: Chunks of are clearly missing from the audio
+    evidenceRelevant: 0
+    evidenceType: 3
+  - evidenceName: Spectrogram Words
+    evidenceDescription: Words are Embedded in to audio source
+    evidenceRelevant: 0
+    evidenceType: 3
+  - evidenceName: Reverse Speech
+    evidenceDescription: After reversing audio words become legible
+    evidenceRelevant: 0
+    evidenceType: 3
+  policeReportList:
+  - evidenceName: Property Damage
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 1
+  - evidenceName: Humanoid Suspect
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 1
+  - evidenceName: Missing People
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 1
+  - evidenceName: Blood Drained Humans or Animals
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 1
+  - evidenceName: Sudden Deaths
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 1
+  - evidenceName: Evening Reports
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 1
+  - evidenceName: Appears Anytime
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 1
+  - evidenceName: Animal Attacks
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 1
+  videoList:
+  - evidenceName: Invisible Assailant
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 2
+  - evidenceName: Floating Object
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 2
+  - evidenceName: Camera Distortion
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 2
+  - evidenceName: Cold Spots
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 2
+  - evidenceName: Bulky Creature
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 2
+  - evidenceName: Animal Like
+    evidenceDescription: 
+    evidenceRelevant: 0
+    evidenceType: 2
+  - evidenceName: Disappering Figure
+    evidenceDescription: A Figure Is seen vanishing into thin air
+    evidenceRelevant: 0
+    evidenceType: 2
+  - evidenceName: Flying Figure
+    evidenceDescription: A figure is seen flying in the air
+    evidenceRelevant: 0
+    evidenceType: 2
+  evidenceType: 0
+  evidencePrefab: {fileID: 6586202626002414144, guid: b02f6cf486235c440987b4f4073b828e, type: 3}
+  storyName: N/A
+  storyDate: N/A
+  storyDescription: "I had woken up in a box. The last couple of nights before it
+    I think I had been sleepwalking. Every morning I would wake up ridiculously sore
+    and rigid from the cold as if I had just done a full body workout in the snow
+    and my hands would be an absolute dirty mess. My doctor said it was just stress
+    causing the sleepwalking but no matter what advice I took and what mitigations
+    I would put up I would always wake up in the same state. As alarming as this
+    would normally be, the other thing is that people have been reported missing
+    all week. Just from their homes never to be seen again. I knew I had to get it
+    under control before I accidentally let some creep in and kidnap me. So I handcuffed
+    myself to my bed thinking that I would be completely safe. I woke up  in a box
+    with bloodied hands, handcuffs still strapped to me. I tried yelling for help
+    banging on the box but no one answered. After hours of banging and waiting I
+    knew no one was coming. I used the handcuffs to chip away at the box and when
+    I was first getting through dirt began to seep in. I couldn\u2019t even debate
+    it too hard because at some point the weight of the dirt imploded and I only
+    had seconds to get out before I suffocated. When I finally did I just saw a field
+    full of mounds that looked freshly dug."
+  storyComments: No Comments
+  policeReportTitle: 
+  policeReportDescription: 
+  videoClip: {fileID: 0}
+  audioClip: {fileID: 0}
+  mimicClip: {fileID: 0}
+  image:
+    image1: []
+    image2: []
+    image3: []
+    image4: []
