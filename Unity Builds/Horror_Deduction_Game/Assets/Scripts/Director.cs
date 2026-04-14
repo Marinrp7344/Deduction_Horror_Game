@@ -2,6 +2,9 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Video;
 using UnityEngine.Audio;
+using static Evidence_Data;
+using static EvidenceData;
+
 public class Director : MonoBehaviour
 {
     [SerializeField] public List<Monster_Data> monsters;
@@ -39,6 +42,9 @@ public class Director : MonoBehaviour
     public List<Evidence_Data> randomList = new List<Evidence_Data>();
     public int maxDifferenceStrength;
     public int currentDifferenceStrength;
+
+    [SerializeField] private List<Evidence_Data> storiesList;
+    [SerializeField] private List<Evidence_Data> imagesList;
 
     public void Start()
     {
@@ -171,6 +177,53 @@ public class Director : MonoBehaviour
         return validEvidence;
     }
 
+    public List<Evidence_Data> GenerateValidEvidence(Monster_Data monster)
+    {
+
+        return null;
+    }
+
+    public Evidence_Data GenerateStoryList(Monster_Data monster)
+    {
+        List<Evidence_Data> randomizedPossibleEvidence = GenerateRandomLoop(storiesList);
+        currentDifferenceStrength = 0;
+        Evidence_Data validStory = null;
+
+        foreach (Evidence_Data story in randomizedPossibleEvidence)
+        {
+            List<EvidenceData> chosenEvidenceTraits = new List<EvidenceData>();
+            bool isValid = false;
+            int i = 0;
+
+            foreach (EvidenceData data in monster.storyList)
+            {
+                if (story.storyList[i].evidenceRelevant == true)
+                {
+                    if (data.evidenceRelevant == true)
+                    {
+                        chosenEvidenceTraits.Add(data);
+                        isValid = true;
+                        currentDifferenceStrength += 1;
+                    }
+                }
+                i++;
+            }
+
+            if (isValid)
+            {
+                int randomTrait = Random.Range(0, chosenEvidenceTraits.Count);
+                chosenTrait = chosenEvidenceTraits[randomTrait];
+                validStory = story;
+            }
+        }
+        return validStory;
+    }
+
+    public Evidence_Data GenerateImageList(Monster_Data monster)
+    {
+
+        return null;
+    }
 
     public List<Evidence_Data> FindValidEvidence(Monster_Data monster)
     {
