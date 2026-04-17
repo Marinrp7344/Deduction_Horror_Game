@@ -19,14 +19,23 @@ public class Image_Evidence : MonoBehaviour
     public GameObject imageUI;
 
     public Evidence_Data evidenceSO;
-    public ImageInfo currentImage;
+    public ImageClassifier currentImage;
+    public List<ImageClassifier> currentImages;
     public int currentImageIndex;
     public Camera_Animator player;
+
+    private readonly System.Random rand = new System.Random();
 
     private void Start()
     {
         currentImageIndex = 0;
-        currentImage = evidenceSO.image;
+        currentImages.Add(evidenceSO.image.image1);
+        currentImages.Add(evidenceSO.image.image2);
+        currentImages.Add(evidenceSO.image.image3);
+
+        currentImages = GenerateRandomImageLoop(currentImages);
+
+        currentImage = currentImages[0];
         ChangeImage(0);
     }
 
@@ -99,39 +108,65 @@ public class Image_Evidence : MonoBehaviour
 
         if(currentImageIndex < 0)
         {
-            currentImageIndex = 3;
+            currentImageIndex = 2;
         }
-        else if(currentImageIndex > 3)
+        else if(currentImageIndex > 2)
         {
             currentImageIndex = 0;
         }
 
-        switch(currentImageIndex)
-        {
-            case 0:
-                mainImage.texture = currentImage.image1[0];
-                thermalImage.texture = currentImage.image1[1];
-                invertImage.texture = currentImage.image1[2];
-                break;
-            case 1:
-                mainImage.texture = currentImage.image2[0];
-                thermalImage.texture = currentImage.image2[1];
-                invertImage.texture = currentImage.image2[2];
-                break;
-            case 2:
-                mainImage.texture = currentImage.image3[0];
-                thermalImage.texture = currentImage.image3[1];
-                invertImage.texture = currentImage.image3[2];
-                break;
-            case 3:
-                mainImage.texture = currentImage.image4[0];
-                thermalImage.texture = currentImage.image4[1];
-                invertImage.texture = currentImage.image4[2];
-                break;
+        ChangeTextures(currentImageIndex);
 
-        }
+      /*
+      switch(currentImageIndex)
+      {  
+          case 0:
+              mainImage.texture = currentImages.image1[0];
+              thermalImage.texture = currentImages.image1[1];
+              invertImage.texture = currentImages.image1[2];
+              break;
+          case 1:
+              mainImage.texture = currentImage.image2[0];
+              thermalImage.texture = currentImage.image2[1];
+              invertImage.texture = currentImage.image2[2];
+              break;
+          case 2:
+              mainImage.texture = currentImage.image3[0];
+              thermalImage.texture = currentImage.image3[1];
+              invertImage.texture = currentImage.image3[2];
+              break;
+          case 3:
+              mainImage.texture = currentImage.image4[0];
+              thermalImage.texture = currentImage.image4[1];
+              invertImage.texture = currentImage.image4[2];
+              break;
+
+      }
+        */
     }
 
+    public void ChangeTextures(int index)
+    {
+        if (currentImages[index].chosen)
+        {
+            mainImage.texture = evidenceSO.image.chosenImage.image;
+        }
+        
+    }
+
+    public List<ImageClassifier> GenerateRandomImageLoop(List<ImageClassifier> listToShuffle)
+    {
+
+        for (int i = listToShuffle.Count - 1; i > 0; i--)
+        {
+            int k = rand.Next(i + 1);
+            ImageClassifier value = listToShuffle[k];
+            listToShuffle[k] = listToShuffle[i];
+            listToShuffle[i] = value;
+        }
+        return listToShuffle;
+    }
 }
+
 
 

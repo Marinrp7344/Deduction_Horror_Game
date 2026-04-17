@@ -69,8 +69,6 @@ public class Folder : MonoBehaviour
 
     public void ProcessStory(GameObject evidenceObject, Evidence_Data evidence)
     {
-
-
         Story_Evidence_Parent storyParentScript = storyParentObject.GetComponent<Story_Evidence_Parent>();
         evidenceObject.transform.SetParent(storyParentScript.storiesParent.transform);
         storyParentScript.player = director.cameraAnimator;

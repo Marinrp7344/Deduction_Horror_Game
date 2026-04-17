@@ -36,8 +36,10 @@ public class Evidence_Data : Monster_Data
 [System.Serializable]
 public class ImageInfo
 {
-    public List<Texture> image1;
-    public List<Texture> image2;
-    public List<Texture> image3;
-    public List<Texture> image4;
+    public ImageClassifier image1;
+    public ImageClassifier image2;
+    public ImageClassifier image3;
+
+    public ImageDataPoint chosenImage;
 }
+

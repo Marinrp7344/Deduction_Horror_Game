@@ -44,8 +44,9 @@ public class Director : MonoBehaviour
     public int currentDifferenceStrength;
 
     [SerializeField] private List<Evidence_Data> storiesList;
-    [SerializeField] private List<Evidence_Data> imagesList;
-
+    [SerializeField] private List<ImageClassifier> imagesList;
+    [SerializeField] private List<ImageClassifier> fillerImagesList;
+    [SerializeField] private GameObject imagePrefab;
     public void Start()
     {
         GenerateGuesses();
@@ -84,7 +85,11 @@ public class Director : MonoBehaviour
         currentMonster = monsterList[randomMonster];
 
 
-        List<Evidence_Data> newEvidence = FindValidEvidence(monsterList[randomMonster]);
+        //List<Evidence_Data> newEvidence = FindValidEvidence(monsterList[randomMonster]);
+        List<Evidence_Data> newEvidence = new List<Evidence_Data>();
+        newEvidence.Add(GenerateStoryList(monsterList[randomMonster]));
+        newEvidence.Add(GenerateImageList(monsterList[randomMonster]));
+
         Debug.Log(newEvidence.Count);
         CreateUnchosenList();
         List<Evidence_Data> extraStories = GetAlternateStories();
@@ -177,11 +182,6 @@ public class Director : MonoBehaviour
         return validEvidence;
     }
 
-    public List<Evidence_Data> GenerateValidEvidence(Monster_Data monster)
-    {
-
-        return null;
-    }
 
     public Evidence_Data GenerateStoryList(Monster_Data monster)
     {
@@ -221,8 +221,74 @@ public class Director : MonoBehaviour
 
     public Evidence_Data GenerateImageList(Monster_Data monster)
     {
+        List<ImageClassifier> randomizedImageList = GenerateRandomImageLoop(imagesList);
+        List<EvidenceData> monsterImageTraitList = GenerateRandomTraitLoop(monster.imageList);
+        EvidenceData chosenTrait = null;
+        ImageDataPoint chosenImage = null;
+        ImageClassifier chosenClassifier = null;
 
-        return null;
+        foreach (EvidenceData trait in monsterImageTraitList)
+        {
+            if(trait.evidenceRelevant == true)
+            {
+                chosenTrait = trait;
+            }
+        }
+
+        foreach(ImageClassifier image in randomizedImageList)
+        {
+            bool isValid = false;
+            foreach(ImageDataPoint data in image.imageDataPoints)
+            {
+                if(data.evidenceName == chosenTrait.evidenceName && data.active == true && chosenTrait.evidenceRelevant == true)
+                {
+                    isValid = true;
+                    chosenImage = data;
+                    image.chosen = true;
+                    chosenClassifier = image;
+                    break;
+                }
+            }
+
+            if(isValid)
+            {
+                break;
+            }
+        }
+
+        Evidence_Data imageData = new Evidence_Data();
+        imageData.evidencePrefab = imagePrefab;
+        imageData.evidenceType = Evidence.Image;
+        int i = 0;
+        foreach(EvidenceData evidence in imageData.imageList)
+        {
+            if(evidence.evidenceName == chosenTrait.evidenceName)
+            {
+                imageData.imageList[i].evidenceRelevant = true;
+                i++;
+                break;
+            }
+        }
+
+        imageData.image.chosenImage = chosenImage;
+        imageData.image.image1 = chosenClassifier;
+        List<ImageClassifier> randomizedFillerImageList = GenerateRandomImageLoop(fillerImagesList);
+        int j = 0;
+        foreach(ImageClassifier image in randomizedFillerImageList)
+        {
+            if (j == 0)
+            {
+                imageData.image.image2 = image;
+            }
+            else if (j == 1)
+            {
+                imageData.image.image3 = image;
+                break;
+            }
+            j++;
+        }
+
+        return imageData;
     }
 
     public List<Evidence_Data> FindValidEvidence(Monster_Data monster)
@@ -372,6 +438,32 @@ public class Director : MonoBehaviour
         {
             int k = rand.Next(i + 1);
             Evidence_Data value = listToShuffle[k];
+            listToShuffle[k] = listToShuffle[i];
+            listToShuffle[i] = value;
+        }
+        return listToShuffle;
+    }
+
+    public List<EvidenceData> GenerateRandomTraitLoop(List<EvidenceData> listToShuffle)
+    {
+
+        for (int i = listToShuffle.Count - 1; i > 0; i--)
+        {
+            int k = rand.Next(i + 1);
+            EvidenceData value = listToShuffle[k];
+            listToShuffle[k] = listToShuffle[i];
+            listToShuffle[i] = value;
+        }
+        return listToShuffle;
+    }
+
+    public List<ImageClassifier> GenerateRandomImageLoop(List<ImageClassifier> listToShuffle)
+    {
+
+        for (int i = listToShuffle.Count - 1; i > 0; i--)
+        {
+            int k = rand.Next(i + 1);
+            ImageClassifier value = listToShuffle[k];
             listToShuffle[k] = listToShuffle[i];
             listToShuffle[i] = value;
         }
