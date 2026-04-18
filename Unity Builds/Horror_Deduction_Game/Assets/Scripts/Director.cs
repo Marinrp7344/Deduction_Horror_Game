@@ -52,6 +52,7 @@ public class Director : MonoBehaviour
         GenerateGuesses();
         GenerateEvidence();
         GenerateNewEvidence();
+        ClearGuessingMenu();
         DisableGuessingMenu();
     }
 
@@ -88,7 +89,13 @@ public class Director : MonoBehaviour
         //List<Evidence_Data> newEvidence = FindValidEvidence(monsterList[randomMonster]);
         List<Evidence_Data> newEvidence = new List<Evidence_Data>();
         newEvidence.Add(GenerateStoryList(monsterList[randomMonster]));
-        newEvidence.Add(GenerateImageList(monsterList[randomMonster]));
+
+        Evidence_Data imageData = GenerateImageList(monsterList[randomMonster]);
+        if(imageData != null)
+        {
+            newEvidence.Add(imageData);
+
+        }
 
         Debug.Log(newEvidence.Count);
         CreateUnchosenList();
@@ -129,7 +136,7 @@ public class Director : MonoBehaviour
 
     public List<Evidence_Data> GetAlternateStories()
     {
-        List<Evidence_Data> randomizedPossibleEvidence = GenerateRandomLoop(possibleEvidence);
+        List<Evidence_Data> randomizedPossibleEvidence = GenerateRandomLoop(storiesList);
         List<Evidence_Data> validEvidence = new List<Evidence_Data>();
 
         foreach(Evidence_Data evidence in randomizedPossibleEvidence)
@@ -204,6 +211,7 @@ public class Director : MonoBehaviour
                         chosenEvidenceTraits.Add(data);
                         isValid = true;
                         currentDifferenceStrength += 1;
+                        Debug.Log("Current Strength: " + currentDifferenceStrength);
                     }
                 }
                 i++;
@@ -214,7 +222,10 @@ public class Director : MonoBehaviour
                 int randomTrait = Random.Range(0, chosenEvidenceTraits.Count);
                 chosenTrait = chosenEvidenceTraits[randomTrait];
                 validStory = story;
+                break;
             }
+
+            
         }
         return validStory;
     }
@@ -240,13 +251,23 @@ public class Director : MonoBehaviour
             bool isValid = false;
             foreach(ImageDataPoint data in image.imageDataPoints)
             {
-                if(data.evidenceName == chosenTrait.evidenceName && data.active == true && chosenTrait.evidenceRelevant == true)
+                if(data.evidenceName == chosenTrait.evidenceName)
                 {
-                    isValid = true;
-                    chosenImage = data;
-                    image.chosen = true;
-                    chosenClassifier = image;
-                    break;
+                    Debug.Log("Names Matched");
+                    if (data.active == true)
+                    {
+                        Debug.Log("Classifier data is active");
+                        if (chosenTrait.evidenceRelevant == true)
+                        {
+                            isValid = true;
+                            chosenImage = data;
+                            image.chosen = true;
+                            chosenClassifier = image;
+                            Debug.Log("Found Image");
+                            break;
+                        }
+                    }
+                    
                 }
             }
 
@@ -257,6 +278,7 @@ public class Director : MonoBehaviour
         }
 
         Evidence_Data imageData = new Evidence_Data();
+        imageData.image = new ImageInfo();
         imageData.evidencePrefab = imagePrefab;
         imageData.evidenceType = Evidence.Image;
         int i = 0;
@@ -270,8 +292,16 @@ public class Director : MonoBehaviour
             }
         }
 
-        imageData.image.chosenImage = chosenImage;
-        imageData.image.image1 = chosenClassifier;
+        if(chosenClassifier != null && chosenImage != null)
+        {
+            imageData.image.chosenImage = chosenImage;
+            imageData.image.image1 = chosenClassifier;
+        }
+        else
+        {
+            return null;
+        }
+        
         List<ImageClassifier> randomizedFillerImageList = GenerateRandomImageLoop(fillerImagesList);
         int j = 0;
         foreach(ImageClassifier image in randomizedFillerImageList)
@@ -546,28 +576,6 @@ public class Director : MonoBehaviour
                 if(guessingData.storyList[i].evidenceRelevant == true)
                 {
                     if(monsterGuess.monster.storyList[i].evidenceRelevant == false)
-                    {
-                        guessPossible = false;
-                    }
-                }
-            }
-
-            for (int i = 0; i < guessingData.policeReportList.Count; i++)
-            {
-                if (guessingData.policeReportList[i].evidenceRelevant == true)
-                {
-                    if (monsterGuess.monster.policeReportList[i].evidenceRelevant == false)
-                    {
-                        guessPossible = false;
-                    }
-                }
-            }
-
-            for (int i = 0; i < guessingData.videoList.Count; i++)
-            {
-                if (guessingData.videoList[i].evidenceRelevant == true)
-                {
-                    if (monsterGuess.monster.videoList[i].evidenceRelevant == false)
                     {
                         guessPossible = false;
                     }

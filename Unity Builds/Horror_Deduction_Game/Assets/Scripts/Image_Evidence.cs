@@ -116,40 +116,36 @@ public class Image_Evidence : MonoBehaviour
         }
 
         ChangeTextures(currentImageIndex);
-
-      /*
-      switch(currentImageIndex)
-      {  
-          case 0:
-              mainImage.texture = currentImages.image1[0];
-              thermalImage.texture = currentImages.image1[1];
-              invertImage.texture = currentImages.image1[2];
-              break;
-          case 1:
-              mainImage.texture = currentImage.image2[0];
-              thermalImage.texture = currentImage.image2[1];
-              invertImage.texture = currentImage.image2[2];
-              break;
-          case 2:
-              mainImage.texture = currentImage.image3[0];
-              thermalImage.texture = currentImage.image3[1];
-              invertImage.texture = currentImage.image3[2];
-              break;
-          case 3:
-              mainImage.texture = currentImage.image4[0];
-              thermalImage.texture = currentImage.image4[1];
-              invertImage.texture = currentImage.image4[2];
-              break;
-
-      }
-        */
     }
 
     public void ChangeTextures(int index)
     {
         if (currentImages[index].chosen)
         {
-            mainImage.texture = evidenceSO.image.chosenImage.image;
+            if(evidenceSO.image.chosenImage.evidenceName == "Negative Spacing")
+            {
+                mainImage.texture = currentImages[index].mainImage.image;
+                thermalImage.texture = currentImages[index].gradientImage.image;
+                invertImage.texture = evidenceSO.image.chosenImage.image;
+            }
+            else if(evidenceSO.image.chosenImage.evidenceName == "Thermal Signatures")
+            {
+                mainImage.texture = currentImages[index].mainImage.image;
+                thermalImage.texture = evidenceSO.image.chosenImage.image;
+                invertImage.texture = currentImages[index].inverseImage.image;
+            }
+            else
+            {
+                mainImage.texture = evidenceSO.image.chosenImage.image;
+                thermalImage.texture = currentImages[index].gradientImage.image;
+                invertImage.texture = currentImages[index].inverseImage.image;
+            }
+        }
+        else
+        {
+            mainImage.texture = currentImages[index].mainImage.image;
+            thermalImage.texture = currentImages[index].gradientImage.image;
+            invertImage.texture = currentImages[index].inverseImage.image;
         }
         
     }

@@ -15,28 +15,66 @@ MonoBehaviour:
   isEvidence: 1
   isFiller: 0
   imageUsed: 0
+  chosen: 0
+  imageData:
+    negativeSpace:
+      evidenceName: Negative Spacing
+      active: 1
+      image: {fileID: 2800000, guid: be4ad20d911454b43a10b918b3c2c344, type: 3}
+    thermalSignature:
+      evidenceName: Thermal Signatures
+      active: 1
+      image: {fileID: 2800000, guid: 871f13988b4f3ef428ef0936057f8052, type: 3}
+    clawMarks:
+      evidenceName: Claw Marks
+      active: 1
+      image: {fileID: 2800000, guid: 362b89767e46d8f4bbff80cb215ab7ff, type: 3}
+    starSigil:
+      evidenceName: Star Sigil
+      active: 0
+      image: {fileID: 0}
+    crossArrowSigil:
+      evidenceName: Cross Arrow Sigil
+      active: 0
+      image: {fileID: 0}
+    obscuredFaces:
+      evidenceName: Obscured Faces
+      active: 0
+      image: {fileID: 0}
+    possessedPerson:
+      evidenceName: Possessed Person
+      active: 0
+      image: {fileID: 0}
+    shadowFigures:
+      evidenceName: Shadow Figure
+      active: 1
+      image: {fileID: 2800000, guid: 6df04d2bb0d17a4449d1b268df105518, type: 3}
+    bloodPresent:
+      evidenceName: Blood Present
+      active: 1
+      image: {fileID: 2800000, guid: f040e0875d324df4aa37bbc6fa673241, type: 3}
   mainImage:
     evidenceName: Main Image
     active: 1
-    image: {fileID: 21300000, guid: ad77b2488c2cbdd4481903b088ecdfba, type: 3}
+    image: {fileID: 2800000, guid: ad77b2488c2cbdd4481903b088ecdfba, type: 3}
   gradientImage:
     evidenceName: Gradient Image
     active: 1
-    image: {fileID: 21300000, guid: d687b3dee009bf24fb189513bd8c8595, type: 3}
+    image: {fileID: 2800000, guid: d687b3dee009bf24fb189513bd8c8595, type: 3}
   inverseImage:
     evidenceName: Inverse Image
     active: 1
-    image: {fileID: 21300000, guid: 871853eceb465f04dac561a2d3fb3198, type: 3}
+    image: {fileID: 2800000, guid: 871853eceb465f04dac561a2d3fb3198, type: 3}
   imageDataPoints:
   - evidenceName: Negative Spacing
     active: 1
-    image: {fileID: 21300000, guid: be4ad20d911454b43a10b918b3c2c344, type: 3}
+    image: {fileID: 2800000, guid: be4ad20d911454b43a10b918b3c2c344, type: 3}
   - evidenceName: Thermal Signatures
     active: 1
-    image: {fileID: 21300000, guid: 871f13988b4f3ef428ef0936057f8052, type: 3}
+    image: {fileID: 2800000, guid: 871f13988b4f3ef428ef0936057f8052, type: 3}
   - evidenceName: Claw Marks
     active: 1
-    image: {fileID: 21300000, guid: 362b89767e46d8f4bbff80cb215ab7ff, type: 3}
+    image: {fileID: 2800000, guid: 362b89767e46d8f4bbff80cb215ab7ff, type: 3}
   - evidenceName: Star Sigil
     active: 0
     image: {fileID: 0}
@@ -51,7 +89,7 @@ MonoBehaviour:
     image: {fileID: 0}
   - evidenceName: Shadow Figure
     active: 1
-    image: {fileID: 21300000, guid: 6df04d2bb0d17a4449d1b268df105518, type: 3}
+    image: {fileID: 2800000, guid: 6df04d2bb0d17a4449d1b268df105518, type: 3}
   - evidenceName: Blood Present
     active: 1
-    image: {fileID: 21300000, guid: f040e0875d324df4aa37bbc6fa673241, type: 3}
+    image: {fileID: 2800000, guid: f040e0875d324df4aa37bbc6fa673241, type: 3}

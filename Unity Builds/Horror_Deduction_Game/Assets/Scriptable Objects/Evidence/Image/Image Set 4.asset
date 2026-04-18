@@ -15,18 +15,56 @@ MonoBehaviour:
   isEvidence: 1
   isFiller: 0
   imageUsed: 0
+  chosen: 0
+  imageData:
+    negativeSpace:
+      evidenceName: Negative Spacing
+      active: 0
+      image: {fileID: 0}
+    thermalSignature:
+      evidenceName: Thermal Signatures
+      active: 0
+      image: {fileID: 0}
+    clawMarks:
+      evidenceName: Claw Marks
+      active: 0
+      image: {fileID: 0}
+    starSigil:
+      evidenceName: Star Sigil
+      active: 0
+      image: {fileID: 0}
+    crossArrowSigil:
+      evidenceName: Cross Arrow Sigil
+      active: 0
+      image: {fileID: 0}
+    obscuredFaces:
+      evidenceName: Obscured Faces
+      active: 1
+      image: {fileID: 2800000, guid: 6bdb101f341e3074a98939ca92055b74, type: 3}
+    possessedPerson:
+      evidenceName: Possessed Person
+      active: 0
+      image: {fileID: 0}
+    shadowFigures:
+      evidenceName: Shadow Figure
+      active: 1
+      image: {fileID: 2800000, guid: 75e6afa81706d5148b0ca817e5bcb7a2, type: 3}
+    bloodPresent:
+      evidenceName: Blood Present
+      active: 1
+      image: {fileID: 2800000, guid: 79c7b7c722d772f4eaf246a5afcf8820, type: 3}
   mainImage:
     evidenceName: Main Image
     active: 1
-    image: {fileID: 0}
+    image: {fileID: 2800000, guid: ac2d87b664f3c534eb823fa10816885e, type: 3}
   gradientImage:
     evidenceName: Gradient Image
     active: 1
-    image: {fileID: 0}
+    image: {fileID: 2800000, guid: 95df9f00548b22d43bf069ae51ce6624, type: 3}
   inverseImage:
     evidenceName: Inverse Image
     active: 1
-    image: {fileID: 0}
+    image: {fileID: 2800000, guid: 5527ef531d8115d4d95d7db37859fbdd, type: 3}
   imageDataPoints:
   - evidenceName: Negative Spacing
     active: 0
@@ -44,14 +82,14 @@ MonoBehaviour:
     active: 0
     image: {fileID: 0}
   - evidenceName: Obscured Faces
-    active: 0
-    image: {fileID: 0}
+    active: 1
+    image: {fileID: 2800000, guid: 6bdb101f341e3074a98939ca92055b74, type: 3}
   - evidenceName: Possessed Person
     active: 0
     image: {fileID: 0}
   - evidenceName: Shadow Figure
-    active: 0
-    image: {fileID: 0}
+    active: 1
+    image: {fileID: 2800000, guid: 75e6afa81706d5148b0ca817e5bcb7a2, type: 3}
   - evidenceName: Blood Present
-    active: 0
-    image: {fileID: 0}
+    active: 1
+    image: {fileID: 2800000, guid: 79c7b7c722d772f4eaf246a5afcf8820, type: 3}

@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95feab6e8767fa44fbb125e384ec98d2, type: 3}
+  m_Name: Filler 6
+  m_EditorClassIdentifier: Assembly-CSharp::ImageClassifier
+  isEvidence: 0
+  isFiller: 1
+  imageUsed: 0
+  chosen: 0
+  imageData:
+    negativeSpace:
+      evidenceName: Negative Spacing
+      active: 0
+      image: {fileID: 0}
+    thermalSignature:
+      evidenceName: Thermal Signatures
+      active: 0
+      image: {fileID: 0}
+    clawMarks:
+      evidenceName: Claw Marks
+      active: 0
+      image: {fileID: 0}
+    starSigil:
+      evidenceName: Star Sigil
+      active: 0
+      image: {fileID: 0}
+    crossArrowSigil:
+      evidenceName: Cross Arrow Sigil
+      active: 0
+      image: {fileID: 0}
+    obscuredFaces:
+      evidenceName: Obscured Faces
+      active: 0
+      image: {fileID: 0}
+    possessedPerson:
+      evidenceName: Possessed Person
+      active: 0
+      image: {fileID: 0}
+    shadowFigures:
+      evidenceName: Shadow Figure
+      active: 0
+      image: {fileID: 0}
+    bloodPresent:
+      evidenceName: Blood Present
+      active: 0
+      image: {fileID: 0}
+  mainImage:
+    evidenceName: Main Image
+    active: 1
+    image: {fileID: 2800000, guid: d9515c56fd3cb2f4cbe44730df702ecc, type: 3}
+  gradientImage:
+    evidenceName: Gradient Image
+    active: 1
+    image: {fileID: 2800000, guid: b3d57ca2c8bfdce4a8cf7406ba5e493c, type: 3}
+  inverseImage:
+    evidenceName: Inverse Image
+    active: 1
+    image: {fileID: 2800000, guid: 40580e6cc2b40ae4f9bb883fba3f6d42, type: 3}
+  imageDataPoints:
+  - evidenceName: Negative Spacing
+    active: 0
+    image: {fileID: 0}
+  - evidenceName: Thermal Signatures
+    active: 0
+    image: {fileID: 0}
+  - evidenceName: Claw Marks
+    active: 0
+    image: {fileID: 0}
+  - evidenceName: Star Sigil
+    active: 0
+    image: {fileID: 0}
+  - evidenceName: Cross Arrow Sigil
+    active: 0
+    image: {fileID: 0}
+  - evidenceName: Obscured Faces
+    active: 0
+    image: {fileID: 0}
+  - evidenceName: Possessed Person
+    active: 0
+    image: {fileID: 0}
+  - evidenceName: Shadow Figure
+    active: 0
+    image: {fileID: 0}
+  - evidenceName: Blood Present
+    active: 0
+    image: {fileID: 0}
