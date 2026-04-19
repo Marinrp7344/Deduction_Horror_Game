@@ -1,9 +1,9 @@
-using UnityEngine;
+using System;
 using System.Collections.Generic;
-using UnityEngine.Video;
+using UnityEngine;
 using UnityEngine.Audio;
-using static Evidence_Data;
-using static EvidenceData;
+using UnityEngine.Video;
+
 
 public class Director : MonoBehaviour
 {
@@ -82,7 +82,7 @@ public class Director : MonoBehaviour
             return;
         }
 
-        int randomMonster = Random.Range(0, monsterList.Count);
+        int randomMonster = UnityEngine.Random.Range(0, monsterList.Count);
         currentMonster = monsterList[randomMonster];
 
 
@@ -219,7 +219,7 @@ public class Director : MonoBehaviour
 
             if (isValid)
             {
-                int randomTrait = Random.Range(0, chosenEvidenceTraits.Count);
+                int randomTrait = UnityEngine.Random.Range(0, chosenEvidenceTraits.Count);
                 chosenTrait = chosenEvidenceTraits[randomTrait];
                 validStory = story;
                 break;
@@ -233,16 +233,26 @@ public class Director : MonoBehaviour
     public Evidence_Data GenerateImageList(Monster_Data monster)
     {
         List<ImageClassifier> randomizedImageList = GenerateRandomImageLoop(imagesList);
-        List<EvidenceData> monsterImageTraitList = GenerateRandomTraitLoop(monster.imageList);
-        EvidenceData chosenTrait = null;
+        int monsterImageTraitIndex = monster.imageList.Count;
+        List<int> indexPositions = new List<int>();
+        for (int k = 0; k < monsterImageTraitIndex; k++)
+        {
+            indexPositions.Add(k);
+        }
+
+        indexPositions = GenerateRandomIntegerLoop(indexPositions);
+
+        int chosenTraitIndex = -1;
         ImageDataPoint chosenImage = null;
         ImageClassifier chosenClassifier = null;
 
-        foreach (EvidenceData trait in monsterImageTraitList)
+        foreach (int index in indexPositions)
         {
-            if(trait.evidenceRelevant == true)
+            if (monster.imageList[index].evidenceRelevant == true)
             {
-                chosenTrait = trait;
+                chosenTraitIndex = index;
+                break;
+
             }
         }
 
@@ -251,13 +261,13 @@ public class Director : MonoBehaviour
             bool isValid = false;
             foreach(ImageDataPoint data in image.imageDataPoints)
             {
-                if(data.evidenceName == chosenTrait.evidenceName)
+                if(data.evidenceName == monster.imageList[chosenTraitIndex].evidenceName)
                 {
                     Debug.Log("Names Matched");
                     if (data.active == true)
                     {
                         Debug.Log("Classifier data is active");
-                        if (chosenTrait.evidenceRelevant == true)
+                        if (monster.imageList[chosenTraitIndex].evidenceRelevant == true)
                         {
                             isValid = true;
                             chosenImage = data;
@@ -277,14 +287,14 @@ public class Director : MonoBehaviour
             }
         }
 
-        Evidence_Data imageData = new Evidence_Data();
+        Evidence_Data imageData = ScriptableObject.CreateInstance<Evidence_Data>();
         imageData.image = new ImageInfo();
         imageData.evidencePrefab = imagePrefab;
-        imageData.evidenceType = Evidence.Image;
+        imageData.evidenceType = Evidence_Data.Evidence.Image;
         int i = 0;
         foreach(EvidenceData evidence in imageData.imageList)
         {
-            if(evidence.evidenceName == chosenTrait.evidenceName)
+            if(evidence.evidenceName == monster.imageList[chosenTraitIndex].evidenceName)
             {
                 imageData.imageList[i].evidenceRelevant = true;
                 i++;
@@ -321,145 +331,7 @@ public class Director : MonoBehaviour
         return imageData;
     }
 
-    public List<Evidence_Data> FindValidEvidence(Monster_Data monster)
-    {
-        List<Evidence_Data> randomizedPossibleEvidence = GenerateRandomLoop(possibleEvidence);
-        randomList = randomizedPossibleEvidence;
-        List<Evidence_Data> validEvidence = new List<Evidence_Data>();
-        int randomEvidenceAmount = Random.Range(3, 5);
-        currentDifferenceStrength = 0;
-        List<Evidence_Data.Evidence> evidenceTypes = new List<Evidence_Data.Evidence>();
-        foreach(Evidence_Data evidence in randomizedPossibleEvidence)
-        {
-            Debug.Log(validEvidence.Count);
-            if(validEvidence.Count >= randomEvidenceAmount)
-            {
-                break;
-            }
-            else
-            {
-                bool isValid = true;
-                int i = 0;
-                bool evidenceTypeNotAddedYet = true;
-
-                foreach(Evidence_Data.Evidence type in evidenceTypes)
-                {
-                    if(type == evidence.evidenceType)
-                    {
-                        evidenceTypeNotAddedYet = false;
-                    }
-                }
-                if(evidenceTypeNotAddedYet)
-                {
-                    switch (evidence.evidenceType)
-                    {
-                        case Evidence_Data.Evidence.Story:
-                            List<EvidenceData> chosenEvidenceTraits= new List<EvidenceData>();
-                            isValid = false;
-                            foreach (EvidenceData data in monster.storyList)
-                            {
-                                if (evidence.storyList[i].evidenceRelevant == true)
-                                {
-                                    if (data.evidenceRelevant == true)
-                                    {
-                                        chosenEvidenceTraits.Add(data);
-                                        isValid = true;
-                                        currentDifferenceStrength += 1;
-                                    }
-                                }
-                                i++;
-                            }
-                            if (isValid)
-                            {
-                                validEvidence.Add(evidence);
-                                evidenceTypes.Add(evidence.evidenceType);
-                                int randomTrait = Random.Range(0, chosenEvidenceTraits.Count);
-                                chosenTrait = chosenEvidenceTraits[randomTrait];
-                            }
-                            break;
-
-                        case Evidence_Data.Evidence.PoliceReport:
-                            foreach (EvidenceData data in monster.policeReportList)
-                            {
-                                if (evidence.policeReportList[i].evidenceRelevant == true)
-                                {
-                                    if (data.evidenceRelevant == false)
-                                    {
-                                        isValid = false;
-                                    }
-                                }
-                                i++;
-                            }
-                            if (isValid)
-                            {
-                                validEvidence.Add(evidence);
-                                evidenceTypes.Add(evidence.evidenceType);
-                            }
-                            break;
-
-                        case Evidence_Data.Evidence.Video:
-                            foreach (EvidenceData data in monster.videoList)
-                            {
-                                if (evidence.videoList[i].evidenceRelevant == true)
-                                {
-                                    if (data.evidenceRelevant == false)
-                                    {
-                                        isValid = false;
-                                    }
-                                }
-                                i++;
-                            }
-                            if (isValid)
-                            {
-                                validEvidence.Add(evidence);
-                                evidenceTypes.Add(evidence.evidenceType);
-                            }
-                            break;
-
-                        case Evidence_Data.Evidence.Audio:
-                            foreach (EvidenceData data in monster.audioList)
-                            {
-                                if (evidence.audioList[i].evidenceRelevant == true)
-                                {
-                                    if (data.evidenceRelevant == false)
-                                    {
-                                        isValid = false;
-                                    }
-                                }
-                                i++;
-                            }
-                            if (isValid)
-                            {
-                                validEvidence.Add(evidence);
-                                evidenceTypes.Add(evidence.evidenceType);
-                            }
-                            break;
-
-                        case Evidence_Data.Evidence.Image:
-                            foreach (EvidenceData data in monster.imageList)
-                            {
-                                if (evidence.imageList[i].evidenceRelevant == true)
-                                {
-                                    if (data.evidenceRelevant == false)
-                                    {
-                                        isValid = false;
-                                    }
-                                }
-                                i++;
-                            }
-                            if (isValid)
-                            {
-                                validEvidence.Add(evidence);
-                                evidenceTypes.Add(evidence.evidenceType);
-                            }
-                            break;
-                    }
-                }
-            }
-        }
-        
-        return validEvidence;
-    }
+   
 
     public List<Evidence_Data> GenerateRandomLoop(List<Evidence_Data> listToShuffle)
     {
@@ -494,6 +366,19 @@ public class Director : MonoBehaviour
         {
             int k = rand.Next(i + 1);
             ImageClassifier value = listToShuffle[k];
+            listToShuffle[k] = listToShuffle[i];
+            listToShuffle[i] = value;
+        }
+        return listToShuffle;
+    }
+
+    public List<int> GenerateRandomIntegerLoop(List<int> listToShuffle)
+    {
+
+        for (int i = listToShuffle.Count - 1; i > 0; i--)
+        {
+            int k = rand.Next(i + 1);
+            int value = listToShuffle[k];
             listToShuffle[k] = listToShuffle[i];
             listToShuffle[i] = value;
         }
@@ -535,35 +420,6 @@ public class Director : MonoBehaviour
             checkboxEvidence.text.text = evidence.evidenceName;
             evidenceGuesses.Add(checkboxEvidence);
         }
-
-        /* 
-
-        foreach (EvidenceData evidence in guessingData.policeReportList)
-        {
-            GameObject checkbox = Instantiate(evidencePrefab, transform.position, Quaternion.identity);
-            checkbox.transform.SetParent(policeReportView.transform);
-            Evidence_Guess_UI checkboxEvidence = checkbox.GetComponent<Evidence_Guess_UI>();
-            checkboxEvidence.guessingValue = evidence;
-            checkboxEvidence.director = this;
-            checkboxEvidence.text.text = evidence.evidenceName;
-            evidenceGuesses.Add(checkboxEvidence);
-        }
-
-        foreach (EvidenceData evidence in guessingData.videoList)
-        {
-            GameObject checkbox = Instantiate(evidencePrefab, transform.position, Quaternion.identity);
-            checkbox.transform.SetParent(videoView.transform);
-            Evidence_Guess_UI checkboxEvidence = checkbox.GetComponent<Evidence_Guess_UI>();
-            checkboxEvidence.guessingValue = evidence;
-            checkboxEvidence.director = this;
-            checkboxEvidence.text.text = evidence.evidenceName;
-            evidenceGuesses.Add(checkboxEvidence);
-        }
-        */
-
-        
-
-
     }
 
     public void FilterPossibleGuesses()
