@@ -2,15 +2,51 @@ using UnityEngine;
 
 public class Demon : Enemy
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private bool demonWaiting;
+
+    public float maxCharge;
+    public float currentCharge;
+    public float chargeIncreaseRate;
+
+    public void Update()
     {
-        
+        if (demonWaiting)
+        {
+            if (lightSwitch.lightOn && player.GetCurrentView() == view)
+            {
+                EnemyAttack();
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void ChangeState()
     {
-        
+        if(isActive && player.GetCurrentView() != view)
+        {
+            if(!isVisible)
+            {
+                MakeEnemyVisible();
+            }
+            else
+            {
+                demonWaiting = true;
+            }
+        }
     }
+
+    public override void HitCrucifix()
+    {
+        if (currentCharge > maxCharge)
+        {
+            ResetEnemy();
+        }
+        else
+        {
+            currentCharge += chargeIncreaseRate * Time.deltaTime;
+        }
+
+
+    }
+
+
 }

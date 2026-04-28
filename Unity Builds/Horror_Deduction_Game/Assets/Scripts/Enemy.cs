@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     public int visibleMultiplier;
     public int visibleChanceThreshold;
     public Camera_Animator player;
+    public LightSwitch lightSwitch;
     public float rotationY;
     public float rotationX;
     public int view;
